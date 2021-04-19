@@ -1,4 +1,51 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic);
+@font-face {
+    font-family: 'StyreneALC';
+    src: url('../fonts/StyreneALC-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StyreneALC';
+    src: url('../fonts/StyreneALC-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StyreneALC';
+    src: url('../fonts/StyreneALC-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StyreneBLC';
+    src: url('../fonts/StyreneBLC-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StyreneBLC';
+    src: url('../fonts/StyreneBLC-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StyreneBLC';
+    src: url('../fonts/StyreneBLC-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 //@import 'normalize.css';
 
 //
@@ -53,32 +100,32 @@
 //*
 // Which objects and abstractions would you like to use?
 //base
-$use-btn-color:                true!default;
-$use-btn-size:                 true!default;
-$use-btn-group:                false!default;
-$use-input-group:              false!default;
-$use-table:                    true!default;
-$use-color-table:              false!default;
-$use-column-table:             false!default;
-$use-color-text:               true!default;
+$use-btn-color: true !default;
+$use-btn-size: true !default;
+$use-btn-group: false !default;
+$use-input-group: false !default;
+$use-table: true !default;
+$use-color-table: false !default;
+$use-column-table: false !default;
+$use-color-text: true !default;
 
 //modules
-$use-accordion:                false!default;
-$use-breadcrumb:               false!default;
-$use-pagination:               true!default;
-$use-pager:                    true!default;
-$use-space:                    false!default;
-$use-split:                    false!default;
-$use-rules:                    false!default;
-$use-this-or-this:             false!default;
-$use-media:                    true!default;
+$use-accordion: false !default;
+$use-breadcrumb: false !default;
+$use-pagination: true !default;
+$use-pager: true !default;
+$use-space: false !default;
+$use-split: false !default;
+$use-rules: false !default;
+$use-this-or-this: false !default;
+$use-media: true !default;
 // grids
-$use-adaptive:                 true!default;
-$use-flexbox:                  true!default;
-$use-bem:                      false!default;
+$use-adaptive: true !default;
+$use-flexbox: true !default;
+$use-bem: false !default;
 // plugins
-$use-animations:               false!default;
-$debug-mode:                   false!default;
+$use-animations: false !default;
+$debug-mode: false !default;
 
 @import "_sprites";
 
