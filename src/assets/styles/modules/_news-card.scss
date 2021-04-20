@@ -36,7 +36,7 @@
     &__mark {
         position: absolute;
         z-index: 2;
-        top: 10px;
+        top: 7px;
         right: 10px;
         @media (min-width: $main-breakpoint) {
             top: 13px;
@@ -44,8 +44,8 @@
         }
 
         font-weight: bold;
-        font-size: 26px; // ?
-        line-height: 120%; // ?
+        font-size: 24px;
+        line-height: 120%;
         @media (min-width: $main-breakpoint) {
             font-size: 46px;
         }
