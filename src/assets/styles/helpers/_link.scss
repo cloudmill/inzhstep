@@ -1,0 +1,11 @@
+@mixin link-hover {
+    &__text {
+        color: $base-color;
+    }
+
+    &__img {
+        visibility: visible;
+
+        opacity: 1;
+    }
+}

@@ -1,5 +1,8 @@
 mixin link(opt)
-  - opt = Object.assign({tag:'a',href:'#'}, opt);
+  -
+    opt = Object.assign({
+      tag:'a', href:'#'
+    }, opt);
   - if (opt.tag !== 'a') delete opt.href;
   .link
     #{opt.tag}.link__link(href=opt.href)

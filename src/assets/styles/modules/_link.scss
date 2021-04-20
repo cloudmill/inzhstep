@@ -11,22 +11,21 @@
         cursor: pointer;
 
         &:hover {
-            #{$component}__text {
-                color: $base-color;
-            }
-    
-            #{$component}__img {
-                visibility: visible;
-    
-                opacity: 1;
+            #{$component} {
+                @include link-hover;
             }
         }
     }
 
     &__text {
         font-family: $base-font-family-b;
-        font-size: 14px;
-        line-height: 18px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        @media (min-width: $main-breakpoint) {
+            font-size: 14px;
+            line-height: 18px;
+        }
         color: $main-color;
         white-space: nowrap;
         text-transform: uppercase;

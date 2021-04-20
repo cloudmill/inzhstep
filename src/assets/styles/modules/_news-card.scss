@@ -1,3 +1,109 @@
 .news-card {
-    
+    $component: &;
+
+    width: 291px;
+    @media (min-width: $main-breakpoint) {
+        width: 560px;
+    }
+    display: block;
+
+    &__frame {
+        position: relative;
+        width: 100%;
+        height: 209px;
+        @media (min-width: $main-breakpoint) {
+            height: 400px;
+        }
+        display: flex;
+        align-items: flex-end;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+
+            transition: $main-transition;
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        z-index: 2;
+        top: 10px;
+        right: 10px;
+        @media (min-width: $main-breakpoint) {
+            top: 13px;
+            right: 20px;
+        }
+
+        font-weight: bold;
+        font-size: 26px; // ?
+        line-height: 120%; // ?
+        @media (min-width: $main-breakpoint) {
+            font-size: 46px;
+        }
+        color: white;
+    }
+
+    &__date {
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        @media (min-width: $main-breakpoint) {
+            padding-top: 8px;
+            padding-bottom: 7px;
+        }
+
+        background-color: white;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+        @media (min-width: $main-breakpoint) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    &__title {
+        margin-top: 20px;
+        @media (min-width: $main-breakpoint) {
+            margin-top: 30px;
+        }
+
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 120%;
+        @media (min-width: $main-breakpoint) {
+            font-size: 26px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 20px;
+
+        @media (min-width: $main-breakpoint) {
+            margin-top: 30px;
+        }
+    }
+
+    &:hover {
+        #{$component}__frame {
+            &::before {
+                background-color: rgba($color: black, $alpha: 0.1);
+            }
+        }
+
+        #{$component}__bottom {
+            .link {
+                @include link-hover;
+            }
+        }
+    }
 }

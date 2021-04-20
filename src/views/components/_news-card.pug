@@ -1,7 +1,23 @@
-mixin news-card
-  .news-card
+mixin news-card(opt)
+  -
+    opt = Object.assign({
+      href:'#',
+      path:'assets/images/',
+      image:'news-card.jpeg',
+      mark:'АКЦИЯ',
+      date:'28.04.2021',
+      titleTag:'h3',
+      title:'Антикризисная акция  по шаровым кранам PN16 Altstream'
+    }, opt);
+  a.news-card(href=opt.href)
     .news-card__frame
-    .news-card__title
+      img.news-card__img(src=(opt.path + opt.image))
+      .news-card__mark
+        |#{opt.mark}
+      .news-card__date
+        |#{opt.date}
+    #{opt.titleTag}.news-card__title
+      |#{opt.title}
     .news-card__bottom
-      +link
+      +link({tag:'span'})
         |подробнее
