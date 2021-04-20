@@ -149,3 +149,7 @@ $debug-mode: false !default;
 
 // Pages
 @import "pages/*.scss";
+
+// libs
+@import "../../../node_modules/swiper/swiper-vars.scss";
+@import "../../../node_modules/swiper/swiper.scss";
