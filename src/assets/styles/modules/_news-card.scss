@@ -1,11 +1,11 @@
 .news-card {
     $component: &;
 
-    $width: 291px;
+    $width: $news-card-width-mobile;
     width: $width;
     min-width: $width;
     @media (min-width: $main-breakpoint) {
-        $width: 560px;
+        $width: $news-card-width-desktop;
         width: $width;
         min-width: $width;
     }
