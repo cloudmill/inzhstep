@@ -13,9 +13,15 @@ block content
     .slider.slider--news-card
       .slider__swiper
         .swiper-wrapper
-          - for (let i= 0; i<10; i++)
+          - for (let i= 0; i<5; i++)
             .swiper-slide
               +news-card
+            .swiper-slide
+              +news-card({
+                image:'news-card-1.jpeg',
+                mark:'НОВИНКА',
+                title:'Новинка! Шаровые краны Altstream PN 25!',
+              })
 
 block footer
   include ../partials/_footer.pug
