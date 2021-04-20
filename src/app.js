@@ -1,26 +1,27 @@
-/* src/app.js */
-
-// Styles
 import 'Styles/_app.scss';
 
-$(document).ready(() => {
-	console.log('Ready!');
-	require('Scripts/demo');
-});
+import Swiper from 'swiper';
 
+const MAIN_BREAKPOINT = 1024;
 
-// load
-// $(document).load(() => {});
-// load
+// slider
+{
+	$(() => {
+		$('.slider').each(function () {
+			const slider = $(this);
+			const slider_swiper_el = slider.find('.slider__swiper');
 
-// scroll
-$(window).scroll(() => {
-});
-// scroll
-
-// mobile sctipts
-const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-if (screenWidth <= 767) {
-	console.log(screenWidth);
+			const slider_swiper = new Swiper(slider_swiper_el[0], {
+				spaceBetween: 20,
+				
+				slidesPerView: 'auto',
+				
+				breakpoints: {
+					[MAIN_BREAKPOINT]: {
+						spaceBetween: 40,
+					},
+				},
+			});
+		});
+	});
 }
-// mobile sctipts

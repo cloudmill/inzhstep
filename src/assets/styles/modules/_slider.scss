@@ -1,0 +1,10 @@
+.slider {
+    &--news-card {
+        .swiper-slide {
+            width: $news-card-width-mobile;
+            @media (min-width: $main-breakpoint) {
+                width: $news-card-width-desktop;
+            }
+        }
+    }
+}

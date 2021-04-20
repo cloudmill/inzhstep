@@ -10,7 +10,12 @@ block content
   main
     +link
       |test
-    +news-card
+    .slider.slider--news-card
+      .slider__swiper
+        .swiper-wrapper
+          - for (let i= 0; i<10; i++)
+            .swiper-slide
+              +news-card
 
 block footer
   include ../partials/_footer.pug
