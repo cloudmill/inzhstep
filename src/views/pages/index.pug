@@ -1,11 +1,14 @@
 extends ../layouts/master.pug
 
+include ../components/_news-card.pug
+include ../components/_link.pug
+
 block header
   include ../partials/_header.pug
 
 block content
   main
-    |test
+    +news-card
 
 block footer
   include ../partials/_footer.pug
