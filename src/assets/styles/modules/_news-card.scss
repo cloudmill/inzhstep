@@ -1,9 +1,13 @@
 .news-card {
     $component: &;
 
-    width: 291px;
+    $width: 291px;
+    width: $width;
+    min-width: $width;
     @media (min-width: $main-breakpoint) {
-        width: 560px;
+        $width: 560px;
+        width: $width;
+        min-width: $width;
     }
     display: block;
 
