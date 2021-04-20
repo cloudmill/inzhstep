@@ -1,0 +1,8 @@
+mixin link(opt)
+  - opt = Object.assign({tag:'a',href:'#'}, opt);
+  - if (opt.tag !== 'a') delete opt.href;
+  .link
+    #{opt.tag}.link__link(href=opt.href)
+      .link__text
+        block
+      img.link__img(src='assets/images/arrow.svg')

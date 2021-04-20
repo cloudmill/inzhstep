@@ -1,0 +1,43 @@
+.link {
+    $component: &;
+
+    display: flex;
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            #{$component}__text {
+                color: $base-color;
+            }
+    
+            #{$component}__img {
+                visibility: visible;
+    
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $base-font-family-b;
+        font-size: 14px;
+        line-height: 18px;
+        color: $main-color;
+        white-space: nowrap;
+        text-transform: uppercase;
+        transition: $main-transition;
+    }
+
+    &__img {
+        margin-left: 7px;
+        visibility: hidden;
+
+        opacity: 0;
+        transition: $main-transition;
+    }
+}
