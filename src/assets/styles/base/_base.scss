@@ -69,6 +69,7 @@ section {
 a {
   color: $link-color;
   @include transition;
+  text-decoration: none;
 
   &:hover,
   &:active,
