@@ -2,7 +2,7 @@
     &--news-card {
         .swiper-slide {
             width: $news-card-width-mobile;
-            @media (min-width: $main-breakpoint) {
+            @media (min-width: $breakpoint) {
                 width: $news-card-width-desktop;
             }
         }

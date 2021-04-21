@@ -1,119 +1,63 @@
-//
-// Base -> Scaffolding
-// --------------------------------------------------
-
-//
-// Make all elements box-sizing
-//
-* {
-  &,
-  &:before,
-  &:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-section, article, aside, footer, header, nav, hgroup, main {
-  display:block;
+section,
+article,
+aside,
+footer,
+header,
+nav,
+hgroup,
+main {
+  display: block;
 }
 
-//
-// Delete focus border
-//
-a:active, a:focus {outline: none;}
-input, textarea {outline:none;}
-input:active, textarea:active {outline:none;}
-button:active, button:focus {outline: none;}
-:focus {outline:none;}
-button::-moz-focus-inner {border: 0;}
-
-//
-// Clearfix
-//
-.clearfix {
-  @include clearfix();
+a:active,
+a:focus {
+  outline: none;
 }
 
-//
-// HTML
-//
-html {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+input,
+textarea {
+  outline: none;
 }
 
-//
-// Basic typography styles
-//
-body {
-  background-color: $base-background;
-  color: $base-color;
-  font-weight: $base-font-weight;
-  font-size: $base-font-size;
-  font-family: $base-font-family-a;
-  line-height: $base-line-height;
+input:active,
+textarea:active {
+  outline: none;
 }
 
-section {
-  background: $white-lighten;
+button:active,
+button:focus {
+  outline: none;
 }
 
-//
-// Link
-//
-a {
-  color: $link-color;
-  @include transition;
-  text-decoration: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $link-hover-color;
-  }
+:focus {
+  outline: none;
 }
 
-//
-// Images
-//
-img {
-  max-width: 100%;
-  height: auto;
-}
-.img--right{
-  float:right;
-  margin-bottom:  $line-height-computed;
-  margin-left: $line-height-computed;
-}
-.img--left{
-  float:left;
-  margin-right: $line-height-computed;
-  margin-bottom: $line-height-computed;
-}
-.img--center{
-  display:block;
-  margin-right:auto;
-  margin-bottom: $line-height-computed;
-  margin-left:auto;
-}
-
-
-
-//
-// Display none
-//
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
+button::-moz-focus-inner {
   border: 0;
-  clip: rect(0,0,0,0);
-  overflow: hidden;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: $color-white;
+  font-family: $font-family-a;
+  color: $color-black;
+}
+
+a {
+  text-decoration: none;
 }
