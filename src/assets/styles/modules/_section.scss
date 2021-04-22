@@ -1,6 +1,7 @@
 .section {
     background-color: $color-white;
 
+    // ?
     &__side {
         height: 100%;
 
@@ -18,6 +19,7 @@
             overflow: hidden;
         }
     }
+    // ?
 
     &--blue {
         background-color: $color-blue;
