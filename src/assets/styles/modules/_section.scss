@@ -1,25 +1,29 @@
 .section {
     background-color: $color-white;
 
-    // ?
-    &__side {
-        height: 100%;
-
+    &__inner {
         @media (min-width: $breakpoint) {
-            border-right: 1px solid #ADC9CB;
-        }
-    }
-
-    &__main {
-        @media (min-width: $breakpoint) {
-            padding-left: 40px;
+            padding: 160px 0;
         }
         height: 100%;
-        @media (min-width: $breakpoint) {
-            overflow: hidden;
+
+        &--side {
+            @media (max-width: $breakpoint - 1px) {
+                margin-bottom: 40px;
+                padding-top: 60px;
+            }
+
+            @media (min-width: $breakpoint) {
+                border-right: 1px solid black;
+            }
+        }
+
+        &--main {
+            @media (max-width: $breakpoint - 1px) {
+                padding-bottom: 60px;
+            }
         }
     }
-    // ?
 
     &--blue {
         background-color: $color-blue;
