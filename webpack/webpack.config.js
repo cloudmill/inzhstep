@@ -104,13 +104,7 @@ module.exports = env => {
 					loaders: [
 						'pug-loader',
 						{
-							loader: 'pug-html-loader',
-							options: {
-								data: {
-									menu: require('../src/views/data/menu.json'),
-									index: require('../src/views/data/index.json'),
-								}
-							}
+							loader: 'pug-html-loader'
 						}
 					]
 				},
