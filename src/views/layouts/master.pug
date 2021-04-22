@@ -3,7 +3,10 @@ include ../mixins/_mixins.pug
 block pageOpt
   -
     const pageOpt = {
-      bodyClass:'body',
+      bodyClass:[
+        'body',
+        'body--main',
+      ],
       mainClass:'main',
     };
 
