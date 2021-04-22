@@ -13,30 +13,54 @@ block header
 
 block content
   +grid-test
-  +link
-    |test
-  +news-card
-  .slider.slider--news-card
-    .slider__swiper
-      .swiper-wrapper
-        - for (let i= 0; i<5; i++)
-          .swiper-slide
-            +news-card
-          .swiper-slide
-            +news-card({
-              image:'news-card-1.jpeg',
-              mark:'НОВИНКА',
-              title:'Новинка! Шаровые краны Altstream PN 25!',
-            })
   .section.section--blue
     .container
       .row
         .row__side
-          .section__side
+          .section__inner.section__inner--side
             +link
               |test
         .row__main
-          .section__main
+          .section__inner.section__inner--main
+            .slider.slider--news-card
+              .slider__swiper
+                .swiper-wrapper
+                  - for (let i= 0; i<5; i++)
+                    .swiper-slide
+                      +news-card
+                    .swiper-slide
+                      +news-card({
+                        image:'news-card-1.jpeg',
+                        mark:'НОВИНКА',
+                        title:'Новинка! Шаровые краны Altstream PN 25!',
+                      })
+  .section
+    .container
+      .row
+        .row__side
+        .row__main
+          .section__inner.section__inner--main
+            .slider.slider--news-card
+              .slider__swiper
+                .swiper-wrapper
+                  - for (let i= 0; i<5; i++)
+                    .swiper-slide
+                      +news-card
+                    .swiper-slide
+                      +news-card({
+                        image:'news-card-1.jpeg',
+                        mark:'НОВИНКА',
+                        title:'Новинка! Шаровые краны Altstream PN 25!',
+                      })
+  .section.section--blue
+    .container
+      .row
+        .row__side
+          .section__inner.section__inner--side
+            +link
+              |test
+        .row__main
+          .section__inner.section__inner--main
             .slider.slider--news-card
               .slider__swiper
                 .swiper-wrapper
