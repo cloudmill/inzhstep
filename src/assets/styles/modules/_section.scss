@@ -1,0 +1,9 @@
+.section {
+    overflow: hidden;
+
+    background-color: $color-white;
+
+    &--blue {
+        background-color: $color-blue;
+    }
+}
