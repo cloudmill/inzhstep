@@ -1,0 +1,20 @@
+.row {
+    @media (min-width: $breakpoint) {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__side {
+        @media (min-width: $breakpoint) {
+            width: calc(#{$col-part-desk} * 3 - #{$col-gap-desk});
+            flex-shrink: 0;
+        }
+    }
+
+    &__main {
+        @media (min-width: $breakpoint) {
+            width: calc(#{$col-part-desk} * 13 + #{$container-pad-hor-desk});
+            flex-shrink: 0;
+        }
+    }
+}
