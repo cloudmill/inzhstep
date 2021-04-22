@@ -6,7 +6,9 @@
     &__side {
         height: 100%;
 
-        border-right: 1px solid #ADC9CB;
+        @media (min-width: $breakpoint) {
+            border-right: 1px solid #ADC9CB;
+        }
     }
 
     &__main {
