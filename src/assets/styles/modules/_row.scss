@@ -13,7 +13,7 @@
 
     &__main {
         @media (min-width: $breakpoint) {
-            width: calc(#{$col-part-desk} * 13 + #{$container-pad-hor-desk});
+            width: calc(#{$col-part-desk} * 13);
             flex-shrink: 0;
         }
     }
