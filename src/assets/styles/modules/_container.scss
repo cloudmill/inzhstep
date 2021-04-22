@@ -1,6 +1,6 @@
 .container {
-    padding: 0 20px;
+    padding: 0 $container-pad-hor-mob;
     @media (min-width: $breakpoint) {
-        padding: 0 60px;
+        padding: 0 $container-pad-hor-desk;
     }
 }
