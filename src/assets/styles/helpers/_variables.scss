@@ -17,5 +17,14 @@ $transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 $breakpoint: 1024px;
 
 // grid
-$gap-mob: 20px;
-$gap-desk: 60px;
+$col-gap-mob: 20px;
+$col-gap-desk: 40px;
+
+$col-count-mob: 8;
+$col-count-desk: $col-count-mob * 2;
+
+$col-width-mob: calc(calc(100vw - calc(#{$container-pad-hor-mob} * 2) - calc(#{$col-gap-mob} * #{$col-count-mob - 1})) / #{$col-count-mob});
+$col-width-desk: calc(calc(100vw - calc(#{$container-pad-hor-desk} * 2) - calc(#{$col-gap-desk} * #{$col-count-desk - 1})) / #{$col-count-desk});
+
+$col-part-mob: calc(#{$col-width-mob} + #{$col-gap-mob});
+$col-part-desk: calc(#{$col-width-desk} + #{$col-gap-desk});
