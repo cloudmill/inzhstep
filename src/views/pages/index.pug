@@ -3,6 +3,7 @@ extends ../layouts/master.pug
 include ../components/_news-card.pug
 include ../components/_link.pug
 include ../components/_grid-test.pug
+include ../components/_nav-card.pug
 
 
 
@@ -13,8 +14,6 @@ block header
 
 block content
   +grid-test
-  +link
-    |test
   .section.section--blue
     .container
       .row
@@ -24,65 +23,28 @@ block content
               |test
         .row__main
           .section__inner.section__inner--main
-            .section__slider
-              .slider.slider--news-card
-                .slider__swiper
-                  .swiper-wrapper
-                    - for (let i= 0; i<5; i++)
-                      .swiper-slide
-                        +news-card
-                      .swiper-slide
-                        +news-card({
-                          image:'news-card-1.jpeg',
-                          mark:'НОВИНКА',
-                          title:'Новинка! Шаровые краны Altstream PN 25!',
-                        })
-            .slider.slider--news-card
-              .slider__swiper
-                .swiper-wrapper
-                  - for (let i= 0; i<5; i++)
-                    .swiper-slide
-                      +news-card
-                    .swiper-slide
-                      +news-card({
-                        image:'news-card-1.jpeg',
-                        mark:'НОВИНКА',
-                        title:'Новинка! Шаровые краны Altstream PN 25!',
-                      })
-  .section
-    .container
-      .row
-        .row__side
-          .section__inner.section__inner--side
-            +link
-              |test
-        .row__main
-          .section__inner.section__inner--main
-            .section__slider
-              .slider.slider--news-card
-                .slider__swiper
-                  .swiper-wrapper
-                    - for (let i= 0; i<5; i++)
-                      .swiper-slide
-                        +news-card
-                      .swiper-slide
-                        +news-card({
-                          image:'news-card-1.jpeg',
-                          mark:'НОВИНКА',
-                          title:'Новинка! Шаровые краны Altstream PN 25!',
-                        })
-            .slider.slider--news-card
-              .slider__swiper
-                .swiper-wrapper
-                  - for (let i= 0; i<5; i++)
-                    .swiper-slide
-                      +news-card
-                    .swiper-slide
-                      +news-card({
-                        image:'news-card-1.jpeg',
-                        mark:'НОВИНКА',
-                        title:'Новинка! Шаровые краны Altstream PN 25!',
-                      })
+            .nav(style='display:flex')
+              +nav-card
+              +nav-card({
+                title: {
+                  text:'Водоснабжение'
+                },
+                links: [
+                  'Полипропиленовые трубы TEBO Technics',
+                  'Полипропиленовые фитинги TEBO Technics',
+                  'Оборудование для монтажа ПП Труб',
+                ],
+              })
+              +nav-card({
+                title: {
+                  text:'Приборы учета тепла и воды'
+                },
+                links: [
+                  'Полипропиленовые трубы TEBO Technics',
+                  'Полипропиленовые фитинги TEBO Technics',
+                  'Оборудование для монтажа ПП Труб',
+                ],
+              })
 
 
 
