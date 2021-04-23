@@ -1,0 +1,30 @@
+mixin nav-card(opt={})
+  -
+    opt.title = Object.assign({
+      tag:'a',
+      href:'#',
+      text:'Отопление',
+    }, opt.title);
+    opt = Object.assign({
+      links:[
+        'Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления',
+        'Sanline. Коллекторные узлы. Балансировочная арматура',
+        'Термостатическая арматура и комплектующие',
+        'Отопительные приборы',
+      ],
+      path:'assets/images/',
+      image:'nav-card.png',
+    }, opt);
+
+  .nav-card
+    .nav-card__frame
+      .nav-card__image
+        img.nav-card__img(src=(opt.path + opt.image))
+    #{opt.title.tag}.nav-card__title(href=(opt.title.tag === 'a' ? opt.title.href : undefined))
+      |#{opt.title.text}
+    nav.nav-card__nav
+      ul.nav-card__list
+        each link in opt.links
+          li.nav-card__item
+            a.nav-card__link(href='#')
+              |#{link}
