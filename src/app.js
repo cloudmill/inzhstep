@@ -4,7 +4,12 @@ import Swiper from 'swiper';
 
 const MAIN_BREAKPOINT = 1024;
 
-// slider
+
+
+
+
+// --- --- SLIDER --- ---
+
 {
 	$(() => {
 		$('.slider').each(function () {
@@ -25,3 +30,5 @@ const MAIN_BREAKPOINT = 1024;
 		});
 	});
 }
+
+// --- --- --- --- ---
