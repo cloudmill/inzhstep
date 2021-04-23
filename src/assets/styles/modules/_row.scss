@@ -6,14 +6,14 @@
 
     &__side {
         @media (min-width: $breakpoint) {
-            width: calc(#{$col-part-desk} * 3 - #{$col-gap-desk});
+            width: calc(#{$grid-part-d} * 3 - #{$grid-gap-d});
             flex-shrink: 0;
         }
     }
 
     &__main {
         @media (min-width: $breakpoint) {
-            width: calc(#{$col-part-desk} * 13);
+            width: calc(#{$grid-part-d} * 13);
             flex-shrink: 0;
         }
     }

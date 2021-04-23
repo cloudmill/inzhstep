@@ -1,0 +1,16 @@
+// --- --- LINK --- ---
+
+@mixin link-hover {
+  &__text {
+      color: $color-black;
+  }
+
+  &__img {
+      transform: none;
+      visibility: visible;
+
+      opacity: 1;
+  }
+}
+
+// --- --- --- --- ---

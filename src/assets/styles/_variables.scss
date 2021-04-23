@@ -1,0 +1,47 @@
+// --- --- GLOBAL --- ---
+
+// font
+$ff-a: 'StyreneALC', sans-serif;
+$ff-b: 'StyreneBLC', sans-serif;
+
+// colors
+$color-main: #0F93A1;
+$color-black: #2B3637;
+$color-white: #FFFFFF;
+$color-blue-light: #CEE5E8;
+
+// animation
+$transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+// breakpoints
+$breakpoint: 1024px;
+
+// grid
+$grid-pad-m: 20px;
+$grid-pad-d: 60px;
+
+$grid-gap-m: 20px;
+$grid-gap-d: 40px;
+
+$grid-length-m: 8;
+$grid-length-d: $grid-length-m * 2;
+
+$grid-col-m: calc(calc(100vw - calc(#{$grid-pad-m} * 2) - calc(#{$grid-gap-m} * #{$grid-length-m - 1})) / #{$grid-length-m});
+$grid-col-d: calc(calc(100vw - calc(#{$grid-pad-d} * 2) - calc(#{$grid-gap-d} * #{$grid-length-d - 1})) / #{$grid-length-d});
+
+$grid-part-m: calc(#{$grid-col-m} + #{$grid-gap-m});
+$grid-part-d: calc(#{$grid-col-d} + #{$grid-gap-d});
+
+// --- --- --- --- ---
+
+
+
+
+
+// --- --- NEWS-CARD --- --- 
+
+// width
+$news-card-width-m: 291px;
+$news-card-width-d: 560px;
+
+// --- --- --- --- ---

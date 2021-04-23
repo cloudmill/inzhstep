@@ -1,7 +1,7 @@
 .container {
-    padding: 0 $container-pad-hor-mob;
+    padding: 0 $grid-pad-m;
     @media (min-width: $breakpoint) {
-        padding: 0 $container-pad-hor-desk;
+        padding: 0 $grid-pad-d;
     }
     width: 100%;
 }

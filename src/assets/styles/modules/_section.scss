@@ -25,7 +25,15 @@
         }
     }
 
+    &__slider {
+        @media (min-width: $breakpoint) {
+            padding-left: #{$grid-gap-d};
+            width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
+            overflow: hidden;
+        }
+    }
+
     &--blue {
-        background-color: $color-blue;
+        background-color: $color-blue-light;
     }
 }

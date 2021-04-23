@@ -1,9 +1,9 @@
 .slider {
     &--news-card {
         .swiper-slide {
-            width: $news-card-width-mobile;
+            width: $news-card-width-m;
             @media (min-width: $breakpoint) {
-                width: $news-card-width-desktop;
+                width: $news-card-width-d;
             }
         }
     }
