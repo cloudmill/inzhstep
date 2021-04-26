@@ -1,0 +1,207 @@
+.footer {
+    padding: 60px 0;
+    @media (min-width: $breakpoint) {
+        padding: 160px 0;
+    }
+
+    background-color: #142F33;
+
+    &__container {
+        @media (min-width: $breakpoint) {
+            padding-left: calc(#{$grid-part-d} * 4 - #{$grid-gap-d});
+        }
+    }
+
+    &__top {
+        @media (min-width: $breakpoint) {
+            display: flex;
+        }
+    }
+
+    &__contacts {
+        @media (min-width: $breakpoint) {
+            width: calc(#{$grid-part-d} * 8 - #{$grid-col-d});
+            flex-shrink: 0;
+        }
+    }
+
+    &__phone {
+        display: flex;
+    }
+
+    &__phone-link {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 39px;
+        @media (min-width: $breakpoint) {
+            font-size: 50px;
+            line-height: 66px;
+        }
+        color: white;
+        transition: $transition;
+
+        &:hover {
+            color: #0F93A1;
+        }
+    }
+
+    &__email {
+        margin-top: 10px;
+        display: flex;
+    }
+
+    &__email-link {
+        font-family: $ff-b;
+        font-size: 16px;
+        line-height: 21px;
+        @media (min-width: $breakpoint) {
+            font-size: 26px;
+            line-height: 34px;
+        }
+        color: white;
+        transition: $transition;
+
+        &:hover {
+            color: #0F93A1;
+        }
+    }
+
+    &__navigation {
+        margin-top: 60px;
+        @media (min-width: $breakpoint) {
+            margin-top: 0;
+            width: calc(#{$grid-part-d} * 4 + #{$grid-col-d});
+            flex-shrink: 0;
+        }
+    }
+
+    &__nav-item {
+        display: flex;
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    &__nav-link {
+        font-family: $ff-b;
+        font-size: 16px;
+        line-height: 21px;
+        @media (min-width: $breakpoint) {
+            font-size: 26px;
+            line-height: 34px;
+        }
+        color: white;
+        transition: $transition;
+
+        &:hover {
+            color: #0F93A1;
+        }
+    }
+
+    &__docs {
+        margin-top: 60px;
+        @media (min-width: $breakpoint) {
+            position: absolute;
+            margin-top: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+    }
+
+    &__docs-item {
+        display: flex;
+        
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__docs-link {
+        @media (min-width: $breakpoint) {
+            pointer-events: all;
+        }
+
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 17px;
+        @media (min-width: $breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        color: #869EA2;
+        transition: $transition;
+
+        &:hover {
+            color: #0F93A1;
+        }
+    }
+
+    &__copyright {
+        margin-top: 40px;
+        @media (min-width: $breakpoint) {
+            margin-top: 76px;
+            display: flex;
+            align-items: baseline;
+        }
+    }
+
+    &__author {
+        display: flex;
+        @media (min-width: $breakpoint) {
+            width: calc(#{$grid-part-d} * 8 - #{$grid-col-d});
+            flex-shrink: 0;
+        }
+    }
+
+    &__author-text {
+        font-family: $ff-b;
+        font-size: 10px;
+        line-height: 12px;
+        @media (min-width: $breakpoint) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        color: #869EA2;
+    }
+
+    &__dev {
+        margin-top: 10px;
+        display: flex;
+        align-items: baseline;
+        @media (min-width: $breakpoint) {
+            margin-top: 0;
+            width: calc(#{$grid-part-d} * 4 + #{$grid-col-d});
+            flex-shrink: 0;
+        }
+    }
+
+    &__dev-text {
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 17px;
+        @media (min-width: $breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        color: #869EA2;
+        white-space: nowrap;
+    }
+
+    &__dev-link {
+        font-family: $ff-b;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        @media (min-width: $breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        color: white;
+        transition: $transition;
+
+        &:hover {
+            color: #0F93A1;
+        }
+    }
+}
