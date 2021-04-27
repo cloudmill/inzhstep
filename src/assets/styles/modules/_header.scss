@@ -214,9 +214,9 @@
         border-right: 1px solid $header-color-border;
         transition: $transition;
 
-        &:hover {
-            background-color: $color-main;
-        }
+        // &:hover {
+        //     background-color: $color-main;
+        // }
     }
 
     &__catalog-button {
