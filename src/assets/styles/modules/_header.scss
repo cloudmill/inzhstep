@@ -139,13 +139,18 @@
         }
     }
 
-    &--catalog {
-        #{$component}__popup {
+    &--modal {
+        #{$component}__modal {
             pointer-events: all;
+            visibility: visible;
+
+            opacity: 1;
         }
 
-        #{$component}__catalog {
-            z-index: 1;
+        &--header-catalog {
+            #{$component}__catalog {
+                z-index: 1;
+            }
         }
     }
 
@@ -214,9 +219,9 @@
         border-right: 1px solid $header-color-border;
         transition: $transition;
 
-        // &:hover {
-        //     background-color: $color-main;
-        // }
+        &:hover {
+            background-color: $color-main; // test
+        }
     }
 
     &__catalog-button {
@@ -512,7 +517,7 @@
         }
     }
 
-    &__popup {
+    &__modal {
         position: fixed;
         z-index: 0;
         top: 0;
@@ -521,8 +526,10 @@
         right: 0;
 
         pointer-events: none;
+        visibility: hidden;
 
-        border: 5px solid red; // test
+        opacity: 0;
+        transition: $transition;
     }
 }
 

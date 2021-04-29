@@ -1,17 +1,19 @@
+include ../components/_header-catalog.pug
+
 header.header
   .header__logo
     a.header__logo-link(href='#')
       img.header__logo-img(src='assets/images/header-logo.svg' alt='logo')
       img.header__logo-img.header__logo-img--dark(src='assets/images/header-logo-dark.svg' alt='logo')
   .header__catalog
-    .header__catalog-button
+    .header__catalog-button(data-header-modal='header-catalog')
       .header__catalog-button-text
         |Каталог
       .header__catalog-button-image
         img.header__catalog-button-img(src='assets/images/arrow-down.svg')
         img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
   .header__search
-    .header__search-button
+    .header__search-button(data-header-modal='header-search')
       img.header__search-img(src='assets/images/search.svg')
       img.header__search-img.header__search-img--dark(src='assets/images/search-dark.svg')
       img.header__search-img.header__search-img--hover(src='assets/images/search-hover.svg')
@@ -36,10 +38,9 @@ header.header
     a.header__contacts-link.header__contacts-link--email(href='#')
       img.header__contacts-img(src='assets/images/email.svg')
       img.header__contacts-img.header__contacts-img--dark(src='assets/images/email-dark.svg')
-  .header__menu
+  .header__menu(data-header-modal='header-menu')
     img.header__menu-img(src='assets/images/burger.svg')
     img.header__menu-img.header__menu-img--dark(src='assets/images/burger-dark.svg')
-  //- .header__popup
-  //-   .header-catalog
-  //-     .container
+  .header__modal
+    +header-catalog
         
