@@ -42,14 +42,22 @@ const MAIN_BREAKPOINT = 1024;
 {
 	const SCROLL_UPDATE_INTERVAL = 1000 / 30; // 30 fps
 
+	let isHeaderScroll = false;
+
 	function scrollHandler() {
 		$(window).off('scroll.header');
 
 		const timeout = setTimeout(() => {
-			if (window.pageYOffset >= 1) {
-				$('.header').addClass('header--scroll');
+			if (isHeaderScroll) {
+				if (window.pageYOffset < 1) {
+					$('.header').removeClass('header--scroll');
+					isHeaderScroll = false;
+				}
 			} else {
-				$('.header').removeClass('header--scroll');
+				if (window.pageYOffset >= 1) {
+					$('.header').addClass('header--scroll');
+					isHeaderScroll = true;
+				}
 			}
 
 			$(window).on('scroll.header', scrollHandler);
@@ -64,6 +72,7 @@ const MAIN_BREAKPOINT = 1024;
 		if (header.length !== 0) {
 			if (window.pageYOffset >= 1) {
 				header.addClass('header--scroll');
+				isHeaderScroll = true;
 			}
 
 			$(window).on('scroll.header', scrollHandler);
