@@ -1,0 +1,36 @@
+.header-catalog {
+    $component: &;
+
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%); // test
+
+    pointer-events: none;
+    visibility: hidden;
+
+    color: greenyellow; // test
+    opacity: 0;
+    transition: $transition;
+
+    &--active {
+        transform: translateY(0); // test
+
+        visibility: visible;
+        
+        opacity: 1;
+
+        #{$component}__inner {
+            pointer-events: all;
+        }
+    }
+
+    &__inner {
+        margin: 0 auto;
+        width: 50%;
+        pointer-events: all;
+    }
+}
