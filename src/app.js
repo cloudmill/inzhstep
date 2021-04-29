@@ -81,28 +81,38 @@ const MAIN_BREAKPOINT = 1024;
 
 			$(window).on('scroll.header', scrollHandler);
 
-			// modal
-			header.find('[data-header-modal]').on('click', function () {
-				headerModalCurrent = $(this).data('header-modal');
-
+			function closeModal() {
 				// header modal layout
-				header.addClass('header--modal');
-				header.addClass('header--modal--' + headerModalCurrent);
+				header.removeClass('header--modal');
+				header.removeClass('header--modal--' + headerModalCurrent);
 
 				// header current modal
-				header.find('.' + headerModalCurrent).addClass(headerModalCurrent + '--active');
+				header.find('.' + headerModalCurrent).removeClass(headerModalCurrent + '--active');
+
+				headerModalCurrent = null;
+			}
+
+			// modal
+			header.find('[data-header-modal]').on('click', function () {
+				if (headerModalCurrent) {
+					if (headerModalCurrent === $(this).data('header-modal')) {
+						closeModal();
+					}
+				} else {
+					headerModalCurrent = $(this).data('header-modal');
+
+					// header modal layout
+					header.addClass('header--modal');
+					header.addClass('header--modal--' + headerModalCurrent);
+
+					// header current modal
+					header.find('.' + headerModalCurrent).addClass(headerModalCurrent + '--active');
+				}
 			});
 
 			headerModal.on('click', event => {
 				if (event.target === event.currentTarget) {
-					// header modal layout
-					header.removeClass('header--modal');
-					header.removeClass('header--modal--' + headerModalCurrent);
-
-					// header current modal
-					header.find('.' + headerModalCurrent).removeClass(headerModalCurrent + '--active');
-
-					headerModalCurrent = null;
+					closeModal();
 				}
 			});
 		}
