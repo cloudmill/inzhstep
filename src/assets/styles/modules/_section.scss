@@ -1,5 +1,35 @@
 .section {
+    $component: &;
+
     background-color: $color-white;
+
+    &--blue {
+        background-color: $color-blue;
+    }
+
+    &--partners {
+        .row {
+            position: relative;
+            z-index: 0;
+
+            &__side {
+                position: relative;
+                z-index: 2;
+            }
+
+            &__main {
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        #{$component}__slider {
+            @media (min-width: $breakpoint) {
+                margin-left: -1px;
+                padding-left: 0;
+            }
+        }
+    }
 
     &__inner {
         @media (min-width: $breakpoint) {
@@ -37,10 +67,13 @@
             width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
             overflow: hidden;
         }
-    }
 
-    &--blue {
-        background-color: $color-blue;
+        &--without-gap {
+            @media (min-width: $breakpoint) {
+                margin-left: -1px;
+                padding-left: 0;
+            }
+        }
     }
 
     &__title {
