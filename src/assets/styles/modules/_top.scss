@@ -1,0 +1,104 @@
+.top {
+    $component: &;
+
+    position: relative;
+    z-index: 0;
+
+    height: 667px;
+    @media (min-width: $breakpoint) {
+        height: 740px;
+    }
+    @media (min-width: $breakpoint-xl) {
+        height: 900px;
+    }
+
+    &__background {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        overflow: hidden;
+    }
+    
+    &__background-img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        max-width: none;
+    }
+    
+    &__ui {
+        position: relative;
+        z-index: 0;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__ui-control {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__control {
+        display: flex;
+    }
+
+    &__control-button {
+        width: 140px;
+        @media (min-width: $breakpoint) {
+            width: 160px;
+        }
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid $header-color-border;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $color-main;
+            border-color: $color-main;
+        }
+
+        &--left {
+            border-right: none;
+
+            #{$component}__control-svg {
+                transform: rotate(180deg);
+
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+
+        &--right {
+            background-color: $color-white;
+            border-color: $color-white;
+
+            &:hover {
+                #{$component}__control-svg {
+                    path {
+                        fill: $color-white;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__control-svg {
+        path {
+            transition: $transition;
+        }
+    }
+}
