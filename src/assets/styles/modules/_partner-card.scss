@@ -1,0 +1,20 @@
+.partner-card {
+    $component: &;
+
+    padding: 40px 30px;
+    width: $partner-card-width-m;
+    min-width: $partner-card-width-m;
+    height: 110px;
+    @media (min-width: $breakpoint) {
+        padding: 80px 65px;
+        width: $partner-card-width-d;
+        min-width: $partner-card-width-d;
+        height: 228px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-white;
+    border: 1px solid $color-gray-border;
+}

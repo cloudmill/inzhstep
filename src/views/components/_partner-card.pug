@@ -1,0 +1,10 @@
+mixin partner-card(opt)
+  -
+    opt = Object.assign({
+      href:'#',
+      path:'assets/images/',
+      image:'partner-card.png',
+    }, opt);
+    
+  a.partner-card(href=opt.href)
+    img.partner-card__img(src=(opt.path + opt.image))
