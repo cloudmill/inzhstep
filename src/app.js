@@ -16,6 +16,9 @@ const MAIN_BREAKPOINT = 1024;
 			const slider = $(this);
 			const slider_swiper_el = slider.find('.slider__swiper');
 
+			const slider_prev_id = slider.data('slider-prev-id');
+			const slider_next_id = slider.data('slider-next-id');
+
 			const slider_swiper = new Swiper(slider_swiper_el[0], {
 				spaceBetween: 20,
 
@@ -26,6 +29,14 @@ const MAIN_BREAKPOINT = 1024;
 						spaceBetween: 40,
 					},
 				},
+			});
+
+			$('[data-slider-id="' + slider_prev_id + '"]').on('click', () => {
+				slider_swiper.slidePrev();
+			});
+
+			$('[data-slider-id="' + slider_next_id + '"]').on('click', () => {
+				slider_swiper.slideNext();
 			});
 		});
 	});
