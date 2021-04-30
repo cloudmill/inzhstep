@@ -1,0 +1,86 @@
+.digits {
+    @media (min-width: $breakpoint) {
+        padding-left: $grid-gap-d;
+    }
+
+    &__row {
+        @media (min-width: $breakpoint) {
+            display: flex;
+        }
+    }
+
+    &__col {
+        flex-shrink: 0;
+
+        &:first-child {
+            @media (max-width: $breakpoint - 1px) {
+                padding-left: calc(#{$grid-part-m} * 3);
+            }
+
+            @media (min-width: $breakpoint) {
+                width: calc(#{$grid-part-d} * 6 - #{$grid-gap-d});
+            }
+        }
+
+        &:last-child {
+            margin-top: 30px;
+            @media (min-width: $breakpoint) {
+                margin-top: 0;
+                margin-left: $grid-gap-d;
+                padding-top: 161px;
+                width: calc(#{$grid-part-d} * 6);
+            }
+        }
+    }
+
+    &__item {
+        @media (min-width: $breakpoint) {
+            display: flex;
+        }
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        &--indent {
+            &:not(:first-child) {
+                @media (min-width: $breakpoint) {
+                    margin-top: 100px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 84px;
+        color: $color-main;
+        @media (min-width: $breakpoint) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        &--large {
+            @media (min-width: $breakpoint) {
+                font-size: 110px;
+                line-height: 132px;
+            }
+        }
+    }
+
+    &__text {
+        @media (min-width: $breakpoint) {
+            margin-left: 20px;
+            padding-top: 20px;
+        }
+
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 17px;
+        @media (min-width: $breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
