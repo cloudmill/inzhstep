@@ -45,18 +45,29 @@
     &__ui-control {
         display: flex;
         justify-content: flex-end;
+        @media (max-width: $breakpoint - 1px) {
+            order: 1;
+        }
     }
 
     &__control {
+        @media (max-width: $breakpoint - 1px) {
+            width: 100%;
+        }
+        flex-shrink: 0;
         display: flex;
     }
 
     &__control-button {
         width: 140px;
-        @media (min-width: $breakpoint) {
+        @media (min-width: $breakpoint-xl) {
             width: 160px;
         }
         height: 100px;
+        @media (max-width: $breakpoint - 1px) {
+            width: 50%;
+            height: 60px;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -100,5 +111,80 @@
         path {
             transition: $transition;
         }
+    }
+
+    &__ui-panel {
+        margin-top: -1px;
+        padding-right: 139px;
+        @media (min-width: $breakpoint-xl) {
+            padding-right: 159px;
+        }
+        height: 100px;
+        @media (max-width: $breakpoint - 1px) {
+            margin-top: 0;
+            padding-right: 0;
+            height: 60px;
+        }
+        display: flex;
+
+        border-top: 1px solid $header-color-border;
+        @media (max-width: $breakpoint - 1px) {
+            border: none;
+        }
+    }
+
+    &__down {
+        position: relative;
+        top: -1px;
+
+        width: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
+        height: calc(100% + 1px);
+        flex-shrink: 0;
+        display: flex;
+        @media (max-width: $breakpoint - 1px) {
+            display: none;
+        }
+        justify-content: center;
+        align-items: center;
+
+        border-right: 1px solid $header-color-border;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $color-main;
+            border-right-color: $color-main;
+        }
+    }
+
+    &__down-svg {
+        transform: rotate(90deg);
+
+        path {
+            fill: $color-white;
+        }
+    }
+
+    &__decor {
+        margin-left: calc(#{$grid-part-d} * 3);
+        padding: 0 40px;
+        flex-shrink: 0;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        @media (max-width: $breakpoint - 1px) {
+            margin-left: 0;
+            padding: 0 $grid-pad-m;
+        }
+
+        border-left: 1px solid $header-color-border;
+        border-right: 1px solid $header-color-border;
+    }
+
+    &__decor-text {
+        font-family: $ff-b;
+        font-size: 16px;
+        line-height: 21px;
+        color: $color-white;
     }
 }
