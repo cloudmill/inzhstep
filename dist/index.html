@@ -14,13 +14,13 @@
 		<header class="header">
 			<div class="header__logo"><a class="header__logo-link" href="#"><img class="header__logo-img" src="assets/images/header-logo.svg" alt="logo"><img class="header__logo-img header__logo-img--dark" src="assets/images/header-logo-dark.svg" alt="logo"></a></div>
 			<div class="header__catalog">
-				<div class="header__catalog-button">
+				<div class="header__catalog-button" data-header-modal="header-catalog">
 					<div class="header__catalog-button-text">Каталог</div>
 					<div class="header__catalog-button-image"><img class="header__catalog-button-img" src="assets/images/arrow-down.svg"><img class="header__catalog-button-img header__catalog-button-img--dark" src="assets/images/arrow-down-dark.svg"></div>
 				</div>
 			</div>
 			<div class="header__search">
-				<div class="header__search-button"><img class="header__search-img" src="assets/images/search.svg"><img class="header__search-img header__search-img--dark" src="assets/images/search-dark.svg"><img class="header__search-img header__search-img--hover" src="assets/images/search-hover.svg"></div>
+				<div class="header__search-button" data-header-modal="header-search"><img class="header__search-img" src="assets/images/search.svg"><img class="header__search-img header__search-img--dark" src="assets/images/search-dark.svg"><img class="header__search-img header__search-img--hover" src="assets/images/search-hover.svg"></div>
 			</div>
 			<nav class="header__nav">
 				<ul class="header__nav-list">
@@ -32,7 +32,94 @@
 				</ul>
 			</nav>
 			<div class="header__contacts"><a class="header__contacts-link header__contacts-link--phone" href="#"><img class="header__contacts-img" src="assets/images/phone.svg"><img class="header__contacts-img header__contacts-img--dark" src="assets/images/phone-dark.svg"></a><a class="header__contacts-link header__contacts-link--email" href="#"><img class="header__contacts-img" src="assets/images/email.svg"><img class="header__contacts-img header__contacts-img--dark" src="assets/images/email-dark.svg"></a></div>
-			<div class="header__menu"><img class="header__menu-img" src="assets/images/burger.svg"><img class="header__menu-img header__menu-img--dark" src="assets/images/burger-dark.svg"></div>
+			<div class="header__menu" data-header-modal="header-menu"><img class="header__menu-img" src="assets/images/burger.svg"><img class="header__menu-img header__menu-img--dark" src="assets/images/burger-dark.svg"></div>
+			<div class="header__modal">
+				<div class="header-catalog">
+					<div class="header-catalog__inner">
+						<div class="header-catalog__row">
+							<div class="header-catalog__col header-catalog__col--panel">
+								<ul class="header-catalog__panel">
+									<li class="header-catalog__panel-item header-catalog__panel-item--active"><span class="header-catalog__panel-text">Отопление</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Водоснабжение</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Приборы учета тепла и воды</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Трубопроводная арматура</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Теплоизоляционные материалы</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Полотенцесущители</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Канализация</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Продукция марки Valtec</span></li>
+									<li class="header-catalog__panel-item"><span class="header-catalog__panel-text">Крепежные изделия</span></li>
+								</ul>
+							</div>
+							<div class="header-catalog__col header-catalog__col--tabs">
+								<ul class="header-catalog__tabs">
+									<li class="header-catalog__tabs-item header-catalog__tabs-item--active">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Коллекторные узлы. Балансировочная арматура</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Отопительные приборы</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Коллекторные узлы. Балансировочная арматура</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Отопительные приборы</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Коллекторные узлы. Балансировочная арматура</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Коллекторные узлы. Балансировочная арматура</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Отопительные приборы</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+									<li class="header-catalog__tabs-item">
+										<ul class="header-catalog__links">
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Sanline. Коллекторные узлы. Балансировочная арматура</a></li>
+											<li class="header-catalog__links-item"><a class="header-catalog__links-link" href="#">Термостатическая арматура и комплектующие</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 		<main class="main">
 			<div class="grid-test">
@@ -55,6 +142,22 @@
 						<div class="grid-test__col"></div>
 						<div class="grid-test__col"></div>
 					</div>
+				</div>
+			</div>
+			<div class="top">
+				<div class="top__background"><img class="top__background-img" src="assets/images/top-background.jpg"></div>
+				<div class="top__ui">
+					<div class="top__ui-control">
+						<div class="top__control">
+							<div class="top__control-button top__control-button--left"><svg class="top__control-svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+								</svg></div>
+							<div class="top__control-button top__control-button--right"><svg class="top__control-svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+								</svg></div>
+						</div>
+					</div>
+					<div class="top__ui-panel"></div>
 				</div>
 			</div>
 		</main>
