@@ -8,13 +8,18 @@
         height: 100%;
 
         &--side {
+            display: flex;
+            justify-content: space-between;
+
             @media (max-width: $breakpoint - 1px) {
                 margin-bottom: 40px;
                 padding-top: 60px;
             }
 
             @media (min-width: $breakpoint) {
-                border-right: 1px solid black;
+                flex-direction: column;
+
+                border-right: 1px solid $color-gray-border;
             }
         }
 
@@ -28,6 +33,7 @@
     &__slider {
         @media (min-width: $breakpoint) {
             padding-left: #{$grid-gap-d};
+            padding-right: #{$grid-pad-d};
             width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
             overflow: hidden;
         }
@@ -35,5 +41,19 @@
 
     &--blue {
         background-color: $color-blue;
+    }
+
+    &__title {
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+
+    &__buttons {
+        margin-top: 60px;
+        @media (max-width: $breakpoint - 1px) {
+            display: none;
+        }
     }
 }
