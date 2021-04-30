@@ -16,4 +16,13 @@
             }
         }
     }
+
+    &--partner-card {
+        .swiper-slide {
+            width: $partner-card-width-m;
+            @media (min-width: $breakpoint) {
+                width: $partner-card-width-d;
+            }
+        }
+    }
 }
