@@ -7,6 +7,10 @@
         background-color: $color-blue;
     }
 
+    &--blue-light {
+        background-color: $color-blue-light;
+    }
+
     &--partners {
         .row {
             position: relative;
@@ -27,6 +31,16 @@
             @media (min-width: $breakpoint) {
                 margin-left: -1px;
                 padding-left: 0;
+            }
+        }
+    }
+
+    &--digits {
+        #{$component}__inner {
+            &--main {
+                @media (min-width: $breakpoint) {
+                    padding-top: 130px;
+                }
             }
         }
     }
