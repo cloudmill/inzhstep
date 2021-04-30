@@ -1,0 +1,123 @@
+.advantage-card {
+    width: 100%;
+    @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 4 - #{$grid-gap-d});
+        min-height: 240px;
+        flex-shrink: 0;
+    }
+
+    background-color: $color-white;
+
+    &__container {
+        padding: 20px;
+        height: 100%;
+    }
+
+    &__col {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @media (min-width: $breakpoint) {
+            margin-bottom: 25px;
+        }
+
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        @media (min-width: $breakpoint) {
+            font-size: 26px;
+            line-height: 31px;
+        }
+    }
+
+    &__list-item {
+        position: relative;
+        z-index: 0;
+        
+        padding-left: 30px;
+
+        &::before {
+            position: absolute;
+            top: 5px;
+            left: 0;
+
+            width: 14px;
+            height: 11px;
+            content: '';
+
+            background-image: url('../images/list-mark.svg');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+        }
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__text {
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 17px;
+        @media (min-width: $breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    &__frame {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        @media (max-width: $breakpoint - 1px) {
+            justify-content: center;
+        }
+    }
+
+    &__img {
+        max-height: 224px;
+        @media (min-width: $breakpoint) {
+            max-height: 240px;
+        }
+    }
+}
+
+.advantage-cards {
+    @media (min-width: $breakpoint) {
+        padding-left: $grid-gap-d;
+    }
+
+    &__list {
+        @media (min-width: $breakpoint) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        .advantage-card {
+            margin-top: 10px;
+            @media (min-width: $breakpoint) {
+                margin-top: $grid-gap-d;
+                margin-left: $grid-gap-d;
+            }
+
+            &:nth-child(-n + 3) {
+                @media (min-width: $breakpoint) {
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-child(3n + 1) {
+                @media (min-width: $breakpoint) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
