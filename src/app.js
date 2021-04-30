@@ -14,22 +14,37 @@ const MAIN_BREAKPOINT = 1024;
 	$(() => {
 		$('.slider').each(function () {
 			const slider = $(this);
+			const slider_id = slider.data('slider-id');
 			const slider_swiper_el = slider.find('.slider__swiper');
 
 			const slider_prev_id = slider.data('slider-prev-id');
 			const slider_next_id = slider.data('slider-next-id');
 
-			const slider_swiper = new Swiper(slider_swiper_el[0], {
-				spaceBetween: 20,
+			let slider_swiper = null;
+			switch (slider_id) {
+				// partners
+				case 7:
+					slider_swiper = new Swiper(slider_swiper_el[0], {
+						spaceBetween: -1,
 
-				slidesPerView: 'auto',
+						slidesPerView: 'auto',
+					});
+					break;
+				// default
+				default:
+					slider_swiper = new Swiper(slider_swiper_el[0], {
+						spaceBetween: 20,
 
-				breakpoints: {
-					[MAIN_BREAKPOINT]: {
-						spaceBetween: 40,
-					},
-				},
-			});
+						slidesPerView: 'auto',
+
+						breakpoints: {
+							[MAIN_BREAKPOINT]: {
+								spaceBetween: 40,
+							},
+						},
+					});
+					break;
+			}
 
 			$('[data-slider-id="' + slider_prev_id + '"]').on('click', () => {
 				slider_swiper.slidePrev();
