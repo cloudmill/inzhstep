@@ -1,0 +1,18 @@
+mixin object-card(opt)
+  -
+    opt = Object.assign({
+      href:'#',
+      path:'assets/images/',
+      image:'object-card.jpg',
+      imageMark:'object-card-mark.png',
+      titleTag:'h3',
+      title:'ЖК «Стрижи в Невском»',
+    }, opt);
+    
+  a.object-card(href=opt.href)
+    .object-card__frame
+      img.object-card__img(src=(opt.path + opt.image))
+      .object-card__mark
+        img.object-card__mark-img(src=(opt.path + opt.imageMark))
+    #{opt.titleTag}.object-card__title
+      |#{opt.title}
