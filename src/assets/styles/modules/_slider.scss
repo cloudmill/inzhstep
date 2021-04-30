@@ -7,4 +7,13 @@
             }
         }
     }
+
+    &--object-card {
+        .swiper-slide {
+            width: $object-card-width-m;
+            @media (min-width: $breakpoint) {
+                width: $object-card-width-d;
+            }
+        }
+    }
 }
