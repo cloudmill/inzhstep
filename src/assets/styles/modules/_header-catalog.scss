@@ -7,17 +7,17 @@
     bottom: 0;
     left: 0;
     right: 0;
-    transform: translateY(100%); // test
+    // transform: translateY(-100%);
 
+    padding-left: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
     pointer-events: none;
     visibility: hidden;
 
-    color: greenyellow; // test
     opacity: 0;
     transition: $transition;
 
     &--active {
-        transform: translateY(0); // test
+        // transform: translateY(0);
 
         visibility: visible;
         
@@ -26,11 +26,160 @@
         #{$component}__inner {
             pointer-events: all;
         }
+
+        #{$component}__col {
+            &--panel {
+                &::before {
+                    visibility: visible;
+
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     &__inner {
-        margin: 0 auto;
-        width: 50%;
+        padding-top: 179px;
+        width: calc(#{$grid-part-d} * 7);
+        height: 100%;
         pointer-events: all;
+
+        background-color: $header-color-modal;
+        transition: $transition;
+    }
+
+    &__row {
+        height: 100%;
+        display: flex;
+    }
+
+    &__col {
+        height: 100%;
+        flex-shrink: 0;
+        overflow: auto;
+
+        transition: $transition;
+
+        &--panel {
+            position: relative;
+            z-index: 0;
+
+            width: calc(#{$grid-part-d} * 3);
+
+            border-right: 1px solid $header-color-border;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: -1px;
+
+                height: 1px;
+                content: '';
+                visibility: hidden;
+
+                background-color: $color-main;
+                opacity: 0;
+                transition: $transition;
+            }
+        }
+
+        &--tabs {
+            width: calc(#{$grid-part-d} * 4);
+        }
+    }
+
+    &__panel {
+        padding: 40px 0;
+    }
+
+    &__panel-item {
+        position: relative;
+        z-index: 0;
+
+        padding: 0 40px;
+
+        &::before {
+            position: absolute;
+            top: 7px;
+            left: 0;
+
+            width: 14px;
+            height: 11px;
+            content: '';
+            visibility: hidden;
+
+            background-image: url('../images/list-mark.svg');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+            opacity: 0;
+            transition: $transition;
+        }
+        
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        &--active {
+            &::before {
+                visibility: visible;
+
+                opacity: 1;
+            }
+
+            #{$component}__panel-text {
+                color: $color-main;
+            }
+        }
+    }
+
+    &__panel-text {
+        display: block;
+
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-white;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    &__tabs-item {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__links {
+        padding: 40px 0;
+    }
+
+    &__links-item {
+        padding: 0 40px;
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    &__links-link {
+        display: block;
+
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-white;
+        transition: $transition;
+
+        &:hover {
+            color: $color-main;
+        }
     }
 }

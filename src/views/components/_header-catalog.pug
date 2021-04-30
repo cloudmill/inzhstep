@@ -1,4 +1,52 @@
 mixin header-catalog
   .header-catalog
     .header-catalog__inner
-      |test
+      .header-catalog__row
+        .header-catalog__col.header-catalog__col--panel
+          ul.header-catalog__panel
+            li.header-catalog__panel-item.header-catalog__panel-item--active
+              span.header-catalog__panel-text
+                |Отопление
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Водоснабжение
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Приборы учета тепла и воды
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Трубопроводная арматура
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Теплоизоляционные материалы
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Полотенцесущители
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Канализация
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Продукция марки Valtec
+            li.header-catalog__panel-item
+              span.header-catalog__panel-text
+                |Крепежные изделия
+        .header-catalog__col.header-catalog__col--tabs
+          ul.header-catalog__tabs
+            - for (let i=0; i<9; i++)
+              li.header-catalog__tabs-item(class = (i === 0 ? 'header-catalog__tabs-item--active' : ''))
+                ul.header-catalog__links
+                  li.header-catalog__links-item
+                    a.header-catalog__links-link(href='#')
+                      |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+                  if (i % 2 === 0)
+                    li.header-catalog__links-item
+                      a.header-catalog__links-link(href='#')
+                        |Sanline. Коллекторные узлы. Балансировочная арматура
+                  li.header-catalog__links-item
+                    a.header-catalog__links-link(href='#')
+                      |Термостатическая арматура и комплектующие
+                  if (i % 3 === 0)
+                    li.header-catalog__links-item
+                      a.header-catalog__links-link(href='#')
+                        |Отопительные приборы

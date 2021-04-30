@@ -137,6 +137,12 @@
                  opacity: 1;
             }
         }
+
+        .header-catalog {
+            &__inner {
+                padding-top: 99px;
+            }
+        }
     }
 
     &--modal {
@@ -150,6 +156,27 @@
         &--header-catalog {
             #{$component}__catalog {
                 z-index: 1;
+                
+                background-color: $color-main;
+                border-right-color: $color-main;
+            }
+
+            #{$component}__catalog-button-text {
+                color: $color-white;
+            }
+    
+            #{$component}__catalog-button-img {
+                transform: rotate(180deg);
+
+                visibility: visible;
+    
+                opacity: 1;
+    
+                &--dark {
+                    visibility: hidden;
+    
+                    opacity: 0;
+                }
             }
         }
     }
@@ -218,10 +245,6 @@
 
         border-right: 1px solid $header-color-border;
         transition: $transition;
-
-        &:hover {
-            background-color: $color-main; // test
-        }
     }
 
     &__catalog-button {

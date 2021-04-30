@@ -120,3 +120,34 @@ const MAIN_BREAKPOINT = 1024;
 }
 
 // --- --- --- --- ---
+
+
+
+
+
+// --- --- HEADER-CATALOG --- ---
+
+{
+	$(() => {
+		const headerCatalog = $('.header-catalog');
+
+		if (headerCatalog.length !== 0) {
+			const headerCatalogPanelText = headerCatalog.find('.header-catalog__panel-text');
+
+			headerCatalogPanelText.on('click', function () {
+				console.log(987);
+				const headerCatalogPanelItem = $(this).closest('.header-catalog__panel-item');
+
+				const headerCatalogActiveIndex = headerCatalogPanelItem.index();
+
+				$('.header-catalog__panel-item').removeClass('header-catalog__panel-item--active');
+				$('.header-catalog__tabs-item').removeClass('header-catalog__tabs-item--active');
+
+				$('.header-catalog__panel-item').eq(headerCatalogActiveIndex).addClass('header-catalog__panel-item--active');
+				$('.header-catalog__tabs-item').eq(headerCatalogActiveIndex).addClass('header-catalog__tabs-item--active');
+			});
+		}
+	});
+}
+
+// --- --- --- --- ---
