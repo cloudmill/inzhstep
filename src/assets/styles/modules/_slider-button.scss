@@ -1,0 +1,63 @@
+$slider-button-size: 85px;
+$slider-button-button-size: 60px;
+
+.slider-button {
+    $component: &;
+
+    position: relative;
+    z-index: 0;
+
+    width: $slider-button-size;
+    min-width: $slider-button-size;
+    height: $slider-button-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--left {
+        #{$component}__svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__button {
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        width: $slider-button-button-size;
+        width: $slider-button-button-size;
+        height: $slider-button-button-size;
+
+        background-color: $color-white;
+        border: 1px solid $color-gray-border;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $color-main;
+            border-color: $color-main;
+
+            &+#{$component}__svg {
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+    }
+
+    &__svg {
+        pointer-events: none;
+
+        path {
+            transition: $transition;
+        }
+    }
+}
+
+.slider-buttons {
+    display: flex;
+}
+
