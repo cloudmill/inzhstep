@@ -107,6 +107,17 @@ const MAIN_BREAKPOINT = 1024;
 
 			$(window).on('scroll.header', scrollHandler);
 
+			function openModal(headerModal) {
+				headerModalCurrent = headerModal;
+
+				// header modal layout
+				header.addClass('header--modal');
+				header.addClass('header--modal--' + headerModalCurrent);
+
+				// header current modal
+				header.find('.' + headerModalCurrent).addClass(headerModalCurrent + '--active');
+			}
+
 			function closeModal() {
 				// header modal layout
 				header.removeClass('header--modal');
@@ -125,14 +136,7 @@ const MAIN_BREAKPOINT = 1024;
 						closeModal();
 					}
 				} else {
-					headerModalCurrent = $(this).data('header-modal');
-
-					// header modal layout
-					header.addClass('header--modal');
-					header.addClass('header--modal--' + headerModalCurrent);
-
-					// header current modal
-					header.find('.' + headerModalCurrent).addClass(headerModalCurrent + '--active');
+					openModal($(this).data('header-modal'));
 				}
 			});
 
@@ -161,7 +165,6 @@ const MAIN_BREAKPOINT = 1024;
 			const headerCatalogPanelText = headerCatalog.find('.header-catalog__panel-text');
 
 			headerCatalogPanelText.on('click', function () {
-				console.log(987);
 				const headerCatalogPanelItem = $(this).closest('.header-catalog__panel-item');
 
 				const headerCatalogActiveIndex = headerCatalogPanelItem.index();
