@@ -7,7 +7,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    // transform: translateY(-100%);
 
     padding-left: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
     pointer-events: none;
@@ -17,15 +16,9 @@
     transition: $transition;
 
     &--active {
-        // transform: translateY(0);
-
         visibility: visible;
         
         opacity: 1;
-
-        #{$component}__inner {
-            pointer-events: all;
-        }
 
         #{$component}__col {
             &--panel {
