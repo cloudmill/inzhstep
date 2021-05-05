@@ -25,4 +25,20 @@
             }
         }
     }
+
+    &--nav-card {
+        .swiper-slide {
+            width: $nav-card-width-m;
+            @media (min-width: $breakpoint) {
+                width: $nav-card-width-d;
+            }
+
+            &--large {
+                width: $nav-card-width-m * 2;
+                @media (min-width: $breakpoint) {
+                    width: $nav-card-width-d * 2;
+                }
+            }
+        }
+    }
 }
