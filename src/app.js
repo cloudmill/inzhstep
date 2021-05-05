@@ -119,14 +119,16 @@ const MAIN_BREAKPOINT = 1024;
 			}
 
 			function closeModal() {
-				// header modal layout
-				header.removeClass('header--modal');
-				header.removeClass('header--modal--' + headerModalCurrent);
+				if (headerModalCurrent !== null) {
+					// header modal layout
+					header.removeClass('header--modal');
+					header.removeClass('header--modal--' + headerModalCurrent);
 
-				// header current modal
-				header.find('.' + headerModalCurrent).removeClass(headerModalCurrent + '--active');
+					// header current modal
+					header.find('.' + headerModalCurrent).removeClass(headerModalCurrent + '--active');
 
-				headerModalCurrent = null;
+					headerModalCurrent = null;
+				}
 			}
 
 			// modal
@@ -144,6 +146,12 @@ const MAIN_BREAKPOINT = 1024;
 				if (event.target === event.currentTarget) {
 					closeModal();
 				}
+			});
+
+			const mediaQuery = window.matchMedia(`(min-width: ${MAIN_BREAKPOINT}px)`);
+
+			mediaQuery.addEventListener('change', () => {
+				closeModal();
 			});
 		}
 	});
