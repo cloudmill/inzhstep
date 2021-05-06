@@ -179,6 +179,20 @@
                 }
             }
         }
+
+        &--header-menu {
+            #{$component}__search {
+                z-index: 1;
+            }
+
+            #{$component}__contacts {
+                z-index: 1;
+            }
+
+            #{$component}__menu {
+                z-index: 1;
+            }
+        }
     }
 
     &__logo {
