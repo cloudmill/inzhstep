@@ -36,7 +36,7 @@ block content
         .top__decor
           .top__decor-text
             |01 — 03
-  
+
   .section
     .container
       .row
@@ -48,36 +48,6 @@ block content
               .section__buttons
                 .slider-buttons
                   .slider-button.slider-button--left
-                    .slider-button__button(data-slider-id='8')
-                    svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                      path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
-                  .slider-button.slider-button--right
-                    .slider-button__button(data-slider-id='9')
-                    svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                      path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
-            +link
-              |все новости
-        .row__main
-          .section__inner.section__inner--main
-            .section__slider
-              .slider.slider--nav-card(data-slider-prev-id='8' data-slider-next-id='9')
-                .slider__swiper
-                  .swiper-wrapper
-                    - for (let i= 0; i<10; i++)
-                      .swiper-slide(class = (i === 5 ? 'swiper-slide--large' : ''))
-                        +nav-card 
-  
-  .section
-    .container
-      .row
-        .row__side
-          .section__inner.section__inner--side
-            .section__top
-              h2.section__title
-                |каталог
-              .section__buttons
-                .slider-buttons
-                  .slider-button.slider-button--left
                     .slider-button__button(data-slider-id='1')
                     svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                       path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
@@ -86,7 +56,7 @@ block content
                     svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                       path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
             +link
-              |скачать прайс
+              |все новости
         .row__main
           .section__inner.section__inner--main
             .section__slider
@@ -102,7 +72,41 @@ block content
                           mark:'НОВИНКА',
                           title:'Новинка! Шаровые краны Altstream PN 25!',
                         })
-  
+
+  .section
+    .container
+      .row
+        .row__side
+          .section__inner.section__inner--side
+            .section__top
+              h2.section__title
+                |каталог
+              .section__buttons
+                .slider-buttons
+                  .slider-button.slider-button--left
+                    .slider-button__button(data-slider-id='8')
+                    svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
+                  .slider-button.slider-button--right
+                    .slider-button__button(data-slider-id='9')
+                    svg.slider-button__svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
+            +link
+              |скачать прайс
+        .row__main
+          .section__inner.section__inner--main
+            .section__slider
+              .slider.slider--nav-card(data-slider-id='10' data-slider-prev-id='8' data-slider-next-id='9')
+                .slider__swiper
+                  .swiper-wrapper
+                    - for (let i= 0; i<9; i++)
+                      if (i === 7)
+                        .swiper-slide.swiper-slide--large
+                          +nav-card--large
+                      else
+                        .swiper-slide
+                          +nav-card
+
   .section.section--digits.section--blue-light
     .container
       .row
