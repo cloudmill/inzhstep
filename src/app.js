@@ -30,6 +30,22 @@ const MAIN_BREAKPOINT = 1024;
 						slidesPerView: 'auto',
 					});
 					break;
+				// nav-cards
+				case 10:
+					slider_swiper = new Swiper(slider_swiper_el[0], {
+						spaceBetween: 20,
+
+						slidesPerView: 'auto',
+
+						autoHeight: true,
+
+						breakpoints: {
+							[MAIN_BREAKPOINT]: {
+								spaceBetween: 40,
+							},
+						},
+					});
+					break;
 				// default
 				default:
 					slider_swiper = new Swiper(slider_swiper_el[0], {

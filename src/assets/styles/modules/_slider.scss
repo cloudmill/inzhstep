@@ -27,6 +27,8 @@
     }
 
     &--nav-card {
+        overflow: hidden;
+
         .swiper-slide {
             width: $nav-card-width-m;
             @media (min-width: $breakpoint) {
@@ -34,9 +36,8 @@
             }
 
             &--large {
-                width: $nav-card-width-m * 2;
                 @media (min-width: $breakpoint) {
-                    width: $nav-card-width-d * 2;
+                    width: $nav-card-large-width-d;
                 }
             }
         }
