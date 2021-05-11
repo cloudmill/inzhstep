@@ -1,30 +1,103 @@
-mixin nav-card(opt={})
-  -
-    opt.title = Object.assign({
-      tag:'a',
-      href:'#',
-      text:'Отопление',
-    }, opt.title);
-    opt = Object.assign({
-      links:[
-        'Sanline. Трубы Pex и фитинги для систем внутридомовой разводки отопления',
-        'Sanline. Коллекторные узлы. Балансировочная арматура',
-        'Термостатическая арматура и комплектующие',
-        'Отопительные приборы',
-      ],
-      path:'assets/images/',
-      image:'nav-card.png',
-    }, opt);
-
+mixin nav-card
   .nav-card
     .nav-card__frame
-      .nav-card__image
-        img.nav-card__img(src=(opt.path + opt.image))
-    #{opt.title.tag}.nav-card__title(href=(opt.title.tag === 'a' ? opt.title.href : undefined))
-      |#{opt.title.text}
+      img.nav-card__img(src='assets/images/nav-card.jpg' alt='')
+    h3.nav-card__title
+      a.nav-card__title-link(href='#')
+        |Отопление
     nav.nav-card__nav
       ul.nav-card__list
-        each link in opt.links
-          li.nav-card__item
-            a.nav-card__link(href='#')
-              |#{link}
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Sanline. Коллекторные узлы. Балансировочная арматура
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Термостатическая арматура и комплектующие
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Отопительные приборы
+
+mixin nav-card--large
+  .nav-card.nav-card--large
+    .nav-card__frame
+      img.nav-card__img(src='assets/images/nav-card-7.jpg' alt='')
+    h3.nav-card__title
+      a.nav-card__title-link(href='#')
+        |Продукция марки Valtec
+    nav.nav-card__nav
+      ul.nav-card__list
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Системы металлополимерных и полимерных трубопроводов
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Системы полипропиленовых трубопроводов
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Системы трубопроводов из нержавеющей стали
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Приборы учета
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Трубопроводная арматура
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Шаровые краны для газоснабжения
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Резьбовые и ремонтные соединения для трубопроводов
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Фильтры
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Водяной теплый пол
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Узлы для горизонтальных систем отопления и водоснабжения
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Системы диспетчеризации
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Элементы автоматики
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Коллекторные системы
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Радиаторная арматура
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Регулирующая арматура
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Контрольно-измерительные приборы
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Арматура безопасности
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Системы модульного монтажа
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Насосное оборудование
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Подводка гибкая
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Баки мембранные
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Инструмент
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Техническая теплоизоляция
+        li.nav-card__item
+          a.nav-card__link(href='#')
+            |Крепеж и расходные материалы
