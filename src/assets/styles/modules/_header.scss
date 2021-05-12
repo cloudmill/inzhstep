@@ -75,16 +75,9 @@
         #{$component}__search {
             border-left-color: $header-color-border-scroll;
         }
-
-        #{$component}__search-img {
-            visibility: hidden;
-
-            opacity: 0;
-
-            &--dark {
-                visibility: visible;
-
-                opacity: 1;
+        #{$component}__search-svg {
+            path {
+                fill: $color-black;
             }
         }
 
@@ -328,7 +321,6 @@
         border-left: 1px solid $header-color-border;
         transition: $transition;
     }
-
     &__search-button {
         position: relative;
         z-index: 0;
@@ -343,41 +335,16 @@
         cursor: pointer;
 
         &:hover {
-            #{$component}__search-img {
-                visibility: hidden;
-
-                opacity: 0;
-
-                &--hover {
-                    visibility: visible;
-
-                    opacity: 1;
+            #{$component}__search-svg {
+                path {
+                    fill: $color-main;
                 }
             }
         }
     }
-
-    &__search-img {
-        transition: $transition;
-
-        &--dark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            visibility: hidden;
-
-            opacity: 0;
-        }
-
-        &--hover {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            visibility: hidden;
-
-            opacity: 0;
+    &__search-svg {
+        path {
+            transition: $transition;
         }
     }
 

@@ -15,9 +15,7 @@ header.header
         img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
   .header__search
     .header__search-button(data-header-modal='header-search')
-      img.header__search-img(src='assets/images/search.svg')
-      img.header__search-img.header__search-img--dark(src='assets/images/search-dark.svg')
-      img.header__search-img.header__search-img--hover(src='assets/images/search-hover.svg')
+      +search-svg('header__search-svg')
   nav.header__nav
     ul.header__nav-list
       -
