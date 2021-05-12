@@ -100,12 +100,8 @@ block content
                 .slider__swiper
                   .swiper-wrapper
                     - for (let i= 0; i<9; i++)
-                      if (i === 7)
-                        .swiper-slide.swiper-slide--large
-                          +nav-card--large
-                      else
-                        .swiper-slide
-                          +nav-card
+                      .swiper-slide(class = (i === 7 ? 'swiper-slide--large' : ''))
+                        +nav-card(i)
 
   .section.section--digits.section--blue-light
     .container

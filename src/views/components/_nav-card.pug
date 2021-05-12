@@ -1,113 +1,272 @@
-mixin nav-card
-  .nav-card
-    .nav-card__frame
-      img.nav-card__img(src='assets/images/nav-card.jpg' alt='')
-    h3.nav-card__title
-      a.nav-card__title-link(href='#')
-        |Отопление
-    nav.nav-card__nav
-      ul.nav-card__list
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Sanline. Коллекторные узлы. Балансировочная арматура
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Термостатическая арматура и комплектующие
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Отопительные приборы
-    .nav-card__button
-      .nav-card__button-text
-        |показать все
-      svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
-        path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
-
-mixin nav-card--large
-  .nav-card.nav-card--large
-    .nav-card__frame
-      img.nav-card__img(src='assets/images/nav-card-7.jpg' alt='')
-    h3.nav-card__title
-      a.nav-card__title-link(href='#')
-        |Продукция марки Valtec
-    nav.nav-card__nav
-      ul.nav-card__list
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Системы металлополимерных и полимерных трубопроводов
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Системы полипропиленовых трубопроводов
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Системы трубопроводов из нержавеющей стали
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Приборы учета
-        li.nav-card__item
-          a.nav-card__link(href='#')
+mixin nav-card(index)
+  case index
+    when 0
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Отопление
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Sanline. Коллекторные узлы. Балансировочная арматура
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Термостатическая арматура и комплектующие
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Отопительные приборы
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 1
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-1.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Водоснабжение
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Полипропиленовые трубы TEBO Technics
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Полипропиленовые фитинги TEBO Technics
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Оборудование для монтажа ПП Труб
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 2
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-2.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Приборы учета тепла и воды
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Счетчики воды Пульс
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Теплосчетчики
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Счетчики распределители тепловой энергии
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 3
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-3.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
             |Трубопроводная арматура
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Шаровые краны для газоснабжения
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Резьбовые и ремонтные соединения для трубопроводов
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Фильтры
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Водяной теплый пол
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Узлы для горизонтальных систем отопления и водоснабжения
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Системы диспетчеризации
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Элементы автоматики
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Коллекторные системы
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Радиаторная арматура
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Регулирующая арматура
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Контрольно-измерительные приборы
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Арматура безопасности
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Системы модульного монтажа
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Насосное оборудование
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Подводка гибкая
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Баки мембранные
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Инструмент
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Техническая теплоизоляция
-        li.nav-card__item
-          a.nav-card__link(href='#')
-            |Крепеж и расходные материалы
-    .nav-card__button
-      .nav-card__button-text
-        |показать все
-      svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
-        path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Краны шаровые латунные Altstream
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Резьбовые латунные фитинги Altstream
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Обратные клапаны Altstream
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Фильтры
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Регуляторы расхода
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Регуляторы давления
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 4
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-4.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Теплоизоляционные материалы
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Экоролл Теплоизоляция из минеральной ваты
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Теплоизоляция из вспененного полиэтилена Термофлекс
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Теплоизоляция из вспененного каучука Armacell
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 5
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-5.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Канализация
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Внутренняя Канализация Политрон
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Противопожарные муфты
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Наружняя канализация
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 6
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-6.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Полотенцесущители
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |PAROC теплоизоляция из базальтовой ваты
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Экоролл теплоизоляция из минеральной ваты
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 7
+      .nav-card.nav-card--large
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-7.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Продукция марки Valtec
+        nav.nav-card__nav
+          ul.nav-card__list
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Системы металлополимерных и полимерных трубопроводов
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Системы полипропиленовых трубопроводов
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Системы трубопроводов из нержавеющей стали
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Приборы учета
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Трубопроводная арматура
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Шаровые краны для газоснабжения
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Резьбовые и ремонтные соединения для трубопроводов
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Фильтры
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Водяной теплый пол
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Узлы для горизонтальных систем отопления и водоснабжения
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Системы диспетчеризации
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Элементы автоматики
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Коллекторные системы
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Радиаторная арматура
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Регулирующая арматура
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Контрольно-измерительные приборы
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Арматура безопасности
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Системы модульного монтажа
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Насосное оборудование
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Подводка гибкая
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Баки мембранные
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Инструмент
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Техническая теплоизоляция
+            li.nav-card__item
+              a.nav-card__link(href='#')
+                |Крепеж и расходные материалы
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
+    when 8
+      .nav-card
+        .nav-card__frame
+          img.nav-card__img(src='assets/images/nav-card-8.jpg' alt='')
+        h3.nav-card__title
+          a.nav-card__title-link(href='#')
+            |Крепежные изделия
+        nav.nav-card__nav
+          ul.nav-card__list
+        .nav-card__button
+          .nav-card__button-text
+            |показать все
+          svg.nav-card__button-svg(xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M16.293 0.292908L17.7072 1.70712L9.00008 10.4142L0.292969 1.70712L1.70718 0.292908L9.00008 7.5858L16.293 0.292908Z" fill="white")
