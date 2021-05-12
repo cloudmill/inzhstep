@@ -37,8 +37,6 @@ const MAIN_BREAKPOINT = 1024;
 
 						slidesPerView: 'auto',
 
-						autoHeight: true,
-
 						breakpoints: {
 							[MAIN_BREAKPOINT]: {
 								spaceBetween: 40,
@@ -242,6 +240,59 @@ const MAIN_BREAKPOINT = 1024;
 					headerMenuSectionClicked.addClass('header-menu__section--active');
 				}
 			});
+		}
+	});
+}
+
+// --- --- --- --- ---
+
+
+
+
+
+// --- --- NAV-CARD --- ---
+
+{
+	const OPEN_TEXT = 'показать все';
+	const CLOSE_TEXT = 'свернуть';
+
+	$(() => {
+		const mediaQuery = window.matchMedia(`(max-width: ${MAIN_BREAKPOINT - 1}px)`);
+		if (mediaQuery.matches) {
+			const navCard = $('.nav-card');
+
+			if (navCard.length !== 0) {
+				navCard.each(function () {
+					const navCardItem = $(this).find('.nav-card__item');
+					const navCardCount = navCardItem.length;
+					const navCardButton = $(this).find('.nav-card__button');
+
+					if (navCardCount <= 4) {
+						navCardButton.css('display', 'none');
+					} else {
+						navCardItem.css('display', 'none')
+						navCardItem.slice(0, 4).css('display', '');
+
+						let navCardOpen = false;
+						navCardButton.on('click', function () {
+							if (navCardOpen) {
+								navCardItem.css('display', 'none')
+								navCardItem.slice(0, 4).css('display', '');
+
+								$(this).removeClass('nav-card__button--active');
+								$(this).find('.nav-card__button-text').text(OPEN_TEXT);
+							} else {
+								navCardItem.css('display', '');
+
+								$(this).addClass('nav-card__button--active');
+								$(this).find('.nav-card__button-text').text(CLOSE_TEXT);
+							}
+
+							navCardOpen = !navCardOpen;
+						});
+					}
+				});
+			}
 		}
 	});
 }
