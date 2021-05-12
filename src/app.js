@@ -167,6 +167,42 @@ const MAIN_BREAKPOINT = 1024;
 			mediaQuery.addEventListener('change', () => {
 				closeModal();
 			});
+
+			// search
+			const headerSearchButton = header.find('.header__search-button');
+			const headerSearchModal = header.find('.header__search-modal');
+
+			headerSearchButton.on('click', () => {
+				headerSearchModal.addClass('header__search-modal--active');
+			});
+
+			headerSearchModal.on('click', event => {
+				if (event.target === event.currentTarget) {
+					headerSearchModal.removeClass('header__search-modal--active');
+				}
+			});
+
+			const searchModal = headerSearchModal.find('.search-modal');
+			const searchModalCloseButton = searchModal.find('.search-modal__close-button');
+
+			searchModalCloseButton.on('click', () => {
+				headerSearchModal.removeClass('header__search-modal--active');
+			});
+
+			const searchModalInput = searchModal.find('.search-modal__input');
+			const searchModalLabel = searchModal.find('.search-modal__label');
+
+			searchModalInput.on('focus', () => {
+				searchModalLabel.css('display', 'none');
+			});
+
+			searchModalInput.on('blur', () => {
+				if (searchModalInput.val().trim() === '') {
+					searchModalLabel.css('display', '');
+
+					searchModalInput.val('');
+				}
+			});
 		}
 	});
 }

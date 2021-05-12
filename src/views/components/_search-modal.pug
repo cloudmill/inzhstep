@@ -1,0 +1,13 @@
+mixin search-modal
+  .search-modal
+    .container
+      .search-modal__inner
+        .search-modal__container
+          .search-modal__close
+            +close-svg('search-modal__close-button')
+          form.search-modal__form(action="#")
+            input.search-modal__input(type="text" name='request' id='search-modal-input')
+            label.search-modal__label(for='search-modal-input')
+              |Что вы хотите найти?
+            button.search-modal__submit(type="submit")
+              |поиск

@@ -1,5 +1,6 @@
 include ../components/_header-catalog.pug
 include ../components/_header-menu.pug
+include ../components/_search-modal.pug
 
 header.header
   .header__logo
@@ -14,7 +15,7 @@ header.header
         img.header__catalog-button-img(src='assets/images/arrow-down.svg')
         img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
   .header__search
-    .header__search-button(data-header-modal='header-search')
+    .header__search-button
       +search-svg('header__search-svg')
   nav.header__nav
     ul.header__nav-list
@@ -43,4 +44,5 @@ header.header
   .header__modal
     +header-catalog
     +header-menu
-        
+  .header__search-modal
+    +search-modal
