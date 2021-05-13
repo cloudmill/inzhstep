@@ -52,8 +52,8 @@ module.exports = env => {
 			maxAssetSize: 512000
 		},
 		/*
-      Loaders with configurations
-    */
+	  Loaders with configurations
+	*/
 		module: {
 			rules: [
 				{
@@ -66,7 +66,7 @@ module.exports = env => {
 					use: [
 						{
 							loader: 'babel-loader',
-							options: {presets: ['@babel/preset-env']}
+							options: { presets: ['@babel/preset-env'] }
 						}
 					]
 				},
@@ -87,7 +87,7 @@ module.exports = env => {
 					test: /\.scss$/,
 					use: [
 						env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-						{loader: 'css-loader', options: {importLoaders: 1, sourceMap: true}},
+						{ loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
 						{
 							loader: 'sass-loader',
 							options: {
@@ -171,8 +171,8 @@ module.exports = env => {
 		plugins: [
 			new CopyWebpackPlugin({
 				patterns: [
-					{from: 'assets/images', to: 'assets/images'},
-					{from: 'assets/fonts', to: 'assets/fonts'},
+					{ from: 'assets/images', to: 'assets/images' },
+					{ from: 'assets/fonts', to: 'assets/fonts' },
 				]
 			}),
 
@@ -203,8 +203,8 @@ module.exports = env => {
 			}),
 
 			/*
-        Pages
-      */
+		Pages
+	  */
 			...utils.pages(env.NODE_ENV),
 
 			new HtmlBeautifyPlugin({
@@ -226,11 +226,11 @@ module.exports = env => {
 				'window.jQuery': 'jquery'
 			}),
 
-			new PurgeCssPlugin({
-				paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
-				only: ['app'],
-				whitelistPatterns: [/select2/, /my-mfp/, /swiper/], // add plugin's classes to exclude from purge
-			}),
+			// new PurgeCssPlugin({
+			// 	paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
+			// 	only: ['app'],
+			// 	whitelistPatterns: [/select2/, /my-mfp/, /swiper/], // add plugin's classes to exclude from purge
+			// }),
 
 			new WebpackNotifierPlugin({
 				title: 'Noob__ui',
