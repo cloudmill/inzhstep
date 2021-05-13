@@ -1,0 +1,36 @@
+extends ../layouts/master.pug
+
+include ../components/_object-card.pug
+include ../components/_link.pug
+include ../components/_grid-test.pug
+
+
+
+block header
+  include ../partials/_header.pug
+
+
+
+block content
+  +grid-test
+  
+  .section
+    .container
+      .row
+        .row__side
+        .row__main
+          .section__inner.section__inner--main
+            .list
+              - for (let i= 0; i<6; i++)
+                .list__item
+                  +object-card
+                .list__item
+                  +object-card({
+                    image:'object-card-1.jpg',
+                    imageMark:'object-card-mark-1.jpg',
+                  })
+
+
+
+block footer
+  include ../partials/_footer.pug
