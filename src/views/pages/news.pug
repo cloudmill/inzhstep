@@ -1,0 +1,37 @@
+extends ../layouts/master.pug
+
+include ../components/_news-card.pug
+include ../components/_link.pug
+include ../components/_grid-test.pug
+
+
+
+block header
+  include ../partials/_header.pug
+
+
+
+block content
+  +grid-test
+  
+  .section
+    .container
+      .row
+        .row__side
+        .row__main
+          .section__inner.section__inner--main
+            .list
+              - for (let i= 0; i<6; i++)
+                .list__item
+                  +news-card
+                .list__item
+                  +news-card({
+                    image:'news-card-1.jpeg',
+                    mark:'НОВИНКА',
+                    title:'Новинка! Шаровые краны Altstream PN 25!',
+                  })
+
+
+
+block footer
+  include ../partials/_footer.pug
