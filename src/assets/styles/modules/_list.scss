@@ -1,0 +1,19 @@
+.list {
+    margin-top: -40px;
+    margin-left: -20px;
+    @media (min-width: $breakpoint) {
+        margin-top: -80px;
+        margin-left: -40px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        margin-top: 40px;
+        margin-left: 20px;
+        @media (min-width: $breakpoint) {
+            margin-top: 80px;
+            margin-left: 40px;
+        }
+    }
+}
