@@ -22,11 +22,19 @@
     }
 
     &__inner {
-        padding: 60px 0 40px;
-        min-height: 100%;
+        padding-top: 60px;
+        height: 100%;
         pointer-events: all;
 
         background-color: $color-blue-dark;
+    }
+    &__wrapper {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    &__container {
+        padding-bottom: 40px;
     }
 
     &__row {
@@ -90,28 +98,34 @@
     // catalog
     &__catalog {
         &--active {
-            .header-menu__catalog-button {
+            #{$component}__catalog-button {
                 background-color: $color-main;
+            }
+            #{$component}__catalog-button-svg {
+                transform: rotate(180deg);
             }
         }
     }
-
     &__catalog-button {
         padding: 15px 20px;
         min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         border-top: 1px solid $header-color-border;
         border-bottom: 1px solid $header-color-border;
         transition: $transition;
     }
-
     &__catalog-button-text {
         font-family: $ff-b;
         font-size: 20px;
         line-height: 26px;
         color: $color-white;
     }
-    
+    &__catalog-button-svg {
+        transition: $transition;
+    }
     &__catalog-dropdown {
         display: none;
     }
@@ -119,19 +133,27 @@
     // section
     &__section {
         &--active {
-            .header-menu__section-button-text {
+            #{$component}__section-button-text {
                 color: $color-main;
+            }
+            #{$component}__section-button-svg {
+                transform: rotate(180deg);
+
+                path {
+                    fill: $color-main;
+                }
             }
         }
     }
-
     &__section-button {
         padding: 10px 20px;
         min-height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         border-bottom: 1px solid $header-color-border;
     }
-
     &__section-button-text {
         font-weight: bold;
         font-size: 16px;
@@ -139,7 +161,13 @@
         color: $color-white;
         transition: $transition;
     }
+    &__section-button-svg {
+        transition: $transition;
 
+        path {
+            transition: $transition;
+        }
+    }
     &__section-dropdown {
         padding: 25px 0;
         display: none;
@@ -151,17 +179,20 @@
     &__links {
         padding: 0 20px;
     }
-
     &__links-item {
         &:not(:first-child) {
             margin-top: 15px;
         }
     }
-
     &__links-link {
         font-weight: bold;
         font-size: 13px;
         line-height: 16px;
         color: $color-white;
+        transition: $transition;
+
+        &:hover {
+            color: $color-main;
+        }
     }
 }
