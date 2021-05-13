@@ -33,14 +33,11 @@ header.header
             |#{item}
   .header__contacts
     a.header__contacts-link.header__contacts-link--phone(href='#')
-      img.header__contacts-img(src='assets/images/phone.svg')
-      img.header__contacts-img.header__contacts-img--dark(src='assets/images/phone-dark.svg')
+      +phone-svg('header__contacts-svg')
     a.header__contacts-link.header__contacts-link--email(href='#')
-      img.header__contacts-img(src='assets/images/email.svg')
-      img.header__contacts-img.header__contacts-img--dark(src='assets/images/email-dark.svg')
+      +email-svg('header__contacts-svg')
   .header__menu(data-header-modal='header-menu')
-    img.header__menu-img(src='assets/images/burger.svg')
-    img.header__menu-img.header__menu-img--dark(src='assets/images/burger-dark.svg')
+    +menu-svg('header__menu-svg')
   .header__modal
     +header-catalog
     +header-menu
