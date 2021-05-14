@@ -6,6 +6,7 @@ include ../components/_partner-card.pug
 include ../components/_link.pug
 include ../components/_grid-test.pug
 include ../components/_nav-card.pug
+include ../components/_top.pug
 
 
 
@@ -17,26 +18,8 @@ block header
 block content
   +grid-test
   
-  .top
-    .top__background
-      img.top__background-img(src='assets/images/top-background.jpg')
-    .top__ui
-      .top__ui-control
-        .top__control
-          .top__control-button.top__control-button--left
-            svg.top__control-svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-              path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
-          .top__control-button.top__control-button--right
-            svg.top__control-svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-              path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
-      .top__ui-panel
-        .top__down
-          svg.top__down-svg(width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
-        .top__decor
-          .top__decor-text
-            |01 — 03
-
+  +top
+  
   .section
     .container
       .row
