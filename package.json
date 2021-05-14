@@ -68,6 +68,7 @@
     "gsap": "^3.2.6",
     "jbox": "^1.2.0",
     "jquery": "^3.5.1",
+    "jquery-bez": "^1.0.11",
     "normalize.css": "^8.0.1",
     "rellax": "^1.12.1",
     "scrollmagic": "^2.0.7",
