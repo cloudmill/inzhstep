@@ -343,6 +343,8 @@ const MAIN_BREAKPOINT = 1024;
 
 // --- --- TOP --- ---
 {
+	const PARALLAX_RATIO = 5;
+
 	$(() => {
 		const top = $('.top');
 
@@ -713,6 +715,19 @@ const MAIN_BREAKPOINT = 1024;
 					$([document.documentElement, document.body]).animate({
 						scrollTop: scrollTargetOffsetTop,
 					}, 600, $.bez([0.65, 0, 0.35, 1]));
+				});
+			}
+
+			// parallax
+			{
+				const background = top.find('.top__background');
+
+				$(window).on('scroll', function () {
+					if ($(this).scrollTop() <= top.offset().top + top.height()) {
+						const parallax = ($(this).scrollTop() - background.offset().top) / PARALLAX_RATIO;
+
+						background.css('transform', `translateY(${parallax}px)`);
+					}
 				});
 			}
 		}

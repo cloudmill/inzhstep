@@ -1087,4 +1087,13 @@
       }
     }
   }
+
+  // background
+  &__background {
+    transform: translateY(0);
+
+    height: 100%;
+
+    will-change: transform;
+  }
 }
