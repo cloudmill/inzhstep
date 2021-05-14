@@ -8,6 +8,7 @@ $ff-b: 'StyreneBLC', sans-serif;
 $color-main: #0F93A1;
 $color-black: #2B3637;
 $color-white: #FFFFFF;
+$color-white-transparent: rgba(white, 0.2);
 $color-blue: #CEE5E8;
 $color-blue-light: #F0F4F4;
 $color-blue-dark: #142F33;
@@ -96,7 +97,7 @@ $nav-card-height-d: 550px;
 // --- --- HEADER --- --- 
 
 // colors
-$header-color-border: rgba(white, 0.2);
+$header-color-border: $color-white-transparent;
 $header-color-border-scroll: #E3E9E9;
 $header-color-modal: $color-blue-dark;
 
