@@ -3,6 +3,7 @@ import 'Styles/_app.scss';
 import Swiper from 'swiper';
 import './assets/scripts/TweenMax.min.js';
 import 'jquery-bez';
+import SmoothScroll from 'smoothscroll-for-websites';
 
 const MAIN_BREAKPOINT = 1024;
 
@@ -731,6 +732,18 @@ const MAIN_BREAKPOINT = 1024;
 				});
 			}
 		}
+	});
+}
+// --- --- --- --- ---
+
+
+
+
+
+// --- --- SMOOTH SCROLL --- ---
+{
+	$(() => {
+		SmoothScroll();
 	});
 }
 // --- --- --- --- ---
