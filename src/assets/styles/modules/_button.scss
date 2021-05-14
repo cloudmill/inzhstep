@@ -1,0 +1,19 @@
+.button {
+    display: flex;
+
+    &__btn {
+        padding: 20px 30px;
+
+        background-color: $color-main;
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-white;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $color-blue-dark;
+        }
+    }
+}
