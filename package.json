@@ -73,6 +73,7 @@
     "rellax": "^1.12.1",
     "scrollmagic": "^2.0.7",
     "select2": "^4.0.13",
+    "smoothscroll-for-websites": "^1.4.10",
     "swiper": "^6.0.1",
     "velocity-animate": "^1.5.2"
   }
