@@ -25,18 +25,24 @@
 
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
-        width: calc(#{$grid-part-d} * 13);
+        width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
+      }
+    }
+
+    .panel {
+      &__item {
+        @media (min-width: $breakpoint-xl) {
+          padding: 0 $grid-pad-d;
+        }
       }
     }
   }
 
   &__container {
     &--title {
-      padding-top: 100px;
-      padding-left: $grid-pad-m;
+      padding: 100px $grid-pad-m 0;
       @media (min-width: $breakpoint) {
-        padding-top: 300px;
-        padding-left: $grid-gap-d;
+        padding: 300px $grid-pad-d 40px $grid-gap-d;
       }
     }
   }
