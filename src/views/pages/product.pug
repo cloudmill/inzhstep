@@ -1,0 +1,23 @@
+extends ../layouts/master.pug
+
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_grid-test.pug
+
+
+
+block header
+  +header({
+    mod: 'white',
+  })
+
+
+
+block content
+  +grid-test
+
+
+
+block footer
+  +footer
