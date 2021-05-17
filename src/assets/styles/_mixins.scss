@@ -1,6 +1,5 @@
-// --- --- LINK --- ---
-
-@mixin link-hover {
+// link
+@mixin link--hover {
   &__text {
       color: $color-black;
   }
@@ -12,5 +11,3 @@
       opacity: 1;
   }
 }
-
-// --- --- --- --- ---
