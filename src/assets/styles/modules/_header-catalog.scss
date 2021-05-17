@@ -20,6 +20,10 @@
         
         opacity: 1;
 
+        #{$component}__inner {
+            pointer-events: all;
+        }
+
         #{$component}__col {
             &--panel {
                 &::before {
@@ -35,7 +39,6 @@
         padding-top: 179px;
         width: calc(#{$grid-part-d} * 7);
         height: 100%;
-        pointer-events: all;
 
         background-color: $color-blue-dark;
         transition: $transition;

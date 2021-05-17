@@ -19,12 +19,15 @@
         visibility: visible;
         
         opacity: 1;
+
+        #{$component}__inner {
+            pointer-events: all;
+        }
     }
 
     &__inner {
         padding-top: 60px;
         height: 100%;
-        pointer-events: all;
 
         background-color: $color-blue-dark;
     }
