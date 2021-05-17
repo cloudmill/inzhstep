@@ -1,0 +1,43 @@
+.grid {
+  &__section {
+    &:not(:first-child) {
+      @media (min-width: $breakpoint) {
+        border-top: 1px solid $color-gray-border;
+      }
+    }
+  }
+
+  &__row {
+    @media (min-width: $breakpoint) {
+      display: flex;
+    }
+  }
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
+        
+        border-right: 1px solid $color-gray-border;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 13);
+      }
+    }
+  }
+
+  &__container {
+    &--title {
+      padding-top: 100px;
+      padding-left: $grid-pad-m;
+      @media (min-width: $breakpoint) {
+        padding-top: 300px;
+        padding-left: $grid-gap-d;
+      }
+    }
+  }
+}
