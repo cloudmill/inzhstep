@@ -1,0 +1,41 @@
+.tabs {
+  $component: &;
+
+  display: none;
+  @media (min-width: $breakpoint) {
+    display: flex;
+  }
+  overflow-x: auto;
+
+  border-bottom: 1px solid $color-gray-border;
+
+  &__row {
+    padding: 0 #{$grid-gap-d / 2};
+    display: flex;
+    align-items: stretch;
+  }
+  &__item {
+    padding: 40px #{$grid-gap-d / 2};
+    width: 326px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+
+    &--active {
+      #{$component}__link {
+        color: $color-main;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}
