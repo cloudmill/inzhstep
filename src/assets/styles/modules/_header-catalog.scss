@@ -52,6 +52,7 @@
     &__col {
         height: 100%;
         flex-shrink: 0;
+        display: flex;
         overflow: auto;
 
         transition: $transition;
@@ -62,29 +63,24 @@
 
             width: calc(#{$grid-part-d} * 3);
 
+            border-top: 1px solid $color-main;
             border-right: 1px solid $color-white-transparent;
-
-            &::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: -1px;
-
-                height: 1px;
-                content: '';
-                visibility: hidden;
-
-                background-color: $color-main;
-                opacity: 0;
-                transition: $transition;
-            }
         }
 
         &--tabs {
             width: calc(#{$grid-part-d} * 4);
         }
     }
+
+    &__panel {
+        -ms-flex-align: start; // ?
+        align-self: flex-start;
+    }
     
+    &__tabs {
+        -ms-flex-align: start; // ?
+        align-self: flex-start;
+    }
     &__tabs-item {
         display: none;
 
