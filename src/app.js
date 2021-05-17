@@ -216,31 +216,30 @@ const MAIN_BREAKPOINT = 1024;
 
 
 
-// --- --- HEADER-CATALOG --- ---
-
+// header-catalog
 {
 	$(() => {
 		const headerCatalog = $('.header-catalog');
 
 		if (headerCatalog.length !== 0) {
-			const headerCatalogPanelText = headerCatalog.find('.header-catalog__panel-text');
+			const headerCatalogPanelText = headerCatalog.find('.panel__text');
 
 			headerCatalogPanelText.on('click', function () {
-				const headerCatalogPanelItem = $(this).closest('.header-catalog__panel-item');
+				const headerCatalogPanelItem = $(this).closest('.panel__item');
 
 				const headerCatalogActiveIndex = headerCatalogPanelItem.index();
 
-				$('.header-catalog__panel-item').removeClass('header-catalog__panel-item--active');
+				headerCatalog.find('.panel__item').removeClass('panel__item--active');
+				// с учетом того, что .header-catalog на странице в единичном экземпляре
 				$('.header-catalog__tabs-item').removeClass('header-catalog__tabs-item--active');
 
-				$('.header-catalog__panel-item').eq(headerCatalogActiveIndex).addClass('header-catalog__panel-item--active');
+				headerCatalog.find('.panel__item').eq(headerCatalogActiveIndex).addClass('panel__item--active');
+				// с учетом того, что .header-catalog на странице в единичном экземпляре
 				$('.header-catalog__tabs-item').eq(headerCatalogActiveIndex).addClass('header-catalog__tabs-item--active');
 			});
 		}
 	});
 }
-
-// --- --- --- --- ---
 
 
 
