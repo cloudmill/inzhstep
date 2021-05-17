@@ -42,20 +42,165 @@ mixin header-catalog
                 |Крепежные изделия
         .header-catalog__col.header-catalog__col--tabs
           ul.header-catalog__tabs
-            - for (let i=0; i<9; i++)
-              li.header-catalog__tabs-item(class = (i === 0 ? 'header-catalog__tabs-item--active' : ''))
-                ul.header-catalog__links
-                  li.header-catalog__links-item
-                    a.header-catalog__links-link(href='#')
-                      |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
-                  if (i % 2 === 0)
-                    li.header-catalog__links-item
-                      a.header-catalog__links-link(href='#')
-                        |Sanline. Коллекторные узлы. Балансировочная арматура
-                  li.header-catalog__links-item
-                    a.header-catalog__links-link(href='#')
-                      |Термостатическая арматура и комплектующие
-                  if (i % 3 === 0)
-                    li.header-catalog__links-item
-                      a.header-catalog__links-link(href='#')
-                        |Отопительные приборы
+            li.header-catalog__tabs-item.header-catalog__tabs-item--active
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Sanline. Коллекторные узлы. Балансировочная арматура
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Термостатическая арматура и комплектующие
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Отопительные приборы
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Полипропиленовые трубы TEBO Technics
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Полипропиленовые фитинги TEBO Technics
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Оборудование для монтажа ПП Труб
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Счетчики воды Пульс
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Теплосчетчики
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Счетчики распределители тепловой энергии
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Краны шаровые латунные Altstream
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Резьбовые латунные фитинги Altstream
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Обратные клапаны Altstream
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Фильтры
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Регуляторы расхода
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Регуляторы давления
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Экоролл Теплоизоляция из минеральной ваты
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Теплоизоляция из вспененного полиэтилена Термофлекс
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Теплоизоляция из вспененного каучука Armacell
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Внутренняя Канализация Политрон
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Противопожарные муфты
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Наружняя канализация
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |PAROC теплоизоляция из базальтовой ваты
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Экоролл теплоизоляция из минеральной ваты
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Системы металлополимерных и полимерных трубопроводов
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Системы полипропиленовых трубопроводов
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Системы трубопроводов из нержавеющей стали
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Приборы учета
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Трубопроводная арматура
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Шаровые краны для газоснабжения
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Резьбовые и ремонтные соединения для трубопроводов
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Фильтры
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Водяной теплый пол
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Узлы для горизонтальных систем отопления и водоснабжения
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Системы диспетчеризации
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Элементы автоматики
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Коллекторные системы
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Радиаторная арматура
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Регулирующая арматура
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Контрольно-измерительные приборы
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Арматура безопасности
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Системы модульного монтажа
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Насосное оборудование
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Подводка гибкая
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Баки мембранные
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Инструмент
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Техническая теплоизоляция
+                li.header-catalog__links-item
+                  a.header-catalog__links-link(href='#')
+                    |Крепеж и расходные материалы
+            li.header-catalog__tabs-item
+              ul.header-catalog__links
