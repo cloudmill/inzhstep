@@ -26,7 +26,8 @@
 
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
-        width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
+        // с учетом ширины полосы прокрутки
+        width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d} - 16px);
       }
     }
   }
