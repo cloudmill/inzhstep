@@ -2,19 +2,17 @@ include ../components/_header-catalog.pug
 include ../components/_header-menu.pug
 include ../components/_search-modal.pug
 
-mixin header
-  header.header
+mixin header(opt = {})
+  header.header(class = (opt.mod ? ('header--' + opt.mod) : undefined))
     .header__logo
       a.header__logo-link(href='#')
-        img.header__logo-img(src='assets/images/header-logo.svg' alt='logo')
-        img.header__logo-img.header__logo-img--dark(src='assets/images/header-logo-dark.svg' alt='logo')
+        +logo-svg('header__logo-svg')
     .header__catalog
       .header__catalog-button(data-header-modal='header-catalog')
         .header__catalog-button-text
           |Каталог
         .header__catalog-button-image
-          img.header__catalog-button-img(src='assets/images/arrow-down.svg')
-          img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
+          +arrow-svg('header__catalog-button-svg')
     .header__search
       .header__search-button
         +search-svg('header__search-svg')

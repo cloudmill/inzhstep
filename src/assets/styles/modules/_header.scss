@@ -22,58 +22,45 @@
     }
     align-items: stretch;
 
-    border-bottom: 1px solid $header-color-border;
+    border-bottom: 1px solid $color-white-transparent;
     transition: $transition;
 
-    &--scroll {
-        @media (min-width: $breakpoint) {
-            height: 100px;
-        }
-
+    @mixin header--white() {
         background-color: $color-white;
-        border-bottom-color: $header-color-border-scroll;
-        box-shadow: 0px 7px 15px rgba(54, 78, 78, 0.06);
+        border-bottom-color: $color-gray-border;
 
+        // logo
         #{$component}__logo {
             @media (min-width: $breakpoint) {
-                border-right-color: $header-color-border-scroll;
+                border-right-color: $color-gray-border;
+            }
+        }
+        #{$component}__logo-svg {
+            .logo-svg__text {
+                fill: $color-black;
+
+                &~path {
+                    fill: $color-black;
+                }
             }
         }
 
-        #{$component}__logo-img {
-            visibility: hidden;
-
-            opacity: 0;
-
-            &--dark {
-                visibility: visible;
-
-                opacity: 1;
-            }
-        }
-
+        // catalog
         #{$component}__catalog {
-            border-right-color: $header-color-border-scroll;
+            border-right-color: $color-gray-border;
         }
-
         #{$component}__catalog-button-text {
             color: $color-black;
         }
-
-        #{$component}__catalog-button-img {
-            visibility: hidden;
-
-            opacity: 0;
-
-            &--dark {
-                visibility: visible;
-
-                opacity: 1;
+        #{$component}__catalog-button-svg {
+            path {
+                fill: $color-black;
             }
         }
 
+        // search
         #{$component}__search {
-            border-left-color: $header-color-border-scroll;
+            border-left-color: $color-gray-border;
         }
         #{$component}__search-svg {
             path {
@@ -81,23 +68,24 @@
             }
         }
 
+        // nav
         #{$component}__nav {
-            border-right-color: $header-color-border-scroll;
+            border-right-color: $color-gray-border;
         }
-
         #{$component}__nav-link {
             color: $color-black;
         }
 
+        // contacts
         #{$component}__contacts {
             @media (max-width: $breakpoint - 1px) {
-                border-left-color: $header-color-border-scroll;
+                border-left-color: $color-gray-border;
             }
         }
         #{$component}__contacts-link {
             &--phone {
                 @media (min-width: $breakpoint) {
-                    border-bottom-color: $header-color-border-scroll;
+                    border-bottom-color: $color-gray-border;
                 }
             }
         }
@@ -107,14 +95,29 @@
             }
         }
 
+        // menu
         #{$component}__menu {
-            border-left-color: $header-color-border-scroll;
+            border-left-color: $color-gray-border;
         }
         #{$component}__menu-svg {
             line {
                 stroke: $color-black;
             }
         }
+    }
+
+    // mods
+    &--white {
+        @include header--white();
+    }
+    &--scroll {
+        @include header--white();
+
+        @media (min-width: $breakpoint) {
+            height: 100px;
+        }
+
+        box-shadow: 0px 7px 15px rgba(54, 78, 78, 0.06);
 
         .header-catalog {
             &__inner {
@@ -131,37 +134,32 @@
         }
 
         &--header-catalog {
+            // catalog
             #{$component}__catalog {
                 z-index: 1;
                 
                 background-color: $color-main;
                 border-right-color: $color-main;
             }
-
             #{$component}__catalog-button-text {
                 color: $color-white;
             }
-    
-            #{$component}__catalog-button-img {
+            #{$component}__catalog-button-image {
                 transform: rotate(180deg);
-
-                visibility: visible;
-    
-                opacity: 1;
-    
-                &--dark {
-                    visibility: hidden;
-    
-                    opacity: 0;
+            }
+            #{$component}__catalog-button-svg {
+                path {
+                    fill: $color-white;
                 }
             }
         }
 
         &--header-menu {
+            // search
             #{$component}__search {
                 z-index: 1;
 
-                border-left: 1px solid $header-color-border;
+                border-left: 1px solid $color-white-transparent;
             }
             #{$component}__search-svg {
                 path {
@@ -169,10 +167,11 @@
                 }
             }
 
+            // contacts
             #{$component}__contacts {
                 z-index: 1;
 
-                border-left: 1px solid $header-color-border;
+                border-left: 1px solid $color-white-transparent;
             }
             #{$component}__contacts-svg {
                 path {
@@ -180,10 +179,11 @@
                 }
             }
 
+            // menu
             #{$component}__menu {
                 z-index: 1;
 
-                border-left: 1px solid $header-color-border;
+                border-left: 1px solid $color-white-transparent;
             }
             #{$component}__menu-svg {
                 line {
@@ -193,6 +193,7 @@
         }
     }
 
+    // logo
     &__logo {
         position: relative;
         z-index: 0;
@@ -200,7 +201,7 @@
         margin-right: auto;
         @media (min-width: $breakpoint) {
             margin-right: 0;
-            padding-right: #{$grid-col-d};
+            padding-right: #{$grid-gap-d};
             width: calc(#{$grid-part-d} * 3 - #{$grid-gap-d});
         }
         flex-shrink: 0;
@@ -208,45 +209,30 @@
         align-items: center;
 
         @media (min-width: $breakpoint) {
-            border-right: 1px solid $header-color-border;
+            border-right: 1px solid $color-white-transparent;
         }
         transition: $transition;
     }
-
     &__logo-link {
-        position: relative;
-        z-index: 0;
-
         display: flex;
     }
-
-    &__logo-img {
+    &__logo-svg {
         max-width: 115px;
         @media (min-width: $breakpoint) {
             max-width: 100%;
         }
-        visibility: visible;
 
-        opacity: 1;
-        transition: $transition;
-        
-        &--dark {
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            visibility: hidden;
-
-            opacity: 0;
+        path {
+            transition: $transition;
         }
     }
 
+    // catalog
     &__catalog {
         position: relative;
         z-index: 0;
 
-        // padding: 0 40px 0 #{$grid-gap-d}; ?
-        padding: 0 #{$grid-col-d} 0 #{$grid-gap-d};
+        padding: 0 #{$grid-gap-d};
         width: calc(#{$grid-part-d} * 3);
         flex-shrink: 0;
         display: flex;
@@ -255,10 +241,9 @@
             display: none;
         }
 
-        border-right: 1px solid $header-color-border;
+        border-right: 1px solid $color-white-transparent;
         transition: $transition;
     }
-
     &__catalog-button {
         width: 100%;
         display: flex;
@@ -267,7 +252,6 @@
 
         cursor: pointer;
     }
-
     &__catalog-button-text {
         flex-shrink: 0;
 
@@ -277,7 +261,6 @@
         color: white;
         transition: $transition;
     }
-
     &__catalog-button-image {
         position: relative;
         z-index: 0;
@@ -286,23 +269,14 @@
         flex-shrink: 0;
         display: flex;
         align-items: center;
-    }
 
-    &__catalog-button-img {
-        flex-shrink: 0;
-        visibility: visible;
-
-        opacity: 1;
         transition: $transition;
+    }
+    &__catalog-button-svg {
+        flex-shrink: 0;
 
-        &--dark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            visibility: hidden;
-
-            opacity: 0;
+        path {
+            transition: $transition;
         }
     }
 
@@ -324,7 +298,9 @@
             align-items: center;
         }
 
-        border-left: 1px solid $header-color-border;
+        @media (max-width: $breakpoint - 1px) {
+            border-left: 1px solid $color-white-transparent;
+        }
         transition: $transition;
     }
     &__search-button {
@@ -339,11 +315,19 @@
         align-items: center;
 
         cursor: pointer;
+        transition: $transition;
 
         &:hover {
+            @media (max-width: $breakpoint - 1px) {
+                background-color: $color-main;
+            }
+
             #{$component}__search-svg {
                 path {
-                    fill: $color-main;
+                    fill: $color-white;
+                    @media (min-width: $breakpoint) {
+                        fill: $color-main;
+                    }
                 }
             }
         }
@@ -379,6 +363,7 @@
         }
     }
 
+    // nav
     &__nav {
         position: relative;
         z-index: 0;
@@ -391,17 +376,15 @@
         }
         align-items: center;
 
-        border-right: 1px solid $header-color-border;
+        border-right: 1px solid $color-white-transparent;
         transition: $transition;
     }
-
     &__nav-list {
         max-height: 53px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
-
     &__nav-item {
         width: calc(#{$grid-part-d} * 2);
         display: flex;
@@ -410,7 +393,6 @@
             margin-top: 11px;
         }
     }
-
     &__nav-link {
         font-family: $ff-b;
         font-size: 16px;
@@ -435,7 +417,7 @@
         flex-shrink: 0;
 
         @media (max-width: $breakpoint - 1px) {
-            border-left: 1px solid $header-color-border;
+            border-left: 1px solid $color-white-transparent;
         }
         transition: $transition;
     }
@@ -466,7 +448,7 @@
 
         &--phone {
             @media (min-width: $breakpoint) {
-                border-bottom: 1px solid $header-color-border;
+                border-bottom: 1px solid $color-white-transparent;
             }
         }
 
@@ -482,6 +464,7 @@
         }
     }
 
+    // menu
     &__menu {
         position: relative;
         z-index: 0;
@@ -494,7 +477,7 @@
         justify-content: center;
         align-items: center;
 
-        border-left: 1px solid $header-color-border;
+        border-left: 1px solid $color-white-transparent;
         cursor: pointer;
         transition: $transition;
 
@@ -512,6 +495,7 @@
         }
     }
 
+    // modal
     &__modal {
         position: fixed;
         z-index: 0;
@@ -527,6 +511,3 @@
         transition: $transition;
     }
 }
-
-// производительность ?
-// изображения ?
