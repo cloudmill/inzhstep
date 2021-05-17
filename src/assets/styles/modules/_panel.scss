@@ -1,0 +1,64 @@
+.panel {
+  $component: &;
+
+  padding: 40px 0;
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
+  }
+
+  &--white {
+    #{$component}__text {
+      color: $color-white;
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 0;
+
+    padding: 0 40px;
+
+    &:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    &--active {
+      #{$component}__svg {
+        visibility: visible;
+
+        opacity: 1;
+      }
+
+      #{$component}__text {
+        color: $color-main;
+      }
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 0;
+
+    width: 14px;
+    height: 11px;
+    visibility: hidden;
+
+    opacity: 0;
+    transition: $transition;
+  }
+  &__text {
+    display: block;
+
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        color: $color-main;
+    }
+  }
+}
