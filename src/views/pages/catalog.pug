@@ -27,45 +27,61 @@ block content
     .grid__section
       .grid__row
         .grid__col
-          ul.panel
-            li.panel__item.panel__item--active
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Отопление
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Водоснабжение
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Приборы учета тепла и воды
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Трубопроводная арматура
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Теплоизоляционные материалы
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Полотенцесущители
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Канализация
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Продукция марки Valtec
-            li.panel__item
-              +mark-svg('panel__svg')
-              span.panel__text
-                |Крепежные изделия
+          .grid__container.grid__container--panel
+            ul.panel
+              li.panel__item.panel__item--active
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Отопление
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Водоснабжение
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Приборы учета тепла и воды
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Трубопроводная арматура
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Теплоизоляционные материалы
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Полотенцесущители
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Канализация
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Продукция марки Valtec
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Крепежные изделия
         .grid__col
-          |test
+          .tabs
+            .tabs__row
+              .tabs__item.tabs__item--active
+                a.tabs__link(href='#')
+                  |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+              .tabs__item
+                a.tabs__link(href='#')
+                  |Sanline. Коллекторные узлы. Балансировочная арматура
+              .tabs__item
+                a.tabs__link(href='#')
+                  |Термостатическая арматура и комплектующие
+              .tabs__item
+                a.tabs__link(href='#')
+                  |Отопительные приборы
+
+
 
 block footer
   include ../partials/_footer.pug
