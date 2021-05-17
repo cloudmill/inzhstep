@@ -222,9 +222,9 @@ const MAIN_BREAKPOINT = 1024;
 		const headerCatalog = $('.header-catalog');
 
 		if (headerCatalog.length !== 0) {
-			const headerCatalogPanelText = headerCatalog.find('.panel__text');
+			const headerCatalogPanelLink = headerCatalog.find('.panel__link');
 
-			headerCatalogPanelText.on('click', function () {
+			headerCatalogPanelLink.on('click', function () {
 				const headerCatalogPanelItem = $(this).closest('.panel__item');
 
 				const headerCatalogActiveIndex = headerCatalogPanelItem.index();
