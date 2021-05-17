@@ -12,7 +12,7 @@
 
         &:hover {
             #{$component} {
-                @include link-hover;
+                @include link--hover;
             }
         }
     }
