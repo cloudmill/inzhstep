@@ -65,16 +65,16 @@
 
             border-top: 1px solid $color-main;
             border-right: 1px solid $color-white-transparent;
+
+            .panel {
+                -ms-flex-align: start; // ?
+                align-self: flex-start;
+            }
         }
 
         &--tabs {
             width: calc(#{$grid-part-d} * 4);
         }
-    }
-
-    &__panel {
-        -ms-flex-align: start; // ?
-        align-self: flex-start;
     }
     
     &__tabs {
