@@ -37,7 +37,7 @@
         height: 100%;
         pointer-events: all;
 
-        background-color: $header-color-modal;
+        background-color: $color-blue-dark;
         transition: $transition;
     }
 
@@ -59,7 +59,7 @@
 
             width: calc(#{$grid-part-d} * 3);
 
-            border-right: 1px solid $header-color-border;
+            border-right: 1px solid $color-white-transparent;
 
             &::before {
                 position: absolute;
