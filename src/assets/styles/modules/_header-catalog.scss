@@ -81,67 +81,7 @@
             width: calc(#{$grid-part-d} * 4);
         }
     }
-
-    &__panel {
-        padding: 40px 0;
-    }
-
-    &__panel-item {
-        position: relative;
-        z-index: 0;
-
-        padding: 0 40px;
-
-        &::before {
-            position: absolute;
-            top: 7px;
-            left: 0;
-
-            width: 14px;
-            height: 11px;
-            content: '';
-            visibility: hidden;
-
-            background-image: url('../images/list-mark.svg');
-            background-repeat: no-repeat;
-            background-position: left center;
-            background-size: contain;
-            opacity: 0;
-            transition: $transition;
-        }
-        
-        &:not(:first-child) {
-            margin-top: 20px;
-        }
-
-        &--active {
-            &::before {
-                visibility: visible;
-
-                opacity: 1;
-            }
-
-            #{$component}__panel-text {
-                color: $color-main;
-            }
-        }
-    }
-
-    &__panel-text {
-        display: block;
-
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 22px;
-        color: $color-white;
-        cursor: pointer;
-        transition: $transition;
-
-        &:hover {
-            color: $color-main;
-        }
-    }
-
+    
     &__tabs-item {
         display: none;
 
