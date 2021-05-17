@@ -5,6 +5,13 @@
         border-top: 1px solid $color-gray-border;
       }
     }
+
+    &--product {
+      padding-bottom: 60px;
+      @media (min-width: $breakpoint) {
+        padding-bottom:  160px;
+      }
+    }
   }
 
   &__row {
@@ -58,6 +65,12 @@
       @media (min-width: $breakpoint) {
         padding: 0 $grid-pad-d;
         padding-top: 300px;
+      }
+    }
+    &--product {
+      padding: 0 $grid-pad-m;
+      @media (min-width: $breakpoint) {
+        padding: 300px $grid-gap-d 0 $grid-pad-d;
       }
     }
   }
