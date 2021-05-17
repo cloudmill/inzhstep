@@ -10,6 +10,7 @@
   &__row {
     @media (min-width: $breakpoint) {
       display: flex;
+      align-items: stretch;
     }
   }
   &__col {
@@ -28,14 +29,6 @@
         width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
       }
     }
-
-    .panel {
-      &__item {
-        @media (min-width: $breakpoint-xl) {
-          padding: 0 $grid-pad-d;
-        }
-      }
-    }
   }
 
   &__container {
@@ -43,6 +36,18 @@
       padding: 100px $grid-pad-m 0;
       @media (min-width: $breakpoint) {
         padding: 300px $grid-pad-d 40px $grid-gap-d;
+      }
+    }
+    &--panel {
+      display: flex;
+      overflow-x: auto;
+
+      .panel {
+        &__item {
+          @media (min-width: $breakpoint-xl) {
+            padding: 0 $grid-pad-d;
+          }
+        }
       }
     }
   }
