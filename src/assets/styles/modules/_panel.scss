@@ -7,7 +7,7 @@
   }
 
   &--white {
-    #{$component}__text {
+    #{$component}__link {
       color: $color-white;
     }
   }
@@ -17,6 +17,7 @@
     z-index: 0;
 
     padding: 0 40px;
+    display: flex;
 
     &:not(:first-child) {
         margin-top: 20px;
@@ -29,7 +30,7 @@
         opacity: 1;
       }
 
-      #{$component}__text {
+      #{$component}__link {
         color: $color-main;
       }
     }
@@ -48,9 +49,7 @@
     opacity: 0;
     transition: $transition;
   }
-  &__text {
-    display: block;
-
+  &__link {
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;

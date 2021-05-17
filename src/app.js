@@ -224,7 +224,9 @@ const MAIN_BREAKPOINT = 1024;
 		if (headerCatalog.length !== 0) {
 			const headerCatalogPanelLink = headerCatalog.find('.panel__link');
 
-			headerCatalogPanelLink.on('click', function () {
+			headerCatalogPanelLink.on('click', function (event) {
+				event.preventDefault();
+
 				const headerCatalogPanelItem = $(this).closest('.panel__item');
 
 				const headerCatalogActiveIndex = headerCatalogPanelItem.index();
