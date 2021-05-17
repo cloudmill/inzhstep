@@ -2,44 +2,45 @@ include ../components/_header-catalog.pug
 include ../components/_header-menu.pug
 include ../components/_search-modal.pug
 
-header.header
-  .header__logo
-    a.header__logo-link(href='#')
-      img.header__logo-img(src='assets/images/header-logo.svg' alt='logo')
-      img.header__logo-img.header__logo-img--dark(src='assets/images/header-logo-dark.svg' alt='logo')
-  .header__catalog
-    .header__catalog-button(data-header-modal='header-catalog')
-      .header__catalog-button-text
-        |Каталог
-      .header__catalog-button-image
-        img.header__catalog-button-img(src='assets/images/arrow-down.svg')
-        img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
-  .header__search
-    .header__search-button
-      +search-svg('header__search-svg')
-  nav.header__nav
-    ul.header__nav-list
-      -
-        const list = [
-          'О компании',
-          'Новости',
-          'Объекты',
-          'Документация',
-          'Контакты',
-        ];
-      each item in list
-        li.header__nav-item
-          a.header__nav-link(href='#')
-            |#{item}
-  .header__contacts
-    a.header__contacts-link.header__contacts-link--phone(href='#')
-      +phone-svg('header__contacts-svg')
-    a.header__contacts-link.header__contacts-link--email(href='#')
-      +email-svg('header__contacts-svg')
-  .header__menu(data-header-modal='header-menu')
-    +menu-svg('header__menu-svg')
-  .header__modal
-    +header-catalog
-    +header-menu
-  .header__search-modal
-    +search-modal
+mixin header
+  header.header
+    .header__logo
+      a.header__logo-link(href='#')
+        img.header__logo-img(src='assets/images/header-logo.svg' alt='logo')
+        img.header__logo-img.header__logo-img--dark(src='assets/images/header-logo-dark.svg' alt='logo')
+    .header__catalog
+      .header__catalog-button(data-header-modal='header-catalog')
+        .header__catalog-button-text
+          |Каталог
+        .header__catalog-button-image
+          img.header__catalog-button-img(src='assets/images/arrow-down.svg')
+          img.header__catalog-button-img.header__catalog-button-img--dark(src='assets/images/arrow-down-dark.svg')
+    .header__search
+      .header__search-button
+        +search-svg('header__search-svg')
+    nav.header__nav
+      ul.header__nav-list
+        -
+          const list = [
+            'О компании',
+            'Новости',
+            'Объекты',
+            'Документация',
+            'Контакты',
+          ];
+        each item in list
+          li.header__nav-item
+            a.header__nav-link(href='#')
+              |#{item}
+    .header__contacts
+      a.header__contacts-link.header__contacts-link--phone(href='#')
+        +phone-svg('header__contacts-svg')
+      a.header__contacts-link.header__contacts-link--email(href='#')
+        +email-svg('header__contacts-svg')
+    .header__menu(data-header-modal='header-menu')
+      +menu-svg('header__menu-svg')
+    .header__modal
+      +header-catalog
+      +header-menu
+    .header__search-modal
+      +search-modal

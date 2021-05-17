@@ -3,12 +3,12 @@ extends ../layouts/master.pug
 include ../components/_object-card.pug
 include ../components/_link.pug
 include ../components/_grid-test.pug
+include ../partials/_header.pug
 
 
 
 block header
-  include ../partials/_header.pug
-
+  +header
 
 
 block content
