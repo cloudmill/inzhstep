@@ -26,7 +26,7 @@
 
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
-        // с учетом ширины полосы прокрутки
+        // с учетом scrollbar
         width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d} - 16px);
       }
     }
@@ -34,7 +34,8 @@
 
   &__container {
     &--title {
-      padding: 100px $grid-pad-m 0;
+      padding: 0 $grid-pad-m;
+      padding-top: 100px;
       @media (min-width: $breakpoint) {
         padding: 300px $grid-pad-d 40px $grid-gap-d;
       }
@@ -49,6 +50,14 @@
             padding: 0 $grid-pad-d;
           }
         }
+      }
+    }
+    &--back {
+      padding: 0 $grid-pad-m;
+      padding-top: 80px;
+      @media (min-width: $breakpoint) {
+        padding: 0 $grid-pad-d;
+        padding-top: 300px;
       }
     }
   }
