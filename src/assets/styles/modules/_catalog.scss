@@ -1,4 +1,37 @@
 .catalog {
   display: flex;
   flex-wrap: wrap;
+  background: $color-gray-border;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1px;
+
+  &__item {
+    width: calc((100% - 3px)/4);
+    margin-top: 1px;
+
+    &:nth-child(-n+4) {
+      margin-top: 0;
+    }
+
+    @media (max-width: $breakpoint - 1px) {
+      width: calc((100% - 1px)/2);
+
+      &:nth-child(-n+4) {
+        margin-top: 1px;
+      }
+
+      &:nth-child(-n+2) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.catalog-space {
+  background: $color-white;
+  margin-top: 1px;
+  &--three {
+    width: calc((100%-3px)/4*3);
+  }
 }

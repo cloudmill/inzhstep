@@ -1,13 +1,12 @@
 .catalog-card {
   padding: 40px;
   padding-bottom: 20px;
-  width: 25%;
-  height: 400px;
   display: flex;
   flex-direction: column;
-
   background-color: $color-white;
-  border: 1px solid $color-gray-border;
+  @media (max-width: $breakpoint - 1px) {
+    padding: 10px;
+  }
 
   &__title {
     height: calc(17px * 4);
@@ -22,12 +21,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: $breakpoint - 1px) {
+      height: 120px;
+      margin-top: 10px;
+    }
   }
 
   &__row {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @media (max-width: $breakpoint - 1px) {
+      margin-top: 10px;
+    }
   }
 
   &__code {
@@ -38,5 +46,6 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
+    white-space: nowrap;
   }
 }
