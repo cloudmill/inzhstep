@@ -1,0 +1,32 @@
+.link-back {
+    $component: &;
+
+    display: flex;
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            .slider-button {
+                &__button {
+                    @include slider-button__button--hover();
+                }
+            }
+    
+            #{$component}__text {
+                color: $color-main;
+            }
+        }
+    }
+
+    &__text {
+        margin-left: 15px;
+
+        font-family: $ff-b;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        transition: $transition;
+    }
+}

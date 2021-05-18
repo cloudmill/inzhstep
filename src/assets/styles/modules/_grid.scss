@@ -5,9 +5,19 @@
         border-top: 1px solid $color-gray-border;
       }
     }
+
+    &--product {
+      padding-bottom: 60px;
+      @media (min-width: $breakpoint) {
+        padding-bottom:  160px;
+      }
+    }
   }
 
   &__row {
+    position: relative;
+    z-index: 0;
+    
     @media (min-width: $breakpoint) {
       display: flex;
       align-items: stretch;
@@ -17,6 +27,9 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
+      position: relative;
+      z-index: 2;
+
       @media (min-width: $breakpoint) {
         width: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
         
@@ -25,8 +38,11 @@
     }
 
     &:nth-child(2) {
+      position: relative;
+      z-index: 1;
+
       @media (min-width: $breakpoint) {
-        // с учетом ширины полосы прокрутки
+        // с учетом scrollbar
         width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d} - 16px);
       }
     }
@@ -34,7 +50,8 @@
 
   &__container {
     &--title {
-      padding: 100px $grid-pad-m 0;
+      padding: 0 $grid-pad-m;
+      padding-top: 100px;
       @media (min-width: $breakpoint) {
         padding: 300px $grid-pad-d 40px $grid-gap-d;
       }
@@ -49,6 +66,20 @@
             padding: 0 $grid-pad-d;
           }
         }
+      }
+    }
+    &--back {
+      padding: 0 $grid-pad-m;
+      padding-top: 80px;
+      @media (min-width: $breakpoint) {
+        padding: 0 $grid-pad-d;
+        padding-top: 300px;
+      }
+    }
+    &--main {
+      padding: 0 $grid-pad-m;
+      @media (min-width: $breakpoint) {
+        padding: 0 $grid-pad-d;
       }
     }
   }

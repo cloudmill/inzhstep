@@ -1,51 +1,91 @@
 .catalog-card {
-  padding: 40px;
-  padding-bottom: 20px;
+  $component: &;
+
+  position: relative;
+  z-index: 0;
+
+  padding: 10px;
+  @media (min-width: $breakpoint) {
+    padding: 40px;
+    padding-bottom: 20px;
+  }
+  width: $catalog-card-width-m;
+  min-width: $catalog-card-width-m;
+  min-height: $catalog-card-height-m;
+  @media (min-width: $breakpoint) {
+    width: $catalog-card-width-d;
+    min-width: $catalog-card-width-d;
+    min-height: $catalog-card-height-d;
+  }
   display: flex;
   flex-direction: column;
-  background-color: $color-white;
-  @media (max-width: $breakpoint - 1px) {
-    padding: 10px;
+  justify-content: space-between;
+
+  background-color: white;
+  border: 1px solid $color-gray-border;
+  transition: $transition;
+
+  &:hover {
+    z-index: 1;
+
+    border-color: white;
+    box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.09);
+
+    #{$component}__price {
+      color: $color-main;
+    }
   }
 
   &__title {
-    height: calc(17px * 4);
+    font-size: 11px;
+    line-height: 13px;
+    @media (min-width: $breakpoint) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
 
-    font-size: 14px;
-    line-height: 17px;
+  &__bottom {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      margin-top: 40px;
+    }
   }
 
   &__image {
-    margin-top: 30px;
-    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  &__img {
 
-    @media (max-width: $breakpoint - 1px) {
-      height: 120px;
-      margin-top: 10px;
-    }
   }
 
   &__row {
     margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      margin-top: 50px;
+    }
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    @media (max-width: $breakpoint - 1px) {
-      margin-top: 10px;
-    }
+    align-items: flex-end;
   }
-
-  &__code {
-    font-size: 14px;
-    line-height: 17px;
+  &__vendor {
+    font-size: 9px;
+    line-height: 11px;
+    @media (min-width: $breakpoint) {
+      font-size: 14px;
+      line-height: 17px;
+    }
   }
   &__price {
     font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    white-space: nowrap;
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: $breakpoint) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    transition: $transition;
   }
 }

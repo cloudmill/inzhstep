@@ -4,15 +4,38 @@ import Swiper from 'swiper';
 import './assets/scripts/TweenMax.min.js';
 import 'jquery-bez';
 import SmoothScroll from 'smoothscroll-for-websites';
+import 'fancybox/dist/js/jquery.fancybox';
 
 const MAIN_BREAKPOINT = 1024;
 
 
 
+// product
+{
+	$(() => {
+		// info slider
+		{
+			const slider = $('.product__slider');
 
+			if (slider.length !== 0) {
+				const swiperEl = slider.find('.product__slider-swiper');
+				const swiper = new Swiper(swiperEl[0], {
+					speed: 600,
+					loop: true,
+				});
 
-// --- --- SLIDER --- ---
+				const thumb = slider.find('.product__slider-thumb');
+				thumb.on('click', function () {
+					const index = $(this).index();
+					
+					swiper.slideTo(index);
+				});
+			}
+		}
+	});
+}
 
+// slider
 {
 	$(() => {
 		$('.slider').each(function () {
@@ -25,8 +48,9 @@ const MAIN_BREAKPOINT = 1024;
 
 			let slider_swiper = null;
 			switch (slider_id) {
-				// partners
+				// partners, product relevate
 				case 7:
+				case 13:
 					slider_swiper = new Swiper(slider_swiper_el[0], {
 						spaceBetween: -1,
 
@@ -74,7 +98,28 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-// --- --- --- --- ---
+// modals
+{
+	$(() => {
+		$('.product__button .button__btn').on('click', event => {
+			event.preventDefault();
+
+			$.fancybox.open($('.modal--request'));
+		});
+
+		$('.modal--request .button__btn').on('click', event => {
+			event.preventDefault();
+
+			$.fancybox.open($('.modal--response'));
+		});
+
+		$('.modal--response .button__btn').on('click', event => {
+			event.preventDefault();
+
+			$.fancybox.open($('.modal--request'));
+		});
+	});
+}
 
 
 

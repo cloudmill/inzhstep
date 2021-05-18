@@ -1,6 +1,9 @@
 $slider-button-size: 85px;
 $slider-button-button-size: 60px;
 
+$slider-button-size--small: 50px;
+$slider-button-button-size--small: 35px;
+
 .slider-button {
     $component: &;
 
@@ -20,6 +23,23 @@ $slider-button-button-size: 60px;
         }
     }
 
+    &--small {
+        width: $slider-button-size--small;
+        min-width: $slider-button-size--small;
+        height: $slider-button-size--small;
+
+        #{$component}__button {
+            width: $slider-button-button-size--small;
+            min-width: $slider-button-button-size--small;
+            height: $slider-button-button-size--small;
+        }
+
+        #{$component}__svg {
+            width: 15px;
+            height: 17px;
+        }
+    }
+
     &__button {
         position: absolute;
         z-index: -1;
@@ -28,7 +48,7 @@ $slider-button-button-size: 60px;
         transform: translate(-50%, -50%) rotate(45deg);
 
         width: $slider-button-button-size;
-        width: $slider-button-button-size;
+        min-width: $slider-button-button-size;
         height: $slider-button-button-size;
 
         background-color: $color-white;
@@ -37,14 +57,7 @@ $slider-button-button-size: 60px;
         transition: $transition;
 
         &:hover {
-            background-color: $color-main;
-            border-color: $color-main;
-
-            &+#{$component}__svg {
-                path {
-                    fill: $color-white;
-                }
-            }
+            @include slider-button__button--hover();
         }
     }
 

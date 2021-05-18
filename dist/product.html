@@ -12,7 +12,7 @@
 	</head>
 
 	<body class="body body--main">
-		<header class="header">
+		<header class="header header--white">
 			<div class="header__logo"><a class="header__logo-link" href="#"><svg class="logo-svg header__logo-svg" xmlns="http://www.w3.org/2000/svg" width="161" height="45" viewBox="0 0 161 45" fill="none">
 						<path d="M22.0898 0L29.4534 7.36356L22.0898 14.7271L14.7263 7.36356L22.0898 0Z" fill="#00A7C9"></path>
 						<path d="M22.0898 29.4543L29.4534 36.8178L22.0898 44.1814L14.7263 36.8178L22.0898 29.4543Z" fill="#0F93A1"></path>
@@ -389,107 +389,330 @@
 			</div>
 		</header>
 		<main class="main">
-			<div class="grid-test">
-				<div class="container">
-					<div class="grid-test__row">
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
-						<div class="grid-test__col"></div>
+			<div class="modal modal--request">
+				<div class="modal__title">Оставить заявку</div>
+				<form class="modal__form form">
+					<div class="form__item"><input class="form__input input" name="name" placeholder="Имя"></div>
+					<div class="form__item"><input class="form__input input" name="phone" placeholder="Телефон"></div>
+					<div class="form__item"><input class="form__input input" name="email" placeholder="Email"></div>
+					<div class="form__item">
+						<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox">
+								<div class="checkbox__box"><svg class="checkbox__svg" xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+										<path d="M1 5L4 8L12 1" stroke="#0F93A1"></path>
+									</svg></div>
+								<div class="checkbox__text">Даю согласание на обработку <a class="checkbox__link" href="#">персональных данных</a></div>
+							</label></div>
 					</div>
+					<div class="form__item">
+						<div class="form__button button"><button class="button__btn" href="#">Отправить</button></div>
+					</div>
+				</form>
+			</div>
+			<div class="modal modal--response">
+				<div class="modal__container">
+					<div class="modal__title">Ваша заявка принята. Мы ответим вам в ближайшее время.</div>
+					<div class="modal__button button"><a class="button__btn" href="#">Отправить еще</a></div>
 				</div>
 			</div>
-			<div class="section">
-				<div class="container">
-					<div class="row">
-						<div class="row__side"></div>
-						<div class="row__main">
-							<div class="section__inner section__inner--main">
-								<div class="list">
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
+			<div class="grid">
+				<div class="grid__section grid__section--product">
+					<div class="grid__row">
+						<div class="grid__col">
+							<div class="grid__container grid__container--back">
+								<div class="link-back"><a class="link-back__link" href="#">
+										<div class="slider-button slider-button--left slider-button--small">
+											<div class="slider-button__button" data-slider-id="8"></div><svg class="slider-button__svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+											</svg>
+										</div>
+										<div class="link-back__text">каталог</div>
+									</a></div>
+							</div>
+						</div>
+						<div class="grid__col">
+							<div class="product">
+								<div class="product__section product__section--info">
+									<div class="grid__container grid__container--main">
+										<div class="product__row">
+											<div class="product__col">
+												<div class="product__slider">
+													<div class="product__slider-swiper">
+														<div class="swiper-wrapper">
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+															<div class="swiper-slide">
+																<div class="product__slider-slide"><img class="product__slider-slide-img" src="assets/images/product-1.png" alt=""></div>
+															</div>
+														</div>
+													</div>
+													<div class="product__slider-thumbs">
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+														<div class="product__slider-thumb"><img class="product__slider-thumb-img" src="assets/images/product-1.png" alt=""></div>
+													</div>
+												</div>
+												<div class="product__desc">Обеспечивают надежное и герметичное соединение труб и фитингов в единую систему при помощи обычного гаечного ключа.</div>
 											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
+											<div class="product__col">
+												<h1 class="product__title">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</h1>
+												<div class="product__info">
+													<div class="product__info-price">237 ₽</div>
+													<div class="product__info-vendor">Артикул: 37101</div>
+												</div>
+												<div class="product__button button"><a class="button__btn" href="#">Отправить заявку</a></div>
+												<div class="product__list">
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+													<div class="product__list-item">
+														<div class="product__list-row">
+															<div class="product__list-col"><a class="product__list-link" href="#">Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус</a></div>
+															<div class="product__list-col">
+																<div class="product__list-vendor">Артикул: 37101</div>
+															</div>
+															<div class="product__list-col">
+																<div class="product__list-price">237 ₽</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product__docs">
+													<h2 class="product__docs-title">Техническая документация</h2>
+													<ul class="product__docs-list">
+														<li class="product__docs-item"><a class="doc" href="#">
+																<div class="doc__title">Altstream PN 25! документация для использования</div>
+																<div class="doc__image"><svg class="doc__svg" xmlns="http://www.w3.org/2000/svg" width="48" height="61" viewBox="0 0 48 61" fill="none">
+																		<path d="M0.5 2.5H47.5V54.3045L41.7811 60.5H0.5V2.5Z" stroke="#0F93A1"></path>
+																		<path d="M4.12 17H5.544V12.744H8.68C8.888 12.744 9.224 12.728 9.528 12.68C11.384 12.392 12.376 10.936 12.376 9.112C12.376 7.272 11.384 5.832 9.528 5.544C9.224 5.496 8.904 5.48 8.68 5.48H4.12V17ZM5.544 11.384V6.824H8.632C8.824 6.824 9.112 6.84 9.352 6.904C10.456 7.144 10.92 8.152 10.92 9.112C10.92 10.072 10.456 11.064 9.352 11.32C9.112 11.368 8.824 11.384 8.632 11.384H5.544ZM13.9794 17H17.5314C17.7554 17 18.4594 17 18.9874 16.92C21.6594 16.568 23.0354 14.184 23.0354 11.24C23.0354 8.296 21.6594 5.896 18.9874 5.544C18.4434 5.48 17.7554 5.48 17.5314 5.48H13.9794V17ZM15.4514 15.64V6.84H17.5314C17.9154 6.84 18.4914 6.856 18.8754 6.92C20.7314 7.256 21.5314 9.064 21.5314 11.24C21.5314 13.368 20.7634 15.208 18.8754 15.544C18.4914 15.624 17.9314 15.64 17.5314 15.64H15.4514ZM24.87 17H26.294V11.944H30.63V10.52H26.294V6.904H31.59V5.48H24.87V17Z" fill="#0F93A1"></path>
+																	</svg></div>
+															</a></li>
+														<li class="product__docs-item"><a class="doc" href="#">
+																<div class="doc__title">Altstream PN 25! документация для использования</div>
+																<div class="doc__image"><svg class="doc__svg" xmlns="http://www.w3.org/2000/svg" width="48" height="61" viewBox="0 0 48 61" fill="none">
+																		<path d="M0.5 2.5H47.5V54.3045L41.7811 60.5H0.5V2.5Z" stroke="#0F93A1"></path>
+																		<path d="M4.12 17H5.544V12.744H8.68C8.888 12.744 9.224 12.728 9.528 12.68C11.384 12.392 12.376 10.936 12.376 9.112C12.376 7.272 11.384 5.832 9.528 5.544C9.224 5.496 8.904 5.48 8.68 5.48H4.12V17ZM5.544 11.384V6.824H8.632C8.824 6.824 9.112 6.84 9.352 6.904C10.456 7.144 10.92 8.152 10.92 9.112C10.92 10.072 10.456 11.064 9.352 11.32C9.112 11.368 8.824 11.384 8.632 11.384H5.544ZM13.9794 17H17.5314C17.7554 17 18.4594 17 18.9874 16.92C21.6594 16.568 23.0354 14.184 23.0354 11.24C23.0354 8.296 21.6594 5.896 18.9874 5.544C18.4434 5.48 17.7554 5.48 17.5314 5.48H13.9794V17ZM15.4514 15.64V6.84H17.5314C17.9154 6.84 18.4914 6.856 18.8754 6.92C20.7314 7.256 21.5314 9.064 21.5314 11.24C21.5314 13.368 20.7634 15.208 18.8754 15.544C18.4914 15.624 17.9314 15.64 17.5314 15.64H15.4514ZM24.87 17H26.294V11.944H30.63V10.52H26.294V6.904H31.59V5.48H24.87V17Z" fill="#0F93A1"></path>
+																	</svg></div>
+															</a></li>
+													</ul>
+												</div>
 											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
+										</div>
+									</div>
+								</div>
+								<div class="product__section product__section--bottom">
+									<div class="product__relevate">
+										<div class="grid__container grid__container--main">
+											<div class="product__relevate-top">
+												<h2 class="product__relevate-title">Похожие товары</h2>
+												<div class="product__slider-buttons">
+													<div class="slider-buttons">
+														<div class="slider-button slider-button--left">
+															<div class="slider-button__button" data-slider-id="11"></div><svg class="slider-button__svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+															</svg>
+														</div>
+														<div class="slider-button slider-button--right">
+															<div class="slider-button__button" data-slider-id="12"></div><svg class="slider-button__svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+															</svg>
+														</div>
+													</div>
+												</div>
 											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
+										</div>
+										<div class="product__relevate-slider">
+											<div class="slider slider--catalog-card" data-slider-id="13" data-slider-prev-id="11" data-slider-next-id="12">
+												<div class="slider__swiper">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+														<div class="swiper-slide"><a class="catalog-card" href="#">
+																<h3 class="catalog-card__title">Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба</h3>
+																<div class="catalog-card__bottom">
+																	<div class="catalog-card__image"><img class="catalog-card__img" src="assets/images/catalog-card-1.png" alt=""></div>
+																	<div class="catalog-card__row">
+																		<div class="catalog-card__vendor">Артикул: 37101</div>
+																		<div class="catalog-card__price">237 ₽</div>
+																	</div>
+																</div>
+															</a></div>
+													</div>
+												</div>
 											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark.png" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
-									<div class="list__item"><a class="object-card" href="#">
-											<div class="object-card__frame"><img class="object-card__img" src="assets/images/object-card-1.jpg" />
-												<div class="object-card__mark"><img class="object-card__mark-img" src="assets/images/object-card-mark-1.jpg" /></div>
-											</div>
-											<h3 class="object-card__title">ЖК «Стрижи в Невском»</h3>
-										</a></div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -497,6 +720,40 @@
 				</div>
 			</div>
 		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__container">
+					<div class="footer__top">
+						<section class="footer__contacts">
+							<div class="footer__phone"><a class="footer__phone-link" href="#">8 812 241-10-15</a></div>
+							<div class="footer__email"><a class="footer__email-link" href="#">info@inzstep.ru</a></div>
+						</section>
+						<section class="footer__navigation">
+							<nav class="footer__nav">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">О компании</a></li>
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">Новости</a></li>
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">Объекты</a></li>
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">Документация</a></li>
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">Клиентам</a></li>
+									<li class="footer__nav-item"><a class="footer__nav-link" href="#">Контакты</a></li>
+								</ul>
+							</nav>
+						</section>
+					</div>
+					<section class="footer__docs">
+						<ul class="footer__docs-list">
+							<li class="footer__docs-item"><a class="footer__docs-link" href="#">Политика конфеденциальности</a></li>
+							<li class="footer__docs-item"><a class="footer__docs-link" href="#">Обработка персональных данных</a></li>
+						</ul>
+					</section>
+					<section class="footer__copyright">
+						<p class="footer__author"><span class="footer__author-text">© 2021 ИнжСтэп. Все права защищены</span></p>
+						<p class="footer__dev"><span class="footer__dev-text">Сделано в&nbsp;</span><a class="footer__dev-link" href="#">CloudMill</a></p>
+					</section>
+				</div>
+			</div>
+		</footer>
 		<script type="text/javascript" src="assets/vendor.js"></script>
 		<script type="text/javascript" src="assets/app.js"></script>
 	</body>

@@ -42,4 +42,18 @@
             }
         }
     }
+
+    &--catalog-card {
+        .swiper-slide {
+            width: $catalog-card-width-m;
+            @media (min-width: $breakpoint) {
+                width: $catalog-card-width-d;
+            }
+            height: auto !important;
+        }
+
+        .catalog-card {
+            height: 100%;
+        }
+    }
 }

@@ -1,0 +1,30 @@
+.doc {
+  padding: 20px;
+  width: 285px;
+  height: 181px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $color-blue-light;
+  transition: $transition;
+
+  &:hover {
+    background-color: $color-gray-border;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__svg {
+    width: 48px;
+    height: 61px;
+  }
+}
