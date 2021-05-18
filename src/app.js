@@ -236,21 +236,6 @@ const MAIN_BREAKPOINT = 1024;
 			searchModalCloseButton.on('click', () => {
 				headerSearchModal.removeClass('header__search-modal--active');
 			});
-
-			const searchModalInput = searchModal.find('.search-modal__input');
-			const searchModalLabel = searchModal.find('.search-modal__label');
-
-			searchModalInput.on('focus', () => {
-				searchModalLabel.css('display', 'none');
-			});
-
-			searchModalInput.on('blur', () => {
-				if (searchModalInput.val().trim() === '') {
-					searchModalLabel.css('display', '');
-
-					searchModalInput.val('');
-				}
-			});
 		}
 	});
 }
@@ -786,10 +771,9 @@ const MAIN_BREAKPOINT = 1024;
 
 
 
-// --- --- SMOOTH SCROLL --- ---
+// smooth scroll
 {
 	$(() => {
 		SmoothScroll();
 	});
 }
-// --- --- --- --- ---
