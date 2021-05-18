@@ -381,7 +381,9 @@
 										<rect x="38.918" y="37.2462" width="2.36066" height="51.9345" transform="rotate(135 38.918 37.2462)" fill="white"></rect>
 										<rect x="2.24219" y="38.9195" width="2.36066" height="51.9345" transform="rotate(-135 2.24219 38.9195)" fill="white"></rect>
 									</svg></div>
-								<form class="search-modal__form" action="#"><input class="search-modal__input" type="text" name="request" id="search-modal-input" /><label class="search-modal__label" for="search-modal-input">Что вы хотите найти?</label><button class="search-modal__submit" type="submit">поиск</button></form>
+								<div class="search-modal__form">
+									<form class="search-form search-form--white"><input class="search-form__input" name="request" placeholder="Что вы хотите найти?" /><button class="search-form__button" type="submit">поиск</button></form>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -419,20 +421,22 @@
 					<div class="grid__row">
 						<div class="grid__col">
 							<div class="grid__container grid__container--back">
-								<div class="link-back"><a class="link-back__link" href="#">
-										<div class="slider-button slider-button--left slider-button--small">
-											<div class="slider-button__button" data-slider-id="8"></div><svg class="slider-button__svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
-											</svg>
-										</div>
-										<div class="link-back__text">каталог</div>
-									</a></div>
+								<div class="container">
+									<div class="link-back"><a class="link-back__link" href="#">
+											<div class="slider-button slider-button--left slider-button--small">
+												<div class="slider-button__button" data-slider-id="8"></div><svg class="slider-button__svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637"></path>
+												</svg>
+											</div>
+											<div class="link-back__text">каталог</div>
+										</a></div>
+								</div>
 							</div>
 						</div>
 						<div class="grid__col">
 							<div class="product">
 								<div class="product__section product__section--info">
-									<div class="grid__container grid__container--main">
+									<div class="container">
 										<div class="product__row">
 											<div class="product__col">
 												<div class="product__slider">
@@ -585,7 +589,7 @@
 								</div>
 								<div class="product__section product__section--bottom">
 									<div class="product__relevate">
-										<div class="grid__container grid__container--main">
+										<div class="container">
 											<div class="product__relevate-top">
 												<h2 class="product__relevate-title">Похожие товары</h2>
 												<div class="product__slider-buttons">
