@@ -1,8 +1,10 @@
 extends ../layouts/master.pug
 
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
 include ../components/_link.pug
 include ../components/_grid-test.pug
-include ../partials/_header.pug
 
 
 
@@ -14,7 +16,7 @@ block header
 
 
 block content
-  //+grid-test
+  //- +grid-test
   
   .grid
     .grid__section
@@ -80,21 +82,23 @@ block content
               .tabs__item
                 a.tabs__link(href='#')
                   |Отопительные приборы
-          .catalog
-            each i in [1, 2, 3, 4, 5]
-              .catalog__item.catalog-card
-                h3.catalog-card__title
-                  |Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба
-                .catalog-card__image
-                  img.catalog-card__img(src='assets/images/catalog-card-1.png' alt='')
-                .catalog-card__row
-                  .catalog-card__code
-                    |Артикул: 37101
-                  .catalog-card__price
-                    |237 ₽
-            .catalog__space.catalog-space.catalog-space--three
+          .grid__container.grid__container--catalog
+            .catalog
+              - for (let i=0; i<10; i++)
+                .catalog__item
+                  a.catalog-card.catalog-card--responsive(href='#')
+                    h3.catalog-card__title
+                      |Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба
+                    .catalog-card__bottom
+                      .catalog-card__image
+                        img.catalog-card__img(src='assets/images/catalog-card-1.png' alt='')
+                      .catalog-card__row
+                        .catalog-card__vendor
+                          |Артикул: 37101
+                        .catalog-card__price
+                          |237 ₽
 
 
 
 block footer
-  include ../partials/_footer.pug
+  +footer
