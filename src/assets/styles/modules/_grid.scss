@@ -15,6 +15,9 @@
   }
 
   &__row {
+    position: relative;
+    z-index: 0;
+    
     @media (min-width: $breakpoint) {
       display: flex;
       align-items: stretch;
@@ -24,6 +27,9 @@
     flex-shrink: 0;
 
     &:nth-child(1) {
+      position: relative;
+      z-index: 2;
+
       @media (min-width: $breakpoint) {
         width: calc(#{$grid-pad-d} + #{$grid-part-d} * 3 - #{$grid-gap-d});
         
@@ -32,6 +38,9 @@
     }
 
     &:nth-child(2) {
+      position: relative;
+      z-index: 1;
+
       @media (min-width: $breakpoint) {
         // с учетом scrollbar
         width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d} - 16px);
@@ -67,10 +76,10 @@
         padding-top: 300px;
       }
     }
-    &--product {
+    &--main {
       padding: 0 $grid-pad-m;
       @media (min-width: $breakpoint) {
-        padding: 300px $grid-gap-d 0 $grid-pad-d;
+        padding: 0 $grid-pad-d;
       }
     }
   }

@@ -1,0 +1,91 @@
+.catalog-card {
+  $component: &;
+
+  position: relative;
+  z-index: 0;
+
+  padding: 10px;
+  @media (min-width: $breakpoint) {
+    padding: 40px;
+    padding-bottom: 20px;
+  }
+  width: $catalog-card-width-m;
+  min-width: $catalog-card-width-m;
+  min-height: $catalog-card-height-m;
+  @media (min-width: $breakpoint) {
+    width: $catalog-card-width-d;
+    min-width: $catalog-card-width-d;
+    min-height: $catalog-card-height-d;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: white;
+  border: 1px solid $color-gray-border;
+  transition: $transition;
+
+  &:hover {
+    z-index: 1;
+
+    border-color: white;
+    box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.09);
+
+    #{$component}__price {
+      color: $color-main;
+    }
+  }
+
+  &__title {
+    font-size: 11px;
+    line-height: 13px;
+    @media (min-width: $breakpoint) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+
+  }
+
+  &__row {
+    margin-top: 30px;
+    @media (min-width: $breakpoint) {
+      margin-top: 50px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__vendor {
+    font-size: 9px;
+    line-height: 11px;
+    @media (min-width: $breakpoint) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  &__price {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: $breakpoint) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    transition: $transition;
+  }
+}
