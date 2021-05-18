@@ -1,0 +1,30 @@
+.results {
+  @media (max-width: $breakpoint - 1px) {
+    margin-top: 40px;
+  }
+  @media (min-width: $breakpoint) {
+    padding-top: 120px;
+  }
+
+  &__info {
+    margin-top: 20px;
+    @media (min-width: $breakpoint) {
+      margin-top: 40px;
+    }
+
+    font-family: $ff-b;
+    font-size: 14px;
+    line-height: 18px;
+    @media (min-width: $breakpoint) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__list {
+    margin-top: 40px;
+    @media (max-width: $breakpoint - 1px) {
+      padding: 0 $grid-pad-m;
+    }
+  }
+}

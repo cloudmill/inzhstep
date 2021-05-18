@@ -53,76 +53,11 @@
     }
 
     &__form {
-        position: relative;
-        z-index: 0;
-
         @media (max-width: $breakpoint - 1px) {
             margin-top: 10px;
         }
         @media (min-width: $breakpoint) {
             width: calc(#{$grid-part-d} * 14 - #{$grid-gap-d});
-        }
-    }
-
-    @mixin search-modal__text {
-        font-family: $ff-b;
-        font-size: 13px;
-        line-height: 17px;
-        @media (min-width: $breakpoint) {
-            font-size: 18px;
-            line-height: 24px;
-        }
-        color: $color-white;
-    }
-
-    &__input {
-        padding-bottom: 10px;
-        @media (min-width: $breakpoint) {
-            padding-bottom: 20px;
-            padding-right: 75px;
-        }
-        width: 100%;
-        display: block;
-
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid $color-main;
-        outline: none;
-        @include search-modal__text;
-    }
-    &__label {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        pointer-events: none;
-
-        @include search-modal__text;
-    }
-    &__submit {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-
-        padding-bottom: 20px;
-        @media (max-width: $breakpoint - 1px) {
-            display: none;
-        }
-
-        background-color: transparent;
-        border: none;
-        outline: none;
-        font-family: $ff-b;
-        font-size: 14px;
-        line-height: 18px;
-        text-transform: uppercase;
-        color: $color-main;
-        cursor: pointer;
-        transition: $transition;
-
-        &:hover {
-            color: $color-white;
         }
     }
 }

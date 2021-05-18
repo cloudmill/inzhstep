@@ -26,12 +26,12 @@
 
     &:nth-child(1) {
       @media (min-width: $breakpoint) {
-        width: calc(#{$grid-part-d} * 5 - #{$grid-gap-d}); // ?
+        width: calc(#{$grid-part-d} * 5 - #{$grid-pad-d}); // ?
       }
     }
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
-        margin-left: $grid-gap-d;
+        margin-left: $grid-pad-d;
         width: calc(#{$grid-part-d} * 8 - #{$grid-pad-d} - 16px); // ?
       }
     }
