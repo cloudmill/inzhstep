@@ -1,0 +1,6 @@
+#map {
+  height: 335px;
+  @media (min-width: $breakpoint) {
+    height: 480px;
+  }
+}

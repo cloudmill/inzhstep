@@ -6,7 +6,7 @@
       }
     }
 
-    &--product {
+    &--pad-bottom {
       padding-bottom: 60px;
       @media (min-width: $breakpoint) {
         padding-bottom:  160px;
@@ -85,6 +85,124 @@
         margin-top: 40px;
         padding: 0 $grid-pad-m;
       }
+    }
+  }
+}
+
+.contacts {
+  margin-top: 40px;
+  padding-bottom: 60px;
+  @media (min-width: $breakpoint) {
+    margin-top: 0;
+    padding: 120px 0 160px;
+  }
+
+  &__row {
+    @media (min-width: $breakpoint) {
+      display: flex;
+    }
+  }
+  &__col {
+    flex-shrink: 0;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+      @media (min-width: $breakpoint) {
+        margin-top: 0;
+        margin-left: $grid-gap-d;
+      }
+    }
+
+    &:nth-child(1) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 5 - #{$grid-gap-d});
+      }
+    }
+    &:nth-child(2) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 4 - #{$grid-gap-d});
+      }
+    }
+    &:nth-child(3) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 4 - #{$grid-gap-d});
+      }
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    @media (min-width: $breakpoint) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+  }
+  &__text {
+    margin-top: 10px;
+    @media (min-width: $breakpoint) {
+      margin-top: 30px;
+    }
+
+    font-family: $ff-b;
+    font-size: 14px;
+    line-height: 20px;
+    @media (min-width: $breakpoint) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__link {
+    display: flex;
+
+    &--margin-top {
+      margin-top: 10px;
+      @media (min-width: $breakpoint) {
+        margin-top: 5px;
+      }
+    }
+  }
+  &__phone {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    @media (min-width: $breakpoint) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+    @media (min-width: $breakpoint-l) {
+      font-size: 30px;
+      line-height: 42px;
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 40px;
+      line-height: 56px;
+    }
+    white-space: nowrap;
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+  &__email {
+    @media (max-width: $breakpoint - 1px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__map {
+    margin-top: 40px;
+    @media (min-width: $breakpoint) {
+      margin-top: 80px;
     }
   }
 }

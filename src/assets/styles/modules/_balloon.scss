@@ -1,0 +1,32 @@
+.balloon {
+  position: absolute;
+  z-index: 0;
+
+  padding-bottom: 10px; // отступ от placemark mark
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    padding: 30px 27px;
+    width: 273px;
+
+    background-color: $color-white;
+  }
+  &__text {
+    font-family: $ff-b;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  &__arrow {
+    width: 36px;
+    height: 10px;
+
+    background-image: url('../images/balloon.svg');
+    background-repeat: no-repeat;
+    background-position: center top -1px;
+    background-size: contain;
+  }
+}
