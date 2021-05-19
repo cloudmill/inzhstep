@@ -3,7 +3,6 @@ extends ../layouts/master.pug
 include ../partials/_header.pug
 include ../partials/_footer.pug
 
-include ../components/_link.pug
 include ../components/_grid-test.pug
 
 
@@ -17,7 +16,7 @@ block header
 
 block content
   //- +grid-test
-  
+
   .grid
     .grid__section
       .grid__row
@@ -68,6 +67,45 @@ block content
                 a.panel__link(href='#')
                   |Крепежные изделия
         .grid__col
+          .selects.selects--margin-top
+            .container
+              .selects__item
+                .select
+                  -
+                    var options = [
+                      'Отопление',
+                      'Водоснабжение',
+                      'Приборы учета тепла и воды',
+                      'Трубопроводная арматура',
+                      'Теплоизоляционные материалы',
+                      'Полотенцесущители',
+                      'Канализация',
+                      'Продукция марки Valtec',
+                      'Крепежные изделия',
+                    ];
+                  .select__panel
+                    .select__text
+                    +arrow-svg('select__svg')
+                  select.select__select(name='select')
+                    each option, index in options
+                      option.select__option(value=option selected=(index === 0 ? '' : undefined))
+                        |#{option}
+              .selects__item
+                .select
+                  -
+                    var options = [
+                      'Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления',
+                      'Sanline. Коллекторные узлы. Балансировочная арматура',
+                      'Термостатическая арматура и комплектующие',
+                      'Отопительные приборы',
+                    ];
+                  .select__panel
+                    .select__text
+                    +arrow-svg('select__svg')
+                  select.select__select(name='select')
+                    each option, index in options
+                      option.select__option(value=option selected=(index === 0 ? '' : undefined))
+                        |#{option} 
           .tabs
             .tabs__row
               .tabs__item.tabs__item--active
@@ -81,7 +119,7 @@ block content
                   |Термостатическая арматура и комплектующие
               .tabs__item
                 a.tabs__link(href='#')
-                  |Отопительные приборы
+                  |Отопительные приборы  
           .grid__container.grid__container--catalog
             .catalog
               - for (let i=0; i<10; i++)
