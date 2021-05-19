@@ -1,0 +1,15 @@
+.selects {
+  @media (min-width: $breakpoint) {
+    display: none;
+  }
+
+  &--margin-top {
+    margin-top: 40px;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: -1px;
+    }
+  }
+}
