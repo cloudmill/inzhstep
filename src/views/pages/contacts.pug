@@ -1,0 +1,75 @@
+extends ../layouts/master.pug
+
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_grid-test.pug
+
+
+
+block header
+  +header({
+    mod: 'white',
+  })
+
+
+
+block content
+  //- +grid-test
+
+  .grid
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .grid__container.grid__container--title
+            h1.title
+              |Контакты
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .contacts
+            .container.container--alt
+              .contacts__row
+                .contacts__col
+                  h2.contacts__title
+                    |ООО «ИнжСтэп»
+                  p.contacts__text
+                    |192012, Санкт-Петербург, проспект Обуховской обороны, дом 112, корп. 2 литер И, пом. 711
+                .contacts__col
+                  h2.contacts__title
+                    |Склад
+                  p.contacts__text
+                    |Санкт-Петербург, Уманский переулок, 76, литер Л
+                .contacts__col
+                  .contacts__link
+                    a.contacts__phone(href="#")
+                      |8 812 241-10-15
+                  .contacts__link.contacts__link--margin-top
+                    a.contacts__email.contacts__title(href="#")
+                      |info@inzstep.ru
+              .contacts__map
+                ul.placemarks
+                  li.placemarks__item
+                    .placemarks__balloon
+                      |192012, город Санкт-Петербург, проспект Обуховской обороны, дом 112, корп. 2 литер И, пом. 711
+                    .placemarks__coordinates
+                      .placemarks__latitude
+                        |55.753559
+                      .placemarks__longitude
+                        |37.609218
+                  li.placemarks__item
+                    .placemarks__balloon
+                      |192012, город Санкт-Петербург, проспект Обуховской обороны, дом 112, корп. 2 литер И, пом. 711
+                    .placemarks__coordinates
+                      .placemarks__latitude
+                        |55.8
+                      .placemarks__longitude
+                        |37.7
+                #map
+
+
+
+block footer
+  +footer
