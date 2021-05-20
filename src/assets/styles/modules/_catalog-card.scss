@@ -85,6 +85,11 @@
     }
   }
   &__price {
+    margin-left: $grid-gap-m;
+    @media (min-width: $breakpoint) {
+      margin-left: $grid-gap-d;
+    }
+
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
@@ -92,6 +97,7 @@
       font-size: 18px;
       line-height: 22px;
     }
+    text-align: right;
     transition: $transition;
   }
 }

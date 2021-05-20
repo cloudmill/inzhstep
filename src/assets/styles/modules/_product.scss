@@ -26,13 +26,13 @@
 
     &:nth-child(1) {
       @media (min-width: $breakpoint) {
-        width: calc(#{$grid-part-d} * 5 - #{$grid-pad-d}); // ?
+        width: calc(#{$grid-part-d} * 5 - #{$grid-pad-d});
       }
     }
     &:nth-child(2) {
       @media (min-width: $breakpoint) {
         margin-left: $grid-pad-d;
-        width: calc(#{$grid-part-d} * 8 - #{$grid-pad-d} - 16px); // ?
+        width: calc(#{$grid-part-d} * 8 - #{$grid-pad-d});
       }
     }
   }
@@ -224,6 +224,7 @@
     }
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
   }
   &__docs-item {
     margin-top: 10px;
@@ -231,6 +232,10 @@
     @media (min-width: $breakpoint) {
       margin-top: 20px;
       margin-left: 40px;
+    }
+
+    .doc {
+      height: 100%;
     }
   }
 
@@ -299,45 +304,46 @@
     @media (max-width: $breakpoint - 1px) {
       margin-top: 20px;
     }
-  }
-  &__slider-swiper {
     @media (min-width: $breakpoint) {
       overflow: hidden;
     }
+  }
+  &__slider-swiper {
+
   }
   &__slider-slide {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  &__slider-thumbs {
-    position: relative;
-    z-index: 0;
+  &__slider-img {
+    
+  }
 
-    padding-left: 1px;
-    margin-top: 10px;
+  &__thumbs {
+    margin-top: 20px;
     @media (min-width: $breakpoint) {
       margin-top: 80px;
     }
-    display: flex;
-    overflow-x: auto;
+    // max-width: 57px;
   }
-  &__slider-thumb {
+  &__thumbs-swiper {
+    width: calc(100% - 1px);
+  }
+  &__thumbs-slide {
     position: relative;
     z-index: 0;
 
-    margin-left: -1px;
-    padding: 15px 10px;
-    $size: 70px;
+    padding: 13px 8px;
+    $size: 57px;
     width: $size;
     height: $size;
-    @media (max-width: $breakpoint - 1px) {
-      padding: 13px 8px;
-      $size: 57px;
+    @media (min-width: $breakpoint) {
+      padding: 15px 10px;
+      $size: 70px;
       width: $size;
       height: $size;
     }
-    flex-shrink: 0;
     display: flex;
     justify-self: center;
     align-items: center;
@@ -345,6 +351,22 @@
     border: 1px solid $color-gray-border;
     cursor: pointer;
     transition: $transition;
-    transition-property: border-color;
+
+    &--active {
+      z-index: 1;
+
+      border-color: $color-main;
+    }
+  }
+  &__thumbs-img {
+
+  }
+
+  // container
+  &__container {
+    padding-bottom: 60px;
+    @media (min-width: $breakpoint) {
+      padding-bottom: 160px;
+    }
   }
 }

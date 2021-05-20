@@ -1,7 +1,7 @@
 .doc {
   padding: 20px;
   width: 285px;
-  height: 181px;
+  min-height: 181px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +20,7 @@
   }
 
   &__image {
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
   }

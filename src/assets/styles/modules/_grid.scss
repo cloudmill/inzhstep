@@ -5,13 +5,6 @@
         border-top: 1px solid $color-gray-border;
       }
     }
-
-    &--pad-bottom {
-      padding-bottom: 60px;
-      @media (min-width: $breakpoint) {
-        padding-bottom:  160px;
-      }
-    }
   }
 
   &__row {
@@ -42,26 +35,20 @@
       z-index: 1;
 
       @media (min-width: $breakpoint) {
-        // с учетом scrollbar
-        width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d} - 16px);
+        width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
       }
     }
   }
 
   &__container {
-    // main
+    // тип. заголовок
     &--title {
-      padding: 0 $grid-pad-m;
-      padding-top: 100px;
+      padding: 100px $grid-pad-m 0;
       @media (min-width: $breakpoint) {
-        padding: 0 $grid-pad-d;
-        padding-left: $grid-gap-d;
-        padding-top: 300px;
-        padding-bottom: 40px;
+        padding: 300px $grid-gap-d 40px $grid-pad-d;
       }
     }
-
-    // side
+    // нав. панель в  aside
     &--panel {
       display: flex;
       overflow-x: auto;
@@ -74,12 +61,17 @@
         }
       }
     }
+    // ссылка "назад"
     &--back {
-      padding-top: 80px;
+      padding: 80px $grid-pad-m 0;
       @media (min-width: $breakpoint) {
-        padding-top: 300px;
+        padding: 300px $grid-gap-d 0;
+      }
+      @media (min-width: $breakpoint-l) {
+        padding: 300px $grid-pad-d 0;
       }
     }
+    // каталог на стр. Каталог
     &--catalog {
       @media (max-width: $breakpoint - 1px) {
         margin-top: 40px;
