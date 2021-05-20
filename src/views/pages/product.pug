@@ -4,6 +4,7 @@ include ../partials/_header.pug
 include ../partials/_footer.pug
 
 include ../components/_grid-test.pug
+include ../components/_catalog-card.pug
 
 
 
@@ -49,12 +50,12 @@ block content
         a.button__btn(href='#')
           |Отправить еще
 
-  .grid
-    .grid__section.grid__section--pad-bottom
-      .grid__row
-        .grid__col
-          .grid__container.grid__container--back
-            .container
+  .product
+    .product__container
+      .grid
+        .grid__row
+          .grid__col
+            .grid__container.grid__container--back
               .link-back
                 a.link-back__link(href='#')
                   .slider-button.slider-button--left.slider-button--small
@@ -63,24 +64,25 @@ block content
                       path(fill-rule="evenodd" clip-rule="evenodd" d="M15.5858 9.99999L-3.36888e-07 9.99999L-4.24311e-07 7.99999L15.5858 7.99999L9.29289 1.70709L10.7071 0.292879L19.4142 8.99998L10.7071 17.7071L9.29289 16.2929L15.5858 9.99999Z" fill="#2B3637")
                   .link-back__text
                     |каталог
-        .grid__col
-          .product
+          .grid__col
             .product__section.product__section--info
               .container
                 .product__row
                   .product__col
                     .product__slider
-                      - const count = 10;
+                      -
+                        var slidesCount = 10;
                       .product__slider-swiper
                         .swiper-wrapper
-                          - for (let i=0; i<count; i++)
-                            .swiper-slide
-                              .product__slider-slide
-                                img.product__slider-slide-img(src='assets/images/product-1.png' alt='')
-                      .product__slider-thumbs
-                        - for (let i=0; i<count; i++)
-                          .product__slider-thumb
-                            img.product__slider-thumb-img(src='assets/images/product-1.png' alt='')
+                          - for (let i=0; i<slidesCount; i++)
+                            .swiper-slide.product__slider-slide
+                              img.product__slider-img(src='assets/images/product-1.png' alt='')
+                      .product__thumbs
+                        .product__thumbs-swiper
+                          .swiper-wrapper
+                            - for (let i=0; i<slidesCount; i++)
+                              .swiper-slide.product__thumbs-slide(class=(i === 0 ? 'product__thumbs-slide--active' : ''))
+                                img.product__thumbs-img(src='assets/images/product-1.png' alt='')
                     .product__desc
                       |Обеспечивают надежное и герметичное соединение труб и фитингов в единую систему при помощи обычного гаечного ключа.
                   .product__col
@@ -140,17 +142,7 @@ block content
                       .swiper-wrapper
                         - for (let i=0; i<10; i++)
                           .swiper-slide
-                            a.catalog-card(href='#')
-                              h3.catalog-card__title
-                                |Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба
-                              .catalog-card__bottom
-                                .catalog-card__image
-                                  img.catalog-card__img(src='assets/images/catalog-card-1.png' alt='')
-                                .catalog-card__row
-                                  .catalog-card__vendor
-                                    |Артикул: 37101
-                                  .catalog-card__price
-                                    |237 ₽
+                            +catalog-card
 
 
 

@@ -4,6 +4,7 @@ include ../partials/_header.pug
 include ../partials/_footer.pug
 
 include ../components/_grid-test.pug
+include ../components/_catalog-card.pug
 
 
 
@@ -124,17 +125,9 @@ block content
             .catalog
               - for (let i=0; i<10; i++)
                 .catalog__item
-                  a.catalog-card.catalog-card--responsive(href='#')
-                    h3.catalog-card__title
-                      |Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба
-                    .catalog-card__bottom
-                      .catalog-card__image
-                        img.catalog-card__img(src='assets/images/catalog-card-1.png' alt='')
-                      .catalog-card__row
-                        .catalog-card__vendor
-                          |Артикул: 37101
-                        .catalog-card__price
-                          |237 ₽
+                  +catalog-card({
+                    responsive: true,
+                  })
 
 
 

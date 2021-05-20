@@ -1,0 +1,17 @@
+mixin catalog-card(opt)
+  -
+    opt = Object.assign({
+      responsive: false,
+    }, opt);
+
+  a.catalog-card(class=(opt.responsive ? 'catalog-card--responsive' : '') href='#')
+    h3.catalog-card__title
+      |Адаптер компрессионный Sanline для L и T трубок 15-R1/2 наружная резьба
+    .catalog-card__bottom
+      .catalog-card__image
+        img.catalog-card__img(src='assets/images/catalog-card-1.png' alt='')
+      .catalog-card__row
+        .catalog-card__vendor
+          |Артикул: 37101
+        .catalog-card__price
+          |237&nbsp;₽
