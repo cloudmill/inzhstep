@@ -3,26 +3,26 @@
   z-index: 0;
 
   $cols: 2;
-  width: calc(100% + #{$cols + 2}px);
+  width: calc(100% + #{$cols + 1}px);
   @media (min-width: $breakpoint-s) {
     $cols: 3;
-    width: calc(100% + #{$cols + 2}px);
+    width: calc(100% + #{$cols + 1}px);
   }
   @media (min-width: $breakpoint) {
     $cols: 2;
-    width: calc(100% + #{$cols + 2}px);
+    width: calc(100% + #{$cols + 1}px);
   }
   @media (min-width: $breakpoint-l) {
     $cols: 3;
-    width: calc(100% + #{$cols + 2}px);
+    width: calc(100% + #{$cols + 1}px);
   }
   @media (min-width: $breakpoint-xl) {
     $cols: 4;
-    width: calc(100% + #{$cols + 2}px);
+    width: calc(100% + #{$cols + 1}px);
   }
   @media (min-width: $breakpoint-xxl) {
     $cols: 5;
-    width: calc(100% + #{$cols + 2}px);
+    width: calc(100% + #{$cols + 1}px);
   }
   display: flex;
   flex-wrap: wrap;
