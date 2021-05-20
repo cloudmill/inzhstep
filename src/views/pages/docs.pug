@@ -1,0 +1,64 @@
+extends ../layouts/master.pug
+
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_object-card.pug
+include ../components/_grid-test.pug
+
+
+
+block header
+  +header({
+    mod: 'white',
+  })
+
+
+block content
+  //- +grid-test
+  
+  .grid
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .grid__container.grid__container--title
+            h1.title
+              |Документация
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .docs
+            .docs__container
+              .docs__section
+                .container.container--padding-left
+                  h2.docs__title
+                    |Техническая документация
+                  .docs__docs
+                    ul.docs__list
+                      - for (let i=0; i<8; i++)
+                        li.docs__item
+                          a.doc(href='#')
+                            .doc__title
+                              |Altstream PN 25! документация для использования
+                            .doc__image
+                              +doc-svg('doc__svg')
+              .docs__section
+                .container.container--padding-left
+                  h2.docs__title
+                    |Техническая документация
+                  .docs__docs
+                    ul.docs__list
+                      - for (let i=0; i<8; i++)
+                        li.docs__item
+                          a.doc(href='#')
+                            .doc__title
+                              |Altstream PN 25! документация для использования
+                            .doc__image
+                              +doc-svg('doc__svg')
+
+
+
+block footer
+  +footer
