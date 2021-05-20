@@ -15,20 +15,53 @@ const MAIN_BREAKPOINT = 1024;
 	$(() => {
 		// info slider
 		{
+			const SPEED = 600;
+
 			const slider = $('.product__slider');
 
 			if (slider.length !== 0) {
-				const swiperEl = slider.find('.product__slider-swiper');
-				const swiper = new Swiper(swiperEl[0], {
-					speed: 600,
-					loop: true,
+				const thumbsSwiperEl = slider.find('.product__thumbs-swiper');
+				const thumbsSwiper = new Swiper(thumbsSwiperEl[0], {
+					speed: SPEED,
+					slidesPerView: 'auto',
+					spaceBetween: -1,
+				});
+				const thumbsSlide = slider.find('.product__thumbs-slide');
+
+				const sliderSwiperEl = slider.find('.product__slider-swiper');
+				const sliderSwiper = new Swiper(sliderSwiperEl[0], {
+					speed: SPEED,
+					spaceBetween: 20,
+					breakpoints: {
+						[MAIN_BREAKPOINT]: {
+							spaceBetween: 40,
+						},
+					},
 				});
 
-				const thumb = slider.find('.product__slider-thumb');
-				thumb.on('click', function () {
-					const index = $(this).index();
+				// control
+				let lastAction = 'nothing';
+				sliderSwiper.on('sliderFirstMove', () => {
+					lastAction = 'slider swipe';
+				})
+				thumbsSwiper.on('click', event => {
+					lastAction = 'thumbs click';
 
-					swiper.slideTo(index);
+					sliderSwiper.slideTo(event.clickedIndex);
+
+					thumbsSlide.removeClass('product__thumbs-slide--active');
+					thumbsSlide.eq(event.clickedIndex).addClass('product__thumbs-slide--active');
+				});
+
+				sliderSwiper.on('slideChange', event => {
+					if (lastAction === 'slider swipe') {
+						thumbsSwiper.slideTo(event.realIndex);
+
+						thumbsSlide.removeClass('product__thumbs-slide--active');
+						thumbsSlide.eq(event.realIndex).addClass('product__thumbs-slide--active');
+					}
+
+					lastAction = 'nothing';
 				});
 			}
 		}
@@ -55,20 +88,6 @@ const MAIN_BREAKPOINT = 1024;
 						spaceBetween: -1,
 
 						slidesPerView: 'auto',
-					});
-					break;
-				// nav-cards
-				case 10:
-					slider_swiper = new Swiper(slider_swiper_el[0], {
-						spaceBetween: 20,
-
-						slidesPerView: 'auto',
-
-						breakpoints: {
-							[MAIN_BREAKPOINT]: {
-								spaceBetween: 40,
-							},
-						},
 					});
 					break;
 				// default
