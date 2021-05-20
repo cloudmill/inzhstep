@@ -325,7 +325,6 @@
     @media (min-width: $breakpoint) {
       margin-top: 80px;
     }
-    // max-width: 57px;
   }
   &__thumbs-swiper {
     width: calc(100% - 1px);
@@ -350,7 +349,8 @@
 
     border: 1px solid $color-gray-border;
     cursor: pointer;
-    transition: $transition;
+    transition: border-color $transition, z-index $transition;
+    // transition: $transition; не работает, т.к. swiper некорректно позиционирует элементы
 
     &--active {
       z-index: 1;
