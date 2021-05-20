@@ -1,5 +1,8 @@
 extends ../layouts/master.pug
 
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
 include ../components/_news-card.pug
 include ../components/_object-card.pug
 include ../components/_partner-card.pug
@@ -7,7 +10,6 @@ include ../components/_link.pug
 include ../components/_grid-test.pug
 include ../components/_nav-card.pug
 include ../components/_top.pug
-include ../partials/_header.pug
 
 
 
@@ -17,7 +19,7 @@ block header
 
 
 block content
-  +grid-test
+  //- +grid-test
   
   +top
   
@@ -294,4 +296,4 @@ block content
 
 
 block footer
-  include ../partials/_footer.pug
+  +footer
