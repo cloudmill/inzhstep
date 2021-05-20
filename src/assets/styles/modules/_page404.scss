@@ -1,0 +1,88 @@
+.page404 {
+  &__container {
+    padding: 100px 0 60px;
+    @media (min-width: $breakpoint) {
+      padding: 300px 0 215px;
+    }
+  }
+
+  &__row {
+    @media (min-width: $breakpoint) {
+      display: flex;
+    }
+  }
+  &__col {
+    flex-shrink: 0;
+
+    &:nth-child(1) {
+      @media (min-width: $breakpoint) {
+        width: calc(#{$grid-part-d} * 5 - #{$grid-gap-d});
+      }
+    }
+    &:nth-child(2) {
+      margin-top: 20px;
+      @media (min-width: $breakpoint) {
+        margin-top: 0;
+        margin-left: $grid-gap-d;
+      }
+    }
+  }
+
+  &__block {
+    &--padding-top {
+      @media (min-width: $breakpoint) {
+        padding-top: 50px;
+      }
+    }
+  }
+  &__block-item {
+    &:not(:first-child) {
+      margin-top: 20px;
+      @media (min-width: $breakpoint) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__nav {
+    
+  }
+  &__nav-list {
+    margin-top: -10px;
+    margin-left: -10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__nav-item {
+    margin-top: 10px;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 96px;
+    @media (min-width: $breakpoint) {
+      font-size: 120px;
+      line-height: 200px;
+    }
+    @media (min-width: $breakpoint-l) {
+      font-size: 170px;
+      line-height: 230px;
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 200px;
+      line-height: 240px;
+    }
+
+    &--small {
+      font-size: 19px;
+      line-height: 27px;
+      @media (min-width: $breakpoint) {
+        font-size: 26px;
+        line-height: 36px;
+      }
+    }
+  }
+}

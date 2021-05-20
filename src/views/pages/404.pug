@@ -1,18 +1,51 @@
 extends ../layouts/master.pug
 
 include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_grid-test.pug
 
 
 
 block header
-  +header
+  +header({
+    mod: 'white',
+  })
 
 
 
 block content
-  //- +grid-test
+  +grid-test
+
+  .grid
+    .grid__row
+      .grid__col
+      .grid__col
+        .page404
+          .page404__container
+            .container.container--padding-left
+              .page404__row
+                .page404__col
+                  h1.page404__title
+                    |404
+                .page404__col
+                  .page404__block.page404__block--padding-top
+                    .page404__block-item
+                      h2.page404__title.page404__title--small
+                        |Страница не найдена.
+                    .page404__block-item
+                      nav.page404__nav
+                        ul.page404__nav-list
+                          li.page404__nav-item
+                            .button
+                              a.button__btn(href='#')
+                                |Главная
+                          li.page404__nav-item
+                            .button
+                              a.button__btn(href='#')
+                                |Каталог
 
 
 
 block footer
-  include ../partials/_footer.pug
+  +footer
