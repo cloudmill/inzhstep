@@ -7,12 +7,14 @@ mixin object-card(opt)
       imageMark:'object-card-mark.png',
       titleTag:'h3',
       title:'ЖК «Стрижи в Невском»',
+      responsive: false,
     }, opt);
     
-  a.object-card(href=opt.href)
+  a.object-card(class=(opt.responsive ? 'object-card--responsive' : '') href=opt.href)
     .object-card__frame
-      img.object-card__img(src=(opt.path + opt.image))
-      .object-card__mark
-        img.object-card__mark-img(src=(opt.path + opt.imageMark))
+      .object-card__frame-inner
+        img.object-card__frame-img(src=(opt.path + opt.image))
+        .object-card__mark
+          img.object-card__mark-img(src=(opt.path + opt.imageMark))
     #{opt.titleTag}.object-card__title
       |#{opt.title}

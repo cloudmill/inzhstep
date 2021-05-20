@@ -1,0 +1,55 @@
+.objects {
+  &__container {
+    margin-top: 40px;
+    padding-bottom: 60px;
+    @media (min-width: $breakpoint) {
+      margin-top: 0;
+      padding-top: 40px;
+      padding-bottom: 160px;
+    }
+  }
+
+  &__list {
+    margin-top: -40px;
+    @media (min-width: $breakpoint-s) {
+      margin-left: -20px;
+    }
+    @media (min-width: $breakpoint) {
+      margin-top: -80px;
+      margin-left: -40px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  &__item {
+    margin-top: 40px;
+    @media (min-width: $breakpoint-s) {
+      margin-left: 20px;
+    }
+    @media (min-width: $breakpoint) {
+      margin-top: 80px;
+      margin-left: 40px;
+    }
+    width: 100%;
+    // mobile grid
+    @media (min-width: $breakpoint-s) {
+      $cols: 2;
+      width: calc((100% - #{$grid-gap-m} * #{$cols}) / #{$cols});
+    }
+    // desktop grid
+    @media (min-width: $breakpoint) {
+      $cols: 2;
+      width: calc((100% - #{$grid-gap-d} * #{$cols}) / #{$cols});
+    }
+    @media (min-width: $breakpoint-l) {
+      $cols: 3;
+      width: calc((100% - #{$grid-gap-d} * #{$cols}) / #{$cols});
+    }
+    @media (min-width: $breakpoint-xxl) {
+      $cols: 4;
+      width: calc((100% - #{$grid-gap-d} * #{$cols}) / #{$cols});
+    }
+    flex-shrink: 0;
+  }
+}

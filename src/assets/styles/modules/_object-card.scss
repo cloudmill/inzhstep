@@ -9,28 +9,43 @@
     }
     display: block;
 
-    &__frame {
-        position: relative;
-        width: 100%;
-        height: 209px;
-        @media (min-width: $breakpoint) {
-            height: 400px;
+    &:hover {
+        #{$component}__frame-inner {
+            &::before {
+                background-color: rgba($color: black, $alpha: 0.1);
+            }
         }
+    }
+
+    &--responsive {
+        width: 100%;
+        min-width: auto;
+    }
+
+    &__frame {
+        width: 100%;
         display: flex;
-        align-items: flex-end;
+    }
+    &__frame-inner {
+        position: relative;
+        z-index: 0;
 
         &::before {
-            content: '';
             position: absolute;
             z-index: 1;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
+
+            content: '';
             pointer-events: none;
 
             transition: $transition;
         }
+    }
+    &__frame-img {
+        display: block;
     }
 
     &__mark {
@@ -52,6 +67,9 @@
 
         background-color: $color-white;
     }
+    &__mark-img {
+
+    }
 
     &__title {
         margin-top: 20px;
@@ -61,17 +79,10 @@
 
         font-weight: bold;
         font-size: 16px;
-        line-height: 120%;
+        line-height: 19px;
         @media (min-width: $breakpoint) {
-            font-size: 26px;
-        }
-    }
-
-    &:hover {
-        #{$component}__frame {
-            &::before {
-                background-color: rgba($color: black, $alpha: 0.1);
-            }
+            font-size: 18px;
+            line-height: 22px;
         }
     }
 }

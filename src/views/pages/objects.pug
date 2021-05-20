@@ -1,36 +1,52 @@
 extends ../layouts/master.pug
 
-include ../components/_object-card.pug
-include ../components/_link.pug
-include ../components/_grid-test.pug
 include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_object-card.pug
+include ../components/_grid-test.pug
 
 
 
 block header
-  +header
+  +header({
+    mod: 'white',
+  })
 
 
 block content
   +grid-test
   
-  .section
-    .container
-      .row
-        .row__side
-        .row__main
-          .section__inner.section__inner--main
-            .list
-              - for (let i= 0; i<6; i++)
-                .list__item
-                  +object-card
-                .list__item
-                  +object-card({
-                    image:'object-card-1.jpg',
-                    imageMark:'object-card-mark-1.jpg',
-                  })
+  .grid
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .grid__container.grid__container--title
+            h1.title
+              |Объекты
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .objects
+            .objects__container
+              .container.container--padding-left
+                .objects__list
+                  - for (let i=0; i<6; i++)
+                    .objects__item
+                      +object-card({
+                        responsive: true,
+                      })
+                    .objects__item
+                      +object-card({
+                        image:'object-card-1.jpg',
+                        imageMark:'object-card-mark-1.jpg',
+
+                        responsive: true,
+                      })
 
 
 
 block footer
-  include ../partials/_footer.pug
+  +footer
