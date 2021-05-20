@@ -1,64 +1,26 @@
-// .catalog {
-//   display: flex;
-//   flex-wrap: wrap;
-//   background: $color-gray-border;
-//   justify-content: space-between;
-//   align-items: stretch;
-//   padding: 1px;
-
-//   &__item {
-//     width: calc((100% - 3px)/4);
-//     margin-top: 1px;
-
-//     &:nth-child(-n+4) {
-//       margin-top: 0;
-//     }
-
-//     @media (max-width: $breakpoint - 1px) {
-//       width: calc((100% - 1px)/2);
-
-//       &:nth-child(-n+4) {
-//         margin-top: 1px;
-//       }
-
-//       &:nth-child(-n+2) {
-//         margin-top: 0;
-//       }
-//     }
-//   }
-// }
-
-// .catalog-space {
-//   background: $color-white;
-//   margin-top: 1px;
-//   &--three {
-//     width: calc((100%-3px)/4*3);
-//   }
-// }
-
 .catalog {
   position: relative;
   z-index: 0;
 
   $cols: 2;
   width: calc(100% + #{$cols + 2}px);
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-s) {
     $cols: 3;
     width: calc(100% + #{$cols + 2}px);
   }
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpoint) {
     $cols: 2;
     width: calc(100% + #{$cols + 2}px);
   }
-  @media (min-width: 1366px) {
+  @media (min-width: $breakpoint-l) {
     $cols: 3;
     width: calc(100% + #{$cols + 2}px);
   }
-  @media (min-width: 1680px) {
+  @media (min-width: $breakpoint-xl) {
     $cols: 4;
     width: calc(100% + #{$cols + 2}px);
   }
-  @media (min-width: 1920px) {
+  @media (min-width: $breakpoint-xxl) {
     $cols: 5;
     width: calc(100% + #{$cols + 2}px);
   }
@@ -71,23 +33,23 @@
     margin-left: -1px;
     $cols: 2;
     width: calc(100% / #{$cols});
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-s) {
       $cols: 3;
       width: calc(100% / #{$cols});
     }
-    @media (min-width: 1024px) {
+    @media (min-width: $breakpoint) {
       $cols: 2;
       width: calc(100% / #{$cols});
     }
-    @media (min-width: 1366px) {
+    @media (min-width: $breakpoint-l) {
       $cols: 3;
       width: calc(100% / #{$cols});
     }
-    @media (min-width: 1680px) {
+    @media (min-width: $breakpoint-xl) {
       $cols: 4;
       width: calc(100% / #{$cols});
     }
-    @media (min-width: 1920px) {
+    @media (min-width: $breakpoint-xxl) {
       $cols: 5;
       width: calc(100% / #{$cols});
     }
