@@ -9,28 +9,49 @@
     }
     display: block;
 
-    &__frame {
-        position: relative;
-        width: 100%;
-        height: 209px;
-        @media (min-width: $breakpoint) {
-            height: 400px;
+    &:hover {
+        #{$component}__frame-inner {
+            &::before {
+                background-color: rgba($color: black, $alpha: 0.1);
+            }
         }
+
+        #{$component}__bottom {
+            .link {
+                @include link--hover();
+            }
+        }
+    }
+
+    &--responsive {
+        width: 100%;
+        min-width: auto;
+    }
+
+    &__frame {
+        width: 100%;
         display: flex;
-        align-items: flex-end;
+    }
+    &__frame-inner {
+        position: relative;
+        z-index: 0;
 
         &::before {
-            content: '';
             position: absolute;
             z-index: 1;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
+
+            content: '';
             pointer-events: none;
 
             transition: $transition;
         }
+    }
+    &__frame-img {
+        display: block;
     }
 
     &__mark {
@@ -51,12 +72,12 @@
         }
         color: white;
     }
-
     &__date {
         position: absolute;
         z-index: 3;
         bottom: 0;
         left: 0;
+
         padding: 10px;
         @media (min-width: $breakpoint) {
             padding-top: 8px;
@@ -92,20 +113,6 @@
 
         @media (min-width: $breakpoint) {
             margin-top: 30px;
-        }
-    }
-
-    &:hover {
-        #{$component}__frame {
-            &::before {
-                background-color: rgba($color: black, $alpha: 0.1);
-            }
-        }
-
-        #{$component}__bottom {
-            .link {
-                @include link--hover;
-            }
         }
     }
 }

@@ -1,38 +1,54 @@
 extends ../layouts/master.pug
 
-include ../components/_news-card.pug
-include ../components/_link.pug
-include ../components/_grid-test.pug
 include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_news-card.pug
+include ../components/_grid-test.pug
 
 
 
 block header
-  +header
+  +header({
+    mod: 'white',
+  })
 
 
 
 block content
-  +grid-test
+  //- +grid-test
   
-  .section
-    .container
-      .row
-        .row__side
-        .row__main
-          .section__inner.section__inner--main
-            .list
-              - for (let i= 0; i<6; i++)
-                .list__item
-                  +news-card
-                .list__item
-                  +news-card({
-                    image:'news-card-1.jpeg',
-                    mark:'НОВИНКА',
-                    title:'Новинка! Шаровые краны Altstream PN 25!',
-                  })
+  .grid
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .grid__container.grid__container--title
+            h1.title
+              |Новости
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .objects
+            .objects__container
+              .container.container--padding-left
+                .objects__list
+                  - for (let i=0; i<6; i++)
+                    .objects__item
+                      +news-card({
+                        responsive: true,
+                      })
+                    .objects__item
+                      +news-card({
+                        image:'news-card-1.jpeg',
+                        mark:'НОВИНКА',
+                        title:'Новинка! Шаровые краны Altstream PN 25!',
+
+                        responsive: true,
+                      })
 
 
 
 block footer
-  include ../partials/_footer.pug
+  +footer

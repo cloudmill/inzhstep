@@ -1,3 +1,5 @@
+include _link.pug
+
 mixin news-card(opt)
   -
     opt = Object.assign({
@@ -8,15 +10,17 @@ mixin news-card(opt)
       date:'28.04.2021',
       titleTag:'h3',
       title:'Антикризисная акция  по шаровым кранам PN16 Altstream',
+      responsive: false,
     }, opt);
     
-  a.news-card(href=opt.href)
+  a.news-card(class=(opt.responsive ? 'news-card--responsive' : '') href=opt.href)
     .news-card__frame
-      img.news-card__img(src=(opt.path + opt.image))
-      .news-card__mark
-        |#{opt.mark}
-      .news-card__date
-        |#{opt.date}
+      .news-card__frame-inner
+        img.news-card__frame-img(src=(opt.path + opt.image))
+        .news-card__mark
+          |#{opt.mark}
+        .news-card__date
+          |#{opt.date}
     #{opt.titleTag}.news-card__title
       |#{opt.title}
     .news-card__bottom
