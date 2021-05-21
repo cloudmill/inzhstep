@@ -37,21 +37,47 @@
 
   &__list {
     margin-top: -10px;
-    margin-left: -20px;
+    @media (min-width: $breakpoint-xs) {
+      margin-left: -$grid-gap-m;
+    }
     @media (min-width: $breakpoint) {
       margin-top: -40px;
-      margin-left: -40px;
+      margin-left: -$grid-gap-d;
     }
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+    @media (min-width: $breakpoint-xs) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
   }
   &__item {
     margin-top: 10px;
-    margin-left: 20px;
+    @media (min-width: $breakpoint-xs) {
+      margin-left: $grid-gap-m;
+    }
     @media (min-width: $breakpoint) {
       margin-top: 40px;
-      margin-left: 40px;
+      margin-left: $grid-gap-m;
+    }
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint - 1px) {
+      $cols: 3;
+      width: calc((100% - 20px * #{$cols}) / #{$cols});
+    }
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-s - 1px) {
+      $cols: 2;
+      width: calc((100% - 20px * #{$cols}) / #{$cols});
+    }
+    flex-shrink: 0;
+    @media (max-width: $breakpoint-xs - 1px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    .doc {
+      @media (min-width: $breakpoint-xs) and (max-width: $breakpoint - 1px) {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
