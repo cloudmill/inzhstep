@@ -16,7 +16,7 @@ block header
 
 
 block content
-  +grid-test
+  //- +grid-test
 
   .grid
     .grid__row
@@ -35,8 +35,8 @@ block content
           .news-detail__container
             .news-detail__section
               .container.container--padding-left
-                .news-detail__detail-wrapper
-                  .news-detail__detail
+                .news-detail__content-wrapper
+                  .news-detail__content
                     .news-detail__frame
                       .news-detail__frame-inner
                         img.news-detail__frame-img(src='assets/images/news-card.jpeg')
@@ -48,44 +48,58 @@ block content
                       h1.news-detail__title
                         |Антикризисная акция  по шаровым кранам PN16 Altstream
                     .news-detail__block.news-detail__block--small
-                      p.news-detail__text
-                        |Уважаемые партнёры!
-                        br
-                        |Информируем Вас о поступлении в продажу шаровых кранов Altstream PN25.
-                        br
-                        |За более подробной информацией обращайтесь в отдел продаж по телефону: +7 (812) 241-10-15
-                        br
-                        |С уважением, компания ИнжСтэп
+                      .news-detail__content-container.news-detail__content-container--desktop
+                        p.news-detail__text
+                          |Уважаемые партнёры!
+                          br
+                          br
+                          |Информируем Вас о поступлении в продажу шаровых кранов Altstream PN25.
+                          br
+                          br
+                          |За более подробной информацией обращайтесь в отдел продаж по телефону: +7 (812) 241-10-15
+                          br
+                          br
+                          |С уважением, компания ИнжСтэп
                     .news-detail__block
-                      |img
+                      img.news-detail__img(src='assets/images/news-detail.jpeg' alt='')
                     .news-detail__block
                       ul.news-detail__list
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          +mark-svg('news-detail__list-svg')
+                          .news-detail__content-container
+                            p.news-detail__text
+                              | ликвидация фальсификата и контрафакта как явления в трубопроводных системах;
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          +mark-svg('news-detail__list-svg')
+                          .news-detail__content-container
+                            p.news-detail__text
+                              |разработка и актуализация нормативных правовых и нормативно технических документов и стандартов;
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          +mark-svg('news-detail__list-svg')
+                          .news-detail__content-container
+                            p.news-detail__text
+                              |ликвидация фальсификата и контрафакта как явления в трубопроводных системах;
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          +mark-svg('news-detail__list-svg')
+                          .news-detail__content-container
+                            p.news-detail__text
+                              |разработка и актуализация нормативных правовых и нормативно технических документов и стандартов.
                     .news-detail__block
                       p.news-detail__text
-                        |text
+                        |Ассоциация производителей трубопроводных систем способствует оздоровлению рынка и повышению надежности трубопроводной инфраструктуры Российской Федерации и стран ЕАЭС.
                     .news-detail__block
                       .news-detail__video
                         |video
                     .news-detail__block
-                      ul.news-detail__list
+                      ol.news-detail__list.news-detail__list--numbered
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          .news-detail__content-container
+                            p.news-detail__text
+                              |ликвидация фальсификата и контрафакта как явления в трубопроводных системах;
                         li.news-detail__list-item
-                          p.news-detail__text
-                            |list
+                          .news-detail__content-container
+                            p.news-detail__text
+                              |разработка и актуализация нормативных правовых и нормативно технических документов и стандартов.
             .news-detail__section.news-detail__section--margin-top
               .container.container--padding-left
                 .product
