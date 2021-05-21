@@ -1,0 +1,33 @@
+.pages {
+  &__container {
+    padding: 60px 0;
+  }
+
+  &__list {
+    counter-reset: index;
+  }
+  &__list-item {
+    position: relative;
+    z-index: 0;
+
+    padding-left: $grid-pad-d;
+    counter-increment: index;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      content: counter(index);
+
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 36px;
+      color: $color-main;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}

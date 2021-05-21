@@ -39,9 +39,9 @@
     }
   }
   &__content-container {
-    margin-left: $grid-part-m;
+    padding-left: calc(#{$grid-part-m});
     @media (min-width: $breakpoint) {
-      margin-left: $grid-part-d;
+      padding-left: calc(#{$grid-part-d});
     }
 
     &--desktop {

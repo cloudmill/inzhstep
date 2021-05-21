@@ -1,5 +1,3 @@
-// --- --- GLOBAL --- ---
-
 // font
 $ff-a: 'StyreneALC', sans-serif;
 $ff-b: 'StyreneBLC', sans-serif;
@@ -35,53 +33,30 @@ $grid-gap-d: 40px;
 $grid-length-m: 8;
 $grid-length-d: $grid-length-m * 2;
 
-$grid-col-m: calc(calc(100vw - calc(#{$grid-pad-m} * 2) - calc(#{$grid-gap-m} * #{$grid-length-m - 1})) / #{$grid-length-m});
-$grid-col-d: calc(calc(100vw - calc(#{$grid-pad-d} * 2) - calc(#{$grid-gap-d} * #{$grid-length-d - 1})) / #{$grid-length-d});
+$grid-col-m: '((100vw - #{$grid-gap-m} * #{$grid-length-m - 1} - #{$grid-pad-m} * 2) / #{$grid-length-m})';
+$grid-col-d: '((100vw - #{$grid-gap-d} * #{$grid-length-d - 1} - #{$grid-pad-d} * 2) / #{$grid-length-d})';
 
-$grid-part-m: calc(#{$grid-col-m} + #{$grid-gap-m});
-$grid-part-d: calc(#{$grid-col-d} + #{$grid-gap-d});
-
-// --- --- --- --- ---
-
-
-
-
+$grid-part-m: '(#{$grid-col-m} + #{$grid-gap-m})';
+$grid-part-d: '(#{$grid-col-d} + #{$grid-gap-d})';
 
 // news-card
 $news-card-width-m: 291px;
 $news-card-width-d: 560px;
 $news-card-alt-width-d: 393px;
 
-
-
 // object-card
 $object-card-width-m: 291px;
 $object-card-width-d: 560px;
 
-
-
-// --- --- PARTNER-CARD --- --- 
-
-// width
+// partner-card
 $partner-card-width-m: 145px;
 $partner-card-width-d: 300px;
 
-// --- --- --- --- ---
-
-
-
-
-
-// --- --- NAV-CARD --- --- 
-
-// width
+// nav-card
 $nav-card-width-m: 202px;
 $nav-card-width-d: 360px;
 $nav-card-large-width-d: 755px;
-// height
 $nav-card-height-d: 550px;
-
-// --- --- --- --- ---
 
 // catalog-card
 $catalog-card-width-d: 341px;
