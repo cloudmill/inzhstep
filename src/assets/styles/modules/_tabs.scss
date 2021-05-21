@@ -1,22 +1,24 @@
 .tabs {
   $component: &;
+  $gap-vertical: 40px;
 
-  display: none;
-  @media (min-width: $breakpoint) {
-    display: flex;
+  padding: 40px 0;
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
   }
-  overflow-x: auto;
 
   border-bottom: 1px solid $color-gray-border;
 
   &__row {
-    padding: 0 #{$grid-gap-d / 2};
+    margin-top: -$gap-vertical;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
   }
   &__item {
-    padding: 40px #{$grid-gap-d / 2};
-    width: 326px;
+    margin-top: $gap-vertical;
+    padding-left: $grid-gap-d;
+    width: 340px;
     flex-shrink: 0;
     display: flex;
     align-items: flex-start;
