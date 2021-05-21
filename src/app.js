@@ -302,12 +302,7 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-
-
-
-
-// --- --- HEADER --- ---
-
+// header
 {
 	const SCROLL_UPDATE_INTERVAL = 1000 / 30; // 30 fps
 
@@ -421,12 +416,6 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-// --- --- --- --- ---
-
-
-
-
-
 // header-catalog
 {
 	$(() => {
@@ -454,12 +443,7 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-
-
-
-
-// --- --- HEADER-MENU --- ---
-
+// header-menu
 {
 	$(() => {
 		const headerMenu = $('.header-menu');
@@ -495,14 +479,7 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-// --- --- --- --- ---
-
-
-
-
-
-// --- --- NAV-CARD --- ---
-
+// nav-card
 {
 	const OPEN_TEXT = 'показать все';
 	const CLOSE_TEXT = 'свернуть';
@@ -548,13 +525,7 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-// --- --- --- --- ---
-
-
-
-
-
-// --- --- TOP --- ---
+// top
 {
 	const PARALLAX_RATIO = 5;
 
@@ -946,15 +917,29 @@ const MAIN_BREAKPOINT = 1024;
 		}
 	});
 }
-// --- --- --- --- ---
-
-
-
-
 
 // smooth scroll
 {
-	$(() => {
+	$(window).on('load', () => {
 		SmoothScroll();
+	});
+}
+
+// video
+{
+	$(() => {
+		const component = $('.news-detail__video');
+
+		component.each(function () {
+			const video = $(this).find('.news-detail__video-video');
+			const play = $(this).find('.news-detail__video-play');
+
+			play.on('click', () => {
+				play.addClass('news-detail__video-play--hide');
+
+				video[0].play();
+				video.attr('controls', '');
+			});
+		});
 	});
 }
