@@ -89,7 +89,9 @@ block content
                         |Ассоциация производителей трубопроводных систем способствует оздоровлению рынка и повышению надежности трубопроводной инфраструктуры Российской Федерации и стран ЕАЭС.
                     .news-detail__block
                       .news-detail__video
-                        |video
+                        video#video.news-detail__video-video(poster='assets/images/news-detail-video.jpeg' muted loop)
+                        #play.news-detail__video-play
+                          +video-svg('news-detail__video-svg')
                     .news-detail__block
                       ol.news-detail__list.news-detail__list--numbered
                         li.news-detail__list-item
