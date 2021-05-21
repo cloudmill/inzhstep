@@ -6,6 +6,14 @@
                 width: $news-card-width-d;
             }
         }
+
+        &--alt {
+            .swiper-slide {
+                @media (min-width: $breakpoint) {
+                    width: $news-card-alt-width-d;
+                }
+            }
+        }
     }
 
     &--object-card {
