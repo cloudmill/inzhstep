@@ -943,3 +943,18 @@ const MAIN_BREAKPOINT = 1024;
 		});
 	});
 }
+
+// about
+{
+	$(() => {
+		const background = $('.about__background');
+
+		if (background.length !== 0) {
+			$(window).on('scroll', function () {
+				const parallax = $(this).scrollTop() / 5;
+
+				background.css('top', `${parallax}px`);
+			});
+		}
+	});
+}
