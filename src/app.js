@@ -1,5 +1,6 @@
 import 'Styles/_app.scss';
 
+import 'core-js';
 import Swiper from 'swiper';
 import './assets/scripts/TweenMax.min.js';
 import 'jquery-bez';
