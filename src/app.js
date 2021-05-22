@@ -389,7 +389,7 @@ const MAIN_BREAKPOINT = 1024;
 
 			const mediaQuery = window.matchMedia(`(min-width: ${MAIN_BREAKPOINT}px)`);
 
-			mediaQuery.addEventListener('change', () => {
+			mediaQuery.addListener('change', () => {
 				closeModal();
 			});
 
