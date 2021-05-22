@@ -179,7 +179,7 @@ const MAIN_BREAKPOINT = 1024;
 				}
 			}
 			mediaQueryChange();
-			mediaQuery.addListener(mediaQueryChange);
+			mediaQuery.addListener('change', mediaQueryChange);
 
 			// balloon layout
 			const layout = ymaps.templateLayoutFactory.createClass(
@@ -389,9 +389,7 @@ const MAIN_BREAKPOINT = 1024;
 
 			const mediaQuery = window.matchMedia(`(min-width: ${MAIN_BREAKPOINT}px)`);
 
-			mediaQuery.addListener('change', () => {
-				closeModal();
-			});
+			mediaQuery.addListener('change', closeModal);
 
 			// search
 			const headerSearchButton = header.find('.header__search-button');
