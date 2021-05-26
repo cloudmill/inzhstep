@@ -5,7 +5,7 @@ import Swiper from 'swiper';
 import './assets/scripts/TweenMax.min.js';
 import 'jquery-bez';
 import SmoothScroll from 'smoothscroll-for-websites';
-import 'fancybox/dist/js/jquery.fancybox';
+import '@fancyapps/fancybox';
 
 const MAIN_BREAKPOINT = 1024;
 
