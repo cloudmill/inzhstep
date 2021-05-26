@@ -8,7 +8,6 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<script src="https://api-maps.yandex.ru/2.1/?apikey=9eaf2d45-34a5-4620-bac6-0482e9335845&amp;lang=ru_RU" type="text/javascript"></script>
-		<link href="vendors.css" rel="stylesheet">
 		<link href="app.css" rel="stylesheet">
 	</head>
 
@@ -392,29 +391,37 @@
 			</div>
 		</header>
 		<main class="main">
-			<div class="modal modal--request">
-				<div class="modal__title">Оставить заявку</div>
-				<form class="modal__form form">
-					<div class="form__item"><input class="form__input input" name="name" placeholder="Имя"></div>
-					<div class="form__item"><input class="form__input input" name="phone" placeholder="Телефон"></div>
-					<div class="form__item"><input class="form__input input" name="email" placeholder="Email"></div>
-					<div class="form__item">
-						<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox">
-								<div class="checkbox__box"><svg class="checkbox__svg" xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
-										<path d="M1 5L4 8L12 1" stroke="#0F93A1"></path>
-									</svg></div>
-								<div class="checkbox__text">Даю согласание на обработку <a class="checkbox__link" href="#">персональных данных</a></div>
-							</label></div>
+			<div class="modals">
+				<div class="modal" data-fancy-modal="1">
+					<div class="modal__inner">
+						<div class="modal__container">
+							<h3 class="modal__title">Оставить заявку</h3>
+							<form class="modal__form form">
+								<div class="form__item"><input class="form__input input" name="name" placeholder="Имя"></div>
+								<div class="form__item"><input class="form__input input" name="phone" placeholder="Телефон"></div>
+								<div class="form__item"><input class="form__input input" name="email" placeholder="Email"></div>
+								<div class="form__item">
+									<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" name="agreement">
+											<div class="checkbox__box"><svg class="checkbox__svg" xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+													<path d="M1 5L4 8L12 1" stroke="#0F93A1"></path>
+												</svg></div>
+											<div class="checkbox__text">Даю согласание на обработку <a class="checkbox__link" href="#">персональных данных</a></div>
+										</label></div>
+								</div>
+								<div class="form__item">
+									<div class="form__button button"><button class="button__btn" type="submit" data-fancy-button="2">Отправить</button></div>
+								</div>
+							</form>
+						</div>
 					</div>
-					<div class="form__item">
-						<div class="form__button button"><button class="button__btn" href="#">Отправить</button></div>
+				</div>
+				<div class="modal" data-fancy-modal="2">
+					<div class="modal__inner">
+						<div class="modal__container">
+							<h3 class="modal__title">Ваша заявка принята. Мы ответим вам в ближайшее время.</h3>
+							<div class="modal__button button"><a class="button__btn" data-fancy-button="1">Отправить еще</a></div>
+						</div>
 					</div>
-				</form>
-			</div>
-			<div class="modal modal--response">
-				<div class="modal__container">
-					<div class="modal__title">Ваша заявка принята. Мы ответим вам в ближайшее время.</div>
-					<div class="modal__button button"><a class="button__btn" href="#">Отправить еще</a></div>
 				</div>
 			</div>
 			<div class="product">
@@ -478,7 +485,7 @@
 													<div class="product__info-price">237 ₽</div>
 													<div class="product__info-vendor">Артикул: 37101</div>
 												</div>
-												<div class="product__button button"><a class="button__btn" href="#">Отправить заявку</a></div>
+												<div class="product__button button"><a class="button__btn" href="#" data-fancy-button="1">Отправить заявку</a></div>
 												<div class="product__list">
 													<div class="product__list-item">
 														<div class="product__list-row">
