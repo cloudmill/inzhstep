@@ -73,40 +73,16 @@
             line-height: 19px;
         }
     }
-
-    &__frame {
-        @media (max-width: $breakpoint - 1px) {
-            justify-content: center;
-        }
+    
+    &__background {
+        min-height: 224px;
         @media (min-width: $breakpoint) {
-            position: absolute;
-            z-index: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-    }
-    &__img {
-        max-height: 224px;
-        @media (min-width: $breakpoint) {
-            max-width: none;
-            max-height: none;
             height: 100%;
         }
-        @media (min-width: $breakpoint-xl) {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
 
-            width: 100%;
-            height: auto;
-        }
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
 }
 

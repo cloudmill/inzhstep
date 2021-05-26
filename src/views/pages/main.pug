@@ -57,7 +57,6 @@ block content
                           mark:'НОВИНКА',
                           title:'Новинка! Шаровые краны Altstream PN 25!',
                         })
-
   .section
     .container
       .row
@@ -87,7 +86,6 @@ block content
                     - for (let i= 0; i<9; i++)
                       .swiper-slide(class = (i === 7 ? 'swiper-slide--large' : ''))
                         +nav-card(i)
-
   .section.section--digits.section--blue-light
     .container
       .row
@@ -135,7 +133,6 @@ block content
                       |3000+
                     p.digits__text
                       |выполненных доставок
-  
   .section.section--blue
     .container
       .row
@@ -172,11 +169,9 @@ block content
                           p.advantage-card__text
                             |Наши специалисты всегда подберут комплексную систему, ориентируясь на Ваш бюджет
                 li.advantage-card
-                  .advantage-card__frame
-                    img.advantage-card__img(src='assets/images/advantage-card.jpg' alt='')
+                  .advantage-card__background(style='background-image: url("assets/images/advantage-card.jpg")')
                 li.advantage-card
-                  .advantage-card__frame
-                    img.advantage-card__img(src='assets/images/advantage-card-1.jpg' alt='')
+                  .advantage-card__background(style='background-image: url("assets/images/advantage-card-1.jpg")')
                 li.advantage-card
                   .advantage-card__container
                     .advantage-card__col
@@ -222,9 +217,7 @@ block content
                           p.advantage-card__text
                             |На связи 24 часа в сутки, 7 дней в неделю
                 li.advantage-card
-                  .advantage-card__frame
-                    img.advantage-card__img(src='assets/images/advantage-card-2.jpg' alt='')
-  
+                  .advantage-card__background(style='background-image: url("assets/images/advantage-card-2.jpg")')
   .section
     .container
       .row
