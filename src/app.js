@@ -118,25 +118,25 @@ const MAIN_BREAKPOINT = 1024;
 	});
 }
 
-// modals
+// fancy
 {
 	$(() => {
-		$('.product__button .button__btn').on('click', event => {
+		// attrs:
+		// data-fancy-button: кнопка вызова модального окна, id модального окна
+		// data-fancy-modal: модальное окно, id модального окна
+
+		// setup
+		$.fancybox.defaults.closeExisting = true;
+		// $.fancybox.defaults.touch = false; // ?
+		
+		// open
+		$('[data-fancy-button]').on('click', function (event) {
 			event.preventDefault();
+		
+			const id = $(this).data('fancy-button');
+			const modal = $(`[data-fancy-modal="${id}"]`);
 
-			$.fancybox.open($('.modal--request'));
-		});
-
-		$('.modal--request .button__btn').on('click', event => {
-			event.preventDefault();
-
-			$.fancybox.open($('.modal--response'));
-		});
-
-		$('.modal--response .button__btn').on('click', event => {
-			event.preventDefault();
-
-			$.fancybox.open($('.modal--request'));
+			$.fancybox.open(modal);
 		});
 	});
 }

@@ -1,0 +1,13 @@
+mixin modal-response(opt={})
+  -
+    opt = Object.assign({
+      id: 1,
+    }, opt);
+
+  .modal.modal--response(data-fancy-modal=opt.id)
+    .modal__container
+      .modal__title
+        |Ваша заявка принята. Мы ответим вам в ближайшее время.
+      .modal__button.button
+        a.button__btn(data-fancy-button='1')
+          |Отправить еще

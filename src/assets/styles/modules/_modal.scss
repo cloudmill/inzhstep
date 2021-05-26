@@ -1,19 +1,28 @@
 .modal {
-  padding: 60px 0;
-  width: 760px;
-  height: 531px;
-  display: none;
+  $width: 760px;
+  $height: 531px;
+
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: $width;
+  max-height: $height;
 
   background-color: $color-white;
 
-  &--response {
-    padding: 175px 0;
+  &__inner {
+    padding: $grid-pad-m;
+    @media (min-width: $breakpoint) {
+      padding: $grid-pad-d;
+    }
+    height: 100%;
   }
-
   &__container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   &__button {
@@ -23,7 +32,7 @@
   }
 
   &__title {
-    padding: 0 100px;
+    max-width: 560px;
 
     font-weight: bold;
     font-size: 26px;
@@ -33,7 +42,8 @@
 
   &__form {
     margin-top: 60px;
-    padding: 0 160px;
+    width: 100%;
+    max-width: 440px;
   }
 }
 
@@ -127,4 +137,21 @@
   &__link {
     text-decoration: underline;
   }
+}
+
+.fancybox {
+  &-bg {
+    background-color: rgba($color-black, 0.23); // ?
+  }
+
+  &-slide {
+    padding: $grid-pad-m;
+    @media (min-width: $breakpoint) {
+      padding: $grid-pad-d;
+    }
+  }
+}
+
+.modals {
+  display: none;
 }

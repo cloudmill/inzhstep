@@ -1,0 +1,30 @@
+mixin modal-request(opt={})
+  -
+    opt = Object.assign({
+      id: 1,
+    }, opt);
+
+  .modal.modal--request(data-fancy-modal=opt.id)
+    .modal__title
+      |Оставить заявку
+    form.modal__form.form
+      .form__item
+        input.form__input.input(name='name' placeholder='Имя')
+      .form__item
+        input.form__input.input(name='phone' placeholder='Телефон')
+      .form__item
+        input.form__input.input(name='email' placeholder='Email')
+      .form__item
+        .checkbox
+          label.checkbox__label
+            input.checkbox__input(type='checkbox')
+            .checkbox__box
+              +checkbox-svg('checkbox__svg')
+            .checkbox__text
+              |Даю согласание на обработку 
+              a.checkbox__link(href='#')
+                |персональных данных
+      .form__item
+        .form__button.button
+          button.button__btn(href='#' data-fancy-button='2')
+            |Отправить

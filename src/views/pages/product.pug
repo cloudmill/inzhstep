@@ -6,49 +6,56 @@ include ../partials/_footer.pug
 include ../components/_grid-test.pug
 include ../components/_catalog-card.pug
 
+include ../components/_modal-request.pug
+include ../components/_modal-response.pug
+
 
 
 block header
-  +header({
-    mod: 'white',
-  })
+  //- +header({
+  //-   mod: 'white',
+  //- })
 
 
 
 block content
   //- +grid-test
 
-  .modal.modal--request
-    .modal__title
-      |Оставить заявку
-    form.modal__form.form
-      .form__item
-        input.form__input.input(name='name' placeholder='Имя')
-      .form__item
-        input.form__input.input(name='phone' placeholder='Телефон')
-      .form__item
-        input.form__input.input(name='email' placeholder='Email')
-      .form__item
-        .checkbox
-          label.checkbox__label
-            input.checkbox__input(type='checkbox')
-            .checkbox__box
-              +checkbox-svg('checkbox__svg')
-            .checkbox__text
-              |Даю согласание на обработку 
-              a.checkbox__link(href='#')
-                |персональных данных
-      .form__item
-        .form__button.button
-          button.button__btn(href='#')
-            |Отправить
-  .modal.modal--response
-    .modal__container
-      .modal__title
-        |Ваша заявка принята. Мы ответим вам в ближайшее время.
-      .modal__button.button
-        a.button__btn(href='#')
-          |Отправить еще
+  .modals
+    .modal(data-fancy-modal='1')
+      .modal__inner
+        .modal__container
+          h3.modal__title
+            |Оставить заявку
+          form.modal__form.form
+            .form__item
+              input.form__input.input(name='name' placeholder='Имя')
+            .form__item
+              input.form__input.input(name='phone' placeholder='Телефон')
+            .form__item
+              input.form__input.input(name='email' placeholder='Email')
+            .form__item
+              .checkbox
+                label.checkbox__label
+                  input.checkbox__input(type='checkbox' name='agreement')
+                  .checkbox__box
+                    +checkbox-svg('checkbox__svg')
+                  .checkbox__text
+                    |Даю согласание на обработку 
+                    a.checkbox__link(href='#')
+                      |персональных данных
+            .form__item
+              .form__button.button
+                button.button__btn(type='submit' data-fancy-button='2')
+                  |Отправить
+    .modal(data-fancy-modal='2')
+      .modal__inner
+        .modal__container
+          h3.modal__title
+            |Ваша заявка принята. Мы ответим вам в ближайшее время.
+          .modal__button.button
+            a.button__btn(data-fancy-button='1')
+              |Отправить еще
 
   .product
     .product__container
@@ -94,7 +101,7 @@ block content
                       .product__info-vendor
                         |Артикул: 37101
                     .product__button.button
-                      a.button__btn(href='#')
+                      a.button__btn(href='#' data-fancy-button='1')
                         |Отправить заявку
                     .product__list
                       - for (let i=0; i<6; i++)
