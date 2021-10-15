@@ -9,6 +9,8 @@ include ../components/_catalog-card.pug
 include ../components/_modal-request.pug
 include ../components/_modal-response.pug
 
+include ../components/_breadcrumbs.pug
+
 
 
 block header
@@ -72,8 +74,9 @@ block content
                   .link-back__text
                     |каталог
           .grid__col
-            .product__section.product__section--info
+            .product__section.product__section--breadcrumbs
               .container.container--padding-left
+                +breadcrumbs.breadcrumbs--in--product
                 .product__row
                   .product__col
                     .product__slider

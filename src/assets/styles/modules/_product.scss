@@ -13,6 +13,13 @@
         padding-top: 160px;
       }
     }
+    &--breadcrumbs {
+      @media (min-width: $breakpoint) {
+        padding: 200px 0 40px;
+
+        border-bottom: 1px solid $color-gray-border;
+      }
+    }
   }
 
   // info grid

@@ -12,12 +12,27 @@
   @media (min-width: $breakpoint) {
     flex-wrap: wrap;
   }
+  @media (max-width: $breakpoint - 1px) {
+    overflow: auto;
+  }
 
   &--margin-bottom {
     &--default {
       margin-bottom: 40px;
       @media (min-width: $breakpoint) {
         margin-bottom: 80px;
+      }
+    }
+  }
+
+  &--in {
+    &--product {
+      @media (max-width: $breakpoint - 1px) {
+        margin-top: 10px;
+      }
+      margin-bottom: 20px;
+      @media (min-width: $breakpoint) {
+        margin-bottom: 60px;
       }
     }
   }
