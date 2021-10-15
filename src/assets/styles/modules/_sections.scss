@@ -1,0 +1,27 @@
+.sections {
+  $gap: 20px;
+  $color-gray: #F6F9F9;
+
+  &__block {
+    padding: 40px 60px 40px 40px;
+
+    &:nth-child(odd) {
+      background-color: $color-gray;
+    }
+  }
+
+  &__list {
+    margin-top: -$gap;
+    margin-left:  -$gap;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    $cols: 3;
+
+    margin-top: $gap;
+    margin-left:  $gap;
+    width: calc((100% - (#{$gap * $cols})) / #{$cols});
+  }
+}

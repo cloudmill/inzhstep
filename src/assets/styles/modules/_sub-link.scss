@@ -1,0 +1,31 @@
+@mixin sub-link--active {
+  background-color: $color-main;
+  color: $color-white;
+}
+
+.sub-link {
+  $comp: &;
+
+  display: flex;
+
+  &--active {
+    #{$comp}__link {
+      @include sub-link--active();
+    }
+  }
+
+  &__link {
+    padding: 15px 16px;
+    min-height: 53px;
+    display: flex;
+    align-items: center;
+  
+    background-color: $color-gray-border;
+    white-space: nowrap;
+    transition: $transition;
+
+    &:hover {
+      @include sub-link--active();
+    }
+  }
+}

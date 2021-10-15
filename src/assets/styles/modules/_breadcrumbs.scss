@@ -1,0 +1,50 @@
+.breadcrumbs {
+  $comp: &;
+
+  $color-gray: #949494;
+  
+  $gap-vert: 6px;
+  $gap-hor: 10px;
+
+  margin-top: -$gap-vert;
+  margin-left: -$gap-hor;
+  display: flex;
+  @media (min-width: $breakpoint) {
+    flex-wrap: wrap;
+  }
+
+  &--margin-bottom {
+    &--default {
+      margin-bottom: 40px;
+      @media (min-width: $breakpoint) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__item {
+    margin-top: $gap-vert;
+    margin-left: $gap-hor;
+    display: flex;
+
+    font-size: 14px;
+    line-height: 17px;
+    white-space: nowrap;
+
+    &--highlight {
+      #{$comp}__decor,
+      #{$comp}__text {
+        color: $color-black;
+      }
+    }
+  }
+
+  &__decor,
+  &__text {
+    color: $color-gray;
+  }
+
+  &__decor {
+    margin-right: $gap-hor;
+  }
+}

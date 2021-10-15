@@ -1,0 +1,128 @@
+extends ../layouts/master.pug
+
+include ../partials/_header.pug
+include ../partials/_footer.pug
+
+include ../components/_grid-test.pug
+include ../components/_catalog-card.pug
+include ../components/_pagination.pug
+include ../components/_sub-nav.pug
+include ../components/_breadcrumbs.pug
+
+
+
+block header
+  +header({
+    mod: 'white',
+  })
+
+
+
+block content
+  //- +grid-test
+
+  .grid
+    .grid__section
+      .grid__row
+        .grid__col
+        .grid__col
+          .grid__container.grid__container--breadcrumbs
+            +breadcrumbs.breadcrumbs--margin-bottom--default
+            h1.title
+              |Каталог
+    .grid__section
+      .grid__row
+        .grid__col
+          .grid__container.grid__container--panel
+            ul.panel
+              li.panel__item.panel__item--active
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Отопление
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Водоснабжение
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Приборы учета тепла и воды
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Трубопроводная арматура
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Теплоизоляционные материалы
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Полотенцесущители
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Канализация
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Продукция марки Valtec
+              li.panel__item
+                +mark-svg('panel__svg')
+                a.panel__link(href='#')
+                  |Крепежные изделия
+        .grid__col
+          .grid__container.grid__container--sections
+            .selects.selects--margin-top
+              .container
+                .selects__item
+                  .select
+                    -
+                      var options = [
+                        'Отопление',
+                        'Водоснабжение',
+                        'Приборы учета тепла и воды',
+                        'Трубопроводная арматура',
+                        'Теплоизоляционные материалы',
+                        'Полотенцесущители',
+                        'Канализация',
+                        'Продукция марки Valtec',
+                        'Крепежные изделия',
+                      ];
+                    .select__panel
+                      .select__text
+                      +arrow-svg('select__svg')
+                    select.select__select(name='select')
+                      each option, index in options
+                        option.select__option(value=option selected=(index === 0 ? '' : undefined))
+                          |#{option}
+                .selects__item
+                  .select
+                    -
+                      var options = [
+                        'Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления',
+                        'Sanline. Коллекторные узлы. Балансировочная арматура',
+                        'Термостатическая арматура и комплектующие',
+                        'Отопительные приборы',
+                      ];
+                    .select__panel
+                      .select__text
+                      +arrow-svg('select__svg')
+                    select.select__select(name='select')
+                      each option, index in options
+                        option.select__option(value=option selected=(index === 0 ? '' : undefined))
+                          |#{option} 
+            +sub-nav
+            .grid__container.grid__container--catalog
+              .catalog
+                - for (let i=0; i<10; i++)
+                  .catalog__item
+                    +catalog-card({
+                      responsive: true,
+                    })
+            +pagination.pagination--margin-top--default
+
+
+
+block footer
+  +footer

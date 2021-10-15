@@ -1,0 +1,22 @@
+mixin pagination
+  .pagination(class=attributes.class)
+    .pagination__row
+      .pagination__item
+        a.pagination__index.pagination__index--active(href='#')
+          |1
+      .pagination__item
+        a.pagination__index(href='#')
+          |2
+      .pagination__item
+        a.pagination__index(href='#')
+          |3
+      .pagination__item
+        .pagination__index.pagination__index--ellipsis
+          |...
+      .pagination__item
+        a.pagination__index(href='#')
+          |12
+      .pagination__item
+        a.pagination__button(href='#')
+          +arrow-line-svg('pagination__svg')
+

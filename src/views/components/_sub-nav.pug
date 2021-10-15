@@ -1,0 +1,18 @@
+mixin sub-nav
+  -
+    var items = [
+      'Трубы Sanline PEХ «Стабил»',
+      'Трубы Sanline PE-RT «Тёплый пол»',
+      'Трубная изоляция Sanline Супер Протект',
+    ]
+  .sub-nav.sub-nav--in--catalog
+    .sub-nav__list
+      .sub-nav__item
+        .sub-link.sub-link--active
+          a.sub-link__link(href='#')
+            |Трубы Sanline PEX-a «Универсальные»
+      each item in items
+        .sub-nav__item
+          .sub-link
+            a.sub-link__link(href='#')
+              |#{item}

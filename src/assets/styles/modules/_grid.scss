@@ -78,5 +78,16 @@
         padding: 0 $grid-pad-m;
       }
     }
+    // хлебные крошки
+    &--breadcrumbs {
+      padding: 100px $grid-pad-m 0;
+      @media (min-width: $breakpoint) {
+        padding: 200px $grid-gap-d 40px $grid-pad-d;
+      }
+    }
+    // sections
+    &--sections {
+      padding-bottom: 160px;
+    }
   }
 }

@@ -957,3 +957,22 @@ const MAIN_BREAKPOINT = 1024;
 		}
 	});
 }
+
+// panel
+{
+	$(() => {
+		// sections
+		{
+			$('[data-section]').on('click', function (event) {
+				event.preventDefault()
+
+				const index = [...document.querySelectorAll('[data-section]')].indexOf(this)
+				try {
+					$("html, body").animate({ 
+						scrollTop: $(`.sections__block:nth-child(${index + 1})`).offset().top - 100 
+					}, 500)
+				} catch {}
+			})
+		}
+	})
+}
