@@ -172,7 +172,7 @@
         }
     }
     &__section-dropdown {
-        padding: 25px 0;
+        padding-bottom: 20px;
         display: none;
         
         border-bottom: 1px solid $color-white-transparent;
@@ -180,11 +180,18 @@
 
     // links
     &__links {
-        padding: 0 20px;
+        padding-left: 20px;
     }
     &__links-item {
-        &:not(:first-child) {
-            margin-top: 15px;
+        padding: 10px 20px 10px 0;
+        display: flex;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-white-transparent;
+        }
+
+        &--drop {
+            padding: 0;
         }
     }
     &__links-link {
@@ -196,6 +203,19 @@
 
         &:hover {
             color: $color-main;
+        }
+    }
+
+    &__sub-links {
+        padding: 10px 20px 10px 0;
+
+        border-top: 1px solid $color-white-transparent;
+    }
+    &__sub-link {
+        display: flex;
+
+        &:not(:first-child) {
+            margin-top: 10px;
         }
     }
 }

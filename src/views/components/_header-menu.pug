@@ -29,9 +29,29 @@ mixin header-menu
                     +arrow-svg('header-menu__section-button-svg')
                   .header-menu__section-dropdown
                     ul.header-menu__links
-                      li.header-menu__links-item
-                        a.header-menu__links-link(href='#')
-                          |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+                      li.header-menu__links-item.header-menu__links-item--drop
+                        .drop.drop--menu
+                          .drop__button
+                            .header-menu__links-link
+                              |Sanline.  Трубы Pex и фитинги для систем внутридомовой разводки отопления
+                            +arrow-svg('drop__svg')
+                          .drop__content
+                            ul.header-menu__sub-links
+                              li.header-menu__sub-link
+                                a.header-menu__links-link(href='#')
+                                  |Все
+                              li.header-menu__sub-link
+                                a.header-menu__links-link(href='#')
+                                  |Трубы Sanline
+                              li.header-menu__sub-link
+                                a.header-menu__links-link(href='#')
+                                  |Фитинги PEX
+                              li.header-menu__sub-link
+                                a.header-menu__links-link(href='#')
+                                  |Комплектующие
+                              li.header-menu__sub-link
+                                a.header-menu__links-link(href='#')
+                                  |Инструмент PEX
                       li.header-menu__links-item
                         a.header-menu__links-link(href='#')
                           |Sanline. Коллекторные узлы. Балансировочная арматура
