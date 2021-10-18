@@ -3,6 +3,10 @@
   
   padding: 40px 60px 40px 40px;
 
+  @media (max-width: $breakpoint - 1px) {
+    display: none;
+  }
+
   &--in {
     &--catalog {
       margin-top: -1px;
