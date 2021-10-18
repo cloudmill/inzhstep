@@ -13,6 +13,11 @@
     flex-wrap: wrap;
   }
   @media (max-width: $breakpoint - 1px) {
+    @include scrollbar-hidden();
+
+    margin-left: calc(-1 * (#{$grid-pad-m} + #{$gap-hor}));
+    width: calc(100% + (#{$grid-pad-m} * 2) + #{$gap-hor});
+    padding: 0 $grid-pad-m;
     overflow: auto;
   }
 
@@ -46,6 +51,13 @@
     line-height: 17px;
     white-space: nowrap;
 
+    &:hover:not(&--highlight) {
+      #{$comp}__decor,
+      #{$comp}__text {
+        color: $color-main;
+      }
+    }
+
     &--highlight {
       #{$comp}__decor,
       #{$comp}__text {
@@ -57,6 +69,7 @@
   &__decor,
   &__text {
     color: $color-gray;
+    transition: $transition;
   }
 
   &__decor {

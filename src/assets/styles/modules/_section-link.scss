@@ -11,6 +11,11 @@
   line-height: 19px;
   transition: $transition;
 
+  @media (max-width: $breakpoint - 1px) {
+    padding: 20px;
+    align-items: flex-start;
+  }
+
   &:hover {
     background-color: $color-black;
     color: $color-white;

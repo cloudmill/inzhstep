@@ -2,8 +2,16 @@
   $gap: 20px;
   $color-gray: #F6F9F9;
 
+  @media (max-width: $breakpoint - 1px) {
+    margin-top: 40px;
+  }
+
   &__block {
     padding: 40px 60px 40px 40px;
+
+    @media (max-width: $breakpoint - 1px) {
+      padding: 40px 20px;
+    }
 
     &:nth-child(odd) {
       background-color: $color-gray;
@@ -18,10 +26,34 @@
   }
 
   &__item {
-    $cols: 3;
+    $cols: 2;
 
     margin-top: $gap;
     margin-left:  $gap;
     width: calc((100% - (#{$gap * $cols})) / #{$cols});
+
+    @media (min-width: $breakpoint-hd) {
+      $cols: 3;
+
+      width: calc((100% - (#{$gap * $cols})) / #{$cols});
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      $cols: 4;
+
+      width: calc((100% - (#{$gap * $cols})) / #{$cols});
+    }
+
+    @media (max-width: $breakpoint-s - 1px) {
+      $cols: 2;
+
+      width: calc((100% - (#{$gap * $cols})) / #{$cols});
+    }
+
+    @media (max-width: $breakpoint-xs - 1px) {
+      $cols: 1;
+
+      width: calc((100% - (#{$gap * $cols})) / #{$cols});
+    }
   }
 }

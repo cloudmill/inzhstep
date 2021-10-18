@@ -7,19 +7,20 @@ mixin breadcrumbs
       'Трубы Sanline PEX-a «Универсальные»',
       'Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус',
     ]
-  .breadcrumbs(class=attributes.class)
-    .breadcrumbs__item
-      a.breadcrumbs__text(href='#')
-        |Главная
-    each item in items
+  .breadcrumbs-wrapper
+    .breadcrumbs(class=attributes.class)
       .breadcrumbs__item
+        a.breadcrumbs__text(href='#')
+          |Главная
+      each item in items
+        .breadcrumbs__item
+          .breadcrumbs__decor
+            |›
+          a.breadcrumbs__text(href='#')
+            |#{item}
+      .breadcrumbs__item.breadcrumbs__item--highlight
         .breadcrumbs__decor
           |›
-        a.breadcrumbs__text(href='#')
-          |#{item}
-    .breadcrumbs__item.breadcrumbs__item--highlight
-      .breadcrumbs__decor
-        |›
-      .breadcrumbs__text
-        |Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус
+        .breadcrumbs__text
+          |Переходник компрессионный для PEX Sanline 16х2,0(2,2)-G3/4 евроконус
         
