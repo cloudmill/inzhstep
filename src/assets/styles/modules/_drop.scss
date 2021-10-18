@@ -1,0 +1,16 @@
+.drop {
+  $comp: &;
+
+  &--open {
+
+  }
+
+  &__button {
+
+  }
+
+  &__content {
+    padding-left: 20px;
+    display: none;
+  }
+}

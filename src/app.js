@@ -6,6 +6,7 @@ import './assets/scripts/TweenMax.min.js';
 import 'jquery-bez';
 import SmoothScroll from 'smoothscroll-for-websites';
 import '@fancyapps/fancybox';
+import './assets/scripts/drop.js';
 
 const MAIN_BREAKPOINT = 1024;
 
