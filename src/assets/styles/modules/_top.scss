@@ -748,6 +748,8 @@
 }
 
 .top {
+  $comp: &;
+
   position: relative;
   z-index: 0;
 
@@ -991,13 +993,27 @@
     align-items: center;
     pointer-events: all;
 
-    border: 1px solid transparent;
+    background-color: white;
+    // border: 1px solid white;
     cursor: pointer;
     transition: $transition;
 
     &:hover {
       background-color: $color-main;
-      border-color: $color-main;
+      // border-color: $color-main;
+
+      #{$comp}__ui-scroll-svg {
+        path {
+          fill: $color-white;
+        }
+      }
+    }
+
+    &-svg {
+      path {
+        fill: $color-black;
+        transition: $transition;
+      }
     }
   }
   &__ui-decor {
