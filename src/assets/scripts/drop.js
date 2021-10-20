@@ -6,6 +6,6 @@ window.addEventListener('click', (event) => {
     const content = drop.querySelector('.drop__content')
     
     drop.classList.toggle('drop--open')
-    $(content).slideToggle()
+    $(content).slideToggle(650)
   }
 })
