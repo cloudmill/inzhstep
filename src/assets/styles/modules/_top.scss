@@ -939,6 +939,14 @@
 
       height: 1px;
     }
+
+    &--bottom {
+      &:nth-child(2) {
+        top: auto;
+
+        height: 100px;
+      }
+    }
   }
 
   &__ui-container {
