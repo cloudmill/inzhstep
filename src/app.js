@@ -8,7 +8,7 @@ import SmoothScroll from 'smoothscroll-for-websites';
 import '@fancyapps/fancybox';
 import './assets/scripts/drop.js';
 
-const MAIN_BREAKPOINT = 1024;
+const MAIN_BREAKPOINT = 1280;
 
 
 
