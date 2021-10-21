@@ -965,7 +965,7 @@ const MAIN_BREAKPOINT = 1280;
 		const panelButtons = $('[data-section]')
 
 		if (panelButtons.length) {
-			const MOVE_DURATION = 500
+			const MOVE_DURATION = 650
 
 			// panel button click
 			panelButtons.on('click', function (event) {

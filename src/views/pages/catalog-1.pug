@@ -30,15 +30,7 @@ block content
     .grid__section
       .grid__row
         .grid__col
-        .grid__col
-          .grid__container.grid__container--breadcrumbs
-            +breadcrumbs.breadcrumbs--margin-bottom--default
-            h1.title
-              |Каталог
-    .grid__section
-      .grid__row
-        .grid__col.grid__col--bottom.grid__col--without-border
-          .grid__container.grid__container--panel.grid__container--sticky
+          .grid__container.grid__container--panel.grid__container--panel
             ul.panel
               li.panel__item.panel__item--active
                 +mark-svg('panel__svg')
@@ -77,7 +69,11 @@ block content
                 a.panel__link.panel-text(href='#' data-section)
                   |Крепежные изделия
         .grid__col
-          .grid__container.grid__container--sections
+          .grid__container.grid__container--breadcrumbs
+            +breadcrumbs.breadcrumbs--margin-bottom--default
+            h1.title
+              |Каталог
+          .grid__container.grid__container--sections.grid__container--border-top
             .selects.selects--margin-top
               .container
                 .selects__item
