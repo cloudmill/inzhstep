@@ -97,16 +97,7 @@
     // стр. каталог
     &--panel {
       position: sticky;
-      top: 0;
-
-      height: 100vh;
-      max-height: 100%;
-      display: flex;
-      align-items: center;
-
-      @media (max-width: $breakpoint - 1px) {
-        display: none;
-      }
+      top: calc(180px + 20px - 40px);
     }
     // стр. каталог
     &--border-top {
