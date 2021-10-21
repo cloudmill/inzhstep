@@ -1020,18 +1020,34 @@ const MAIN_BREAKPOINT = 1280;
 			window.addEventListener('scroll', updateBlocksY)
 
 			// panel active item
-			function updatePanelActiveItem() {
-				let activeIndex = blocksY.findIndex((blockY) => {
-					return (nextScrollY + 100) < blockY
-				})
-				if (activeIndex === 0) {
-					activeIndex = 1
-				} else if (activeIndex < 0) {
+			function getAverageBlockHeight() {
+				const blocks = document.querySelectorAll('.sections__block')
+				const blocksHeight = Array.from(blocks).map(block => block.getBoundingClientRect().height)
+				const allBlocksHeight = blocksHeight.reduce((allHeight, blockHeight) => allHeight + blockHeight)
+				return allBlocksHeight / blocks.length
+			}
+			function getPanelDetectY() {
+				let panelDetectY = 0
+				panelDetectY += nextScrollY
+				panelDetectY += document.documentElement.clientHeight / 2
+				panelDetectY -= getAverageBlockHeight() / 2
+				return panelDetectY
+			}
+			function getPanelActiveItemIndex() {
+				let activeIndex = blocksY.findIndex(blockY => getPanelDetectY() < blockY)
+				if (activeIndex < 0) {
 					activeIndex = blocksY.length
+				} else if (activeIndex === 0) {
+					activeIndex = 1
 				}
-
+				return activeIndex
+			}
+			function setPanelActiveItem(index) {
 				$('.panel__item').removeClass('panel__item--active')
-				$(`.panel__item:nth-child(${activeIndex})`).addClass('panel__item--active')
+				$(`.panel__item:nth-child(${index})`).addClass('panel__item--active')
+			}
+			function updatePanelActiveItem() {
+				setPanelActiveItem(getPanelActiveItemIndex())
 			}
 
 			updatePanelActiveItem()
