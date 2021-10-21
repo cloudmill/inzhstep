@@ -1,0 +1,11 @@
+.testt {
+  overflow: hidden;
+}
+
+.test {
+  white-space: nowrap;
+
+  &:nth-child(odd) {
+    background-color: lightgray;
+  }
+}
