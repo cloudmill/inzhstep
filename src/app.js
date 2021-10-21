@@ -962,6 +962,71 @@ const MAIN_BREAKPOINT = 1280;
 // panel
 {
 	$(() => {
+		// sections y
+		// let blocksY = []
+
+		// function getBlockY(block) {
+		// 	const blockRect = block.getBoundingClientRect()
+		// 	return blockRect.y + pageYOffset
+		// }
+		// function getBlocksY() {
+		// 	const blocksY = []
+
+		// 	const blocks = document.querySelectorAll('.sections__block')
+		// 	blocks.forEach(block => blocksY.push(getBlockY(block)))
+
+		// 	return blocksY
+		// }
+		// function updateBlocksY() {
+		// 	blocksY = getBlocksY()
+
+		// 	console.log('blocks', blocksY)
+		// }
+
+		// updateBlocksY()
+		
+		// window.addEventListener('load', updateBlocksY)
+		// window.addEventListener('resize', updateBlocksY)
+
+		// // scroll y
+		// let prevScrollY = null
+		// let nextScrollY = pageYOffset
+
+		// function updateScrollY() {
+		// 	prevScrollY = nextScrollY
+		// 	nextScrollY = pageYOffset
+
+		// 	console.log('scroll', prevScrollY, nextScrollY)
+		// }
+
+		// updateScrollY()
+
+		// window.addEventListener('load', updateScrollY)
+		// window.addEventListener('resize', updateScrollY)
+
+		// // panel active item
+		// function updatePanelActiveItem() {
+		// 	if (prevScrollY < nextScrollY) {
+		// 		// down
+
+		// 		// const activeIndex = blocksY.findIndex((blockY) => {
+		// 		// 	return blockY > nextScrollY - 100
+		// 		// })
+
+		// 		// $('.panel__item').removeClass('panel__item--active')
+		// 		// $(`.panel__item:nth-child(${activeIndex})`).addClass('panel__item--active')
+		// 	} else {
+		// 		// up
+				
+
+		// 	}
+		// }
+
+		// updatePanelActiveItem()
+
+		// window.addEventListener('load', updatePanelActiveItem)
+		// window.addEventListener('resize', updatePanelActiveItem)
+
 		// sections
 		{
 			$('[data-section]').on('click', function (event) {
