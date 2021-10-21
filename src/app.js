@@ -965,15 +965,12 @@ const MAIN_BREAKPOINT = 1280;
 	$(() => {
 		const panelButtons = $('[data-section]')
 
-		if (panelButtons.length) {
+		if (panelButtons.length && matchMedia(`(min-width: ${MAIN_BREAKPOINT}px)`).matches) {
 			const MOVE_DURATION = 650
-
-			let i = 0;
-
 			const RESIZE_FPS = 2
-			const resizeDebounce = createDebounce()
-
 			const SCROLL_FPS = 2
+
+			const resizeDebounce = createDebounce()
 			const scrollThrottle = createThrottle()
 
 			// panel button click
@@ -993,8 +990,6 @@ const MAIN_BREAKPOINT = 1280;
 			let nextScrollY = pageYOffset
 
 			function updateScrollY() {
-				console.log('scroll y', i++)
-
 				prevScrollY = nextScrollY
 				nextScrollY = pageYOffset
 			}
@@ -1021,8 +1016,6 @@ const MAIN_BREAKPOINT = 1280;
 				return blocksY
 			}
 			function updateBlocksY() {
-				console.log('blocks y', i++)
-
 				blocksY = getBlocksY()
 			}
 
@@ -1060,8 +1053,6 @@ const MAIN_BREAKPOINT = 1280;
 				$(`.panel__item:nth-child(${index})`).addClass('panel__item--active')
 			}
 			function updatePanelActiveItem() {
-				console.log('active item', i++)
-
 				setPanelActiveItem(getPanelActiveItemIndex())
 			}
 
