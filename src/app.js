@@ -962,90 +962,83 @@ const MAIN_BREAKPOINT = 1280;
 // panel
 {
 	$(() => {
-		// sections y
-		// let blocksY = []
+		const panelButtons = $('[data-section]')
 
-		// function getBlockY(block) {
-		// 	const blockRect = block.getBoundingClientRect()
-		// 	return blockRect.y + pageYOffset
-		// }
-		// function getBlocksY() {
-		// 	const blocksY = []
+		if (panelButtons.length) {
+			const MOVE_DURATION = 500
 
-		// 	const blocks = document.querySelectorAll('.sections__block')
-		// 	blocks.forEach(block => blocksY.push(getBlockY(block)))
-
-		// 	return blocksY
-		// }
-		// function updateBlocksY() {
-		// 	blocksY = getBlocksY()
-
-		// 	console.log('blocks', blocksY)
-		// }
-
-		// updateBlocksY()
-		
-		// window.addEventListener('load', updateBlocksY)
-		// window.addEventListener('resize', updateBlocksY)
-
-		// // scroll y
-		// let prevScrollY = null
-		// let nextScrollY = pageYOffset
-
-		// function updateScrollY() {
-		// 	prevScrollY = nextScrollY
-		// 	nextScrollY = pageYOffset
-
-		// 	console.log('scroll', prevScrollY, nextScrollY)
-		// }
-
-		// updateScrollY()
-
-		// window.addEventListener('load', updateScrollY)
-		// window.addEventListener('resize', updateScrollY)
-
-		// // panel active item
-		// function updatePanelActiveItem() {
-		// 	if (prevScrollY < nextScrollY) {
-		// 		// down
-
-		// 		// const activeIndex = blocksY.findIndex((blockY) => {
-		// 		// 	return blockY > nextScrollY - 100
-		// 		// })
-
-		// 		// $('.panel__item').removeClass('panel__item--active')
-		// 		// $(`.panel__item:nth-child(${activeIndex})`).addClass('panel__item--active')
-		// 	} else {
-		// 		// up
-				
-
-		// 	}
-		// }
-
-		// updatePanelActiveItem()
-
-		// window.addEventListener('load', updatePanelActiveItem)
-		// window.addEventListener('resize', updatePanelActiveItem)
-
-		// sections
-		{
-			$('[data-section]').on('click', function (event) {
+			// panel button click
+			panelButtons.on('click', function (event) {
 				event.preventDefault()
 
-				// $('.panel__item').removeClass('panel__item--active')
-				// $(this).closest('.panel__item').addClass('panel__item--active')
-
-				const index = [...document.querySelectorAll('[data-section]')].indexOf(this)
+				const activeIndex = [...document.querySelectorAll('[data-section]')].indexOf(this)
 				try {
-					$("html, body").animate({ 
-						scrollTop: $(`.sections__block:nth-child(${index + 1})`).offset().top - 100 
-					}, 500)
+					$('html, body').animate({ 
+						scrollTop: $(`.sections__block:nth-child(${activeIndex + 1})`).offset().top - 100
+					}, MOVE_DURATION)
 				} catch {}
-
-				window.addEventListener('scroll', () => {
-					console.log(123)
-				})
 			})
+
+			// scroll y
+			let prevScrollY = null
+			let nextScrollY = pageYOffset
+
+			function updateScrollY() {
+				prevScrollY = nextScrollY
+				nextScrollY = pageYOffset
+			}
+
+			updateScrollY()
+
+			window.addEventListener('load', updateScrollY)
+			window.addEventListener('resize', updateScrollY)
+			window.addEventListener('scroll', updateScrollY)
+
+			// sections y
+			let blocksY = null
+
+			function getBlockY(block) {
+				const blockRect = block.getBoundingClientRect()
+				return blockRect.y + pageYOffset
+			}
+			function getBlocksY() {
+				const blocksY = []
+
+				const blocks = document.querySelectorAll('.sections__block')
+				blocks.forEach(block => blocksY.push(getBlockY(block)))
+
+				return blocksY
+			}
+			function updateBlocksY() {
+				blocksY = getBlocksY()
+			}
+
+			updateBlocksY()
+		
+			window.addEventListener('load', updateBlocksY)
+			window.addEventListener('resize', updateBlocksY)
+			window.addEventListener('scroll', updateBlocksY)
+
+			// panel active item
+			function updatePanelActiveItem() {
+				let activeIndex = blocksY.findIndex((blockY) => {
+					return (nextScrollY + 100) < blockY
+				})
+				if (activeIndex === 0) {
+					activeIndex = 1
+				} else if (activeIndex < 0) {
+					activeIndex = blocksY.length
+				}
+
+				$('.panel__item').removeClass('panel__item--active')
+				$(`.panel__item:nth-child(${activeIndex})`).addClass('panel__item--active')
+			}
+
+			updatePanelActiveItem()
+
+			window.addEventListener('load', updatePanelActiveItem)
+			window.addEventListener('resize', updatePanelActiveItem)
+			window.addEventListener('scroll', updatePanelActiveItem)
 		}
 	})
 }
