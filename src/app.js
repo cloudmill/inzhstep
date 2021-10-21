@@ -7,6 +7,7 @@ import 'jquery-bez';
 import SmoothScroll from 'smoothscroll-for-websites';
 import '@fancyapps/fancybox';
 import './assets/scripts/drop.js';
+import { createDebounce, createThrottle } from './assets/scripts/optimization.js'
 
 const MAIN_BREAKPOINT = 1280;
 
@@ -967,6 +968,14 @@ const MAIN_BREAKPOINT = 1280;
 		if (panelButtons.length) {
 			const MOVE_DURATION = 650
 
+			let i = 0;
+
+			const RESIZE_FPS = 2
+			const resizeDebounce = createDebounce()
+
+			const SCROLL_FPS = 2
+			const scrollThrottle = createThrottle()
+
 			// panel button click
 			panelButtons.on('click', function (event) {
 				event.preventDefault()
@@ -984,6 +993,8 @@ const MAIN_BREAKPOINT = 1280;
 			let nextScrollY = pageYOffset
 
 			function updateScrollY() {
+				console.log('scroll y', i++)
+
 				prevScrollY = nextScrollY
 				nextScrollY = pageYOffset
 			}
@@ -991,8 +1002,8 @@ const MAIN_BREAKPOINT = 1280;
 			updateScrollY()
 
 			window.addEventListener('load', updateScrollY)
-			window.addEventListener('resize', updateScrollY)
-			window.addEventListener('scroll', updateScrollY)
+			window.addEventListener('resize', resizeDebounce(updateScrollY, 1000 / RESIZE_FPS))
+			window.addEventListener('scroll', scrollThrottle(updateScrollY, 1000 / SCROLL_FPS))
 
 			// sections y
 			let blocksY = null
@@ -1010,14 +1021,16 @@ const MAIN_BREAKPOINT = 1280;
 				return blocksY
 			}
 			function updateBlocksY() {
+				console.log('blocks y', i++)
+
 				blocksY = getBlocksY()
 			}
 
 			updateBlocksY()
 		
 			window.addEventListener('load', updateBlocksY)
-			window.addEventListener('resize', updateBlocksY)
-			window.addEventListener('scroll', updateBlocksY)
+			window.addEventListener('resize', resizeDebounce(updateBlocksY, 1000 / RESIZE_FPS))
+			window.addEventListener('scroll', scrollThrottle(updateBlocksY, 1000 / SCROLL_FPS))
 
 			// panel active item
 			function getAverageBlockHeight() {
@@ -1047,14 +1060,16 @@ const MAIN_BREAKPOINT = 1280;
 				$(`.panel__item:nth-child(${index})`).addClass('panel__item--active')
 			}
 			function updatePanelActiveItem() {
+				console.log('active item', i++)
+
 				setPanelActiveItem(getPanelActiveItemIndex())
 			}
 
 			updatePanelActiveItem()
 
 			window.addEventListener('load', updatePanelActiveItem)
-			window.addEventListener('resize', updatePanelActiveItem)
-			window.addEventListener('scroll', updatePanelActiveItem)
+			window.addEventListener('resize', resizeDebounce(updatePanelActiveItem, 1000 / RESIZE_FPS))
+			window.addEventListener('scroll', scrollThrottle(updatePanelActiveItem, 1000 / SCROLL_FPS))
 		}
 	})
 }
