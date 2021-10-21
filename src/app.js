@@ -967,12 +967,19 @@ const MAIN_BREAKPOINT = 1280;
 			$('[data-section]').on('click', function (event) {
 				event.preventDefault()
 
+				// $('.panel__item').removeClass('panel__item--active')
+				// $(this).closest('.panel__item').addClass('panel__item--active')
+
 				const index = [...document.querySelectorAll('[data-section]')].indexOf(this)
 				try {
 					$("html, body").animate({ 
 						scrollTop: $(`.sections__block:nth-child(${index + 1})`).offset().top - 100 
 					}, 500)
 				} catch {}
+
+				window.addEventListener('scroll', () => {
+					console.log(123)
+				})
 			})
 		}
 	})

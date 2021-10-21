@@ -38,6 +38,27 @@
         width: calc(#{$grid-part-d} * 13 + #{$grid-pad-d});
       }
     }
+
+    &--bottom {
+      display: flex;
+      align-items: flex-end;
+    }
+    &--without-border {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+
+        content: '';
+        height: 1px;
+        pointer-events: none;
+
+        background-color: $color-white;
+      }
+    }
   }
 
   &__container {
@@ -93,6 +114,11 @@
       @media (max-width: $breakpoint - 1px) {
         padding-bottom: 60px;
       }
+    }
+    // стр. каталог
+    &--sticky {
+      position: sticky;
+      bottom: 0;
     }
   }
 }

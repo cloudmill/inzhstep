@@ -10,6 +10,12 @@ include ../components/_sections.pug
 
 
 
+block helper
+  -
+    pageOpt.mainClass = 'main main--visible'
+
+
+
 block header
   +header({
     mod: 'white',
@@ -31,8 +37,8 @@ block content
               |Каталог
     .grid__section
       .grid__row
-        .grid__col
-          .grid__container.grid__container--panel
+        .grid__col.grid__col--bottom.grid__col--without-border
+          .grid__container.grid__container--panel.grid__container--sticky
             ul.panel
               li.panel__item.panel__item--active
                 +mark-svg('panel__svg')
