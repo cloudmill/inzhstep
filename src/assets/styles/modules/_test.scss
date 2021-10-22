@@ -1,5 +1,14 @@
-.testt {
+.testtt {
   overflow: hidden;
+}
+
+.testt {
+  background-color: white;
+
+  &--scale {
+    transform-origin: left top;
+    transform: scale(7);
+  }
 }
 
 .test {
