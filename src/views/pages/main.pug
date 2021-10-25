@@ -244,16 +244,19 @@ block content
         .row__main
           .section__inner.section__inner--main
             .section__slider
-              .slider.slider--object-card(data-slider-prev-id='3' data-slider-next-id='4')
+              .slider.slider--object-card.slider--object-card--responsive(data-slider-prev-id='3' data-slider-next-id='4')
                 .slider__swiper
                   .swiper-wrapper
                     - for (let i= 0; i<5; i++)
                       .swiper-slide
-                        +object-card
+                        +object-card({
+                          responsive: true,
+                        })
                       .swiper-slide
                         +object-card({
                           image:'object-card-1.jpg',
                           imageMark:'object-card-mark-1.jpg',
+                          responsive: true,
                         })
   
   .section.section--partners

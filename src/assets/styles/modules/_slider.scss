@@ -31,6 +31,14 @@
                 width: $object-card-width-d;
             }
         }
+
+        &--responsive {
+            .swiper-slide {
+                @media (min-width: $breakpoint) and (max-width: $breakpoint-xls - 1px) {
+                    width: calc(#{$object-card-responsive-width});
+                }
+            }
+        }
     }
 
     &--partner-card {
