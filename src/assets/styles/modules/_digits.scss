@@ -82,5 +82,11 @@
             font-size: 16px;
             line-height: 19px;
         }
+
+        &--big {
+            @media (min-width: $breakpoint) {
+                min-width: 220px;
+            }
+        }
     }
 }
