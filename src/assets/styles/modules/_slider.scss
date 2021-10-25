@@ -14,6 +14,14 @@
                 }
             }
         }
+
+        &--responsive {
+            .swiper-slide {
+                @media (min-width: $breakpoint) and (max-width: $breakpoint-xls - 1px) {
+                    width: calc(#{$news-card-responsive-width});
+                }
+            }
+        }
     }
 
     &--object-card {

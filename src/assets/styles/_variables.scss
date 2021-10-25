@@ -21,6 +21,8 @@ $breakpoint-s: 768px;
 $breakpoint: 1280px;
 $breakpoint-hd: 1280px;
 $breakpoint-l: 1366px;
+$breakpoint-ll: 1440px;
+$breakpoint-xls: 1580px;
 $breakpoint-xl: 1680px;
 $breakpoint-xxl: 1920px;
 
@@ -44,6 +46,7 @@ $grid-part-d: '(#{$grid-col-d} + #{$grid-gap-d})';
 $news-card-width-m: 291px;
 $news-card-width-d: 560px;
 $news-card-alt-width-d: 393px;
+$news-card-responsive-width: '(#{$grid-part-d} * 6)';
 
 // object-card
 $object-card-width-m: 291px;

@@ -45,17 +45,20 @@ block content
         .row__main
           .section__inner.section__inner--main
             .section__slider
-              .slider.slider--news-card(data-slider-prev-id='1' data-slider-next-id='2')
+              .slider.slider--news-card.slider--news-card--responsive(data-slider-prev-id='1' data-slider-next-id='2')
                 .slider__swiper
                   .swiper-wrapper
                     - for (let i= 0; i<5; i++)
                       .swiper-slide
-                        +news-card
+                        +news-card({
+                          responsive: true,
+                        })
                       .swiper-slide
                         +news-card({
                           image:'news-card-1.jpeg',
                           mark:'НОВИНКА',
                           title:'Новинка! Шаровые краны Altstream PN 25!',
+                          responsive: true,
                         })
   .section
     .container
