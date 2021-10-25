@@ -85,7 +85,7 @@
 
         &--big {
             @media (min-width: $breakpoint) {
-                min-width: 220px;
+                width: 220px;
             }
         }
     }
