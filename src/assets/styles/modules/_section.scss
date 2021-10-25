@@ -45,6 +45,19 @@
         }
     }
 
+    &--up {
+        margin-top: -60px;
+        @media (min-width: $breakpoint) {
+            margin-top: -160px;
+        }
+
+        &--top {
+            @media (min-width: $breakpoint) {
+                margin-top: -60px;
+            }
+        }
+    }
+
     &__inner {
         @media (min-width: $breakpoint) {
             padding: 160px 0;
