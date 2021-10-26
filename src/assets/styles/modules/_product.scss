@@ -51,7 +51,7 @@
     }
 
     font-weight: bold;
-    font-size: 26px;
+    font-size: 25px;
     line-height: 36px;
     @media (max-width: $breakpoint - 1px) {
       font-size: 18px;
@@ -101,7 +101,7 @@
     font-size: 12px;
     line-height: 14px;
     @media (min-width: $breakpoint) {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 17px;
     }
   }
@@ -183,7 +183,7 @@
     font-size: 12px;
     line-height: 14px;
     @media (min-width: $breakpoint) {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 17px;
     }
     transition: $transition;
@@ -196,13 +196,13 @@
     font-size: 12px;
     line-height: 14px;
     @media (min-width: $breakpoint) {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 17px;
     }
   }
   &__list-price {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 17px;
   }
 
@@ -218,7 +218,7 @@
     font-size: 18px;
     line-height: 25px;
     @media (min-width: $breakpoint) {
-      font-size: 26px;
+      font-size: 25px;
       line-height: 36px;
     }
   }
