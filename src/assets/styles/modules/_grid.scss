@@ -45,7 +45,7 @@
     &--title {
       padding: 100px $grid-pad-m 0;
       @media (min-width: $breakpoint) {
-        padding: 300px $grid-gap-d 40px $grid-pad-d;
+        padding: 300px $grid-pad-d 40px $grid-gap-d;
       }
     }
     // нав. панель в  aside
@@ -83,7 +83,7 @@
       padding: 73px $grid-pad-m 0;
 
       @media (min-width: $breakpoint) {
-        padding: 200px $grid-gap-d 40px $grid-pad-d;
+        padding: 200px $grid-pad-d 40px $grid-gap-d;
       }
     }
     // sections

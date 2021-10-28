@@ -57,7 +57,7 @@
     }
     @media (min-width: $breakpoint) {
       margin-top: 40px;
-      margin-left: $grid-gap-m;
+      margin-left: $grid-gap-d;
     }
     @media (min-width: $breakpoint-xs) and (max-width: $breakpoint - 1px) {
       $cols: 3;
