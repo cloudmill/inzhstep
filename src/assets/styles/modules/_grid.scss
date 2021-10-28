@@ -51,7 +51,7 @@
     // нав. панель в  aside
     &--panel {
       display: flex;
-      overflow-x: auto;
+      overflow-x: hidden;
 
       .panel {
         &__item {

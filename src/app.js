@@ -980,7 +980,7 @@ const MAIN_BREAKPOINT = 1280;
 				const activeIndex = [...document.querySelectorAll('[data-section]')].indexOf(this)
 				try {
 					$('html, body').animate({ 
-						scrollTop: $(`.sections__block:nth-child(${activeIndex + 1})`).offset().top - 100
+						scrollTop: $(`.sections__block:nth-child(${activeIndex + 1})`).offset().top - Math.max(100, getPanelDetectTop() - 1),
 					}, MOVE_DURATION)
 				} catch {}
 			})
@@ -1032,12 +1032,14 @@ const MAIN_BREAKPOINT = 1280;
 				const allBlocksHeight = blocksHeight.reduce((allHeight, blockHeight) => allHeight + blockHeight)
 				return allBlocksHeight / blocks.length
 			}
-			function getPanelDetectY() {
+			function getPanelDetectTop() {
 				let panelDetectY = 0
-				panelDetectY += nextScrollY
 				panelDetectY += document.documentElement.clientHeight / 2
 				panelDetectY -= getAverageBlockHeight() / 2
 				return panelDetectY
+			}
+			function getPanelDetectY() {
+				return getPanelDetectTop() + nextScrollY
 			}
 			function getPanelActiveItemIndex() {
 				let activeIndex = blocksY.findIndex(blockY => getPanelDetectY() < blockY)
@@ -1049,14 +1051,13 @@ const MAIN_BREAKPOINT = 1280;
 				return activeIndex
 			}
 			function setPanelActiveItem(index) {
-				$('.panel__item').removeClass('panel__item--active')
-				$(`.panel__item:nth-child(${index})`).addClass('panel__item--active')
+				$('[data-sections] .panel__item').removeClass('panel__item--active')
+				$(`[data-sections] .panel__item:nth-child(${index})`).addClass('panel__item--active')
 			}
 			function setSectionsActiveBlock(index) {
 				$('.sections__block').removeClass('sections__block--active')
 				$(`.sections__block:nth-child(${index})`).addClass('sections__block--active')
 			}
-			// refactoring
 			function updatePanelActiveItem() {
 				const activeIndex = getPanelActiveItemIndex()
 

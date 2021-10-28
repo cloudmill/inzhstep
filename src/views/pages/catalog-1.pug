@@ -30,8 +30,8 @@ block content
     .grid__section
       .grid__row
         .grid__col
-          .grid__container.grid__container--panel.grid__container--panel
-            ul.panel
+          .grid__container.grid__container--panel
+            ul.panel(data-sections)
               li.panel__item.panel__item--active
                 +mark-svg('panel__svg')
                 a.panel__link.panel-text(href='#' data-section)
