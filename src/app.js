@@ -1025,7 +1025,7 @@ const MAIN_BREAKPOINT = 1280;
 			window.addEventListener('resize', resizeDebounce(updateBlocksY, 1000 / RESIZE_FPS))
 			window.addEventListener('scroll', scrollThrottle(updateBlocksY, 1000 / SCROLL_FPS))
 
-			// panel active item
+			// panel active item & sections active block
 			function getAverageBlockHeight() {
 				const blocks = document.querySelectorAll('.sections__block')
 				const blocksHeight = Array.from(blocks).map(block => block.getBoundingClientRect().height)
@@ -1052,8 +1052,16 @@ const MAIN_BREAKPOINT = 1280;
 				$('.panel__item').removeClass('panel__item--active')
 				$(`.panel__item:nth-child(${index})`).addClass('panel__item--active')
 			}
+			function setSectionsActiveBlock(index) {
+				$('.sections__block').removeClass('sections__block--active')
+				$(`.sections__block:nth-child(${index})`).addClass('sections__block--active')
+			}
+			// refactoring
 			function updatePanelActiveItem() {
-				setPanelActiveItem(getPanelActiveItemIndex())
+				const activeIndex = getPanelActiveItemIndex()
+
+				setPanelActiveItem(activeIndex)
+				setSectionsActiveBlock(activeIndex)
 			}
 
 			updatePanelActiveItem()

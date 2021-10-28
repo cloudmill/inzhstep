@@ -1,4 +1,6 @@
 .sections {
+  $comp: &;
+
   $gap: 20px;
   $color-gray: #F6F9F9;
 
@@ -9,21 +11,25 @@
   &__block {
     padding: 40px 60px 40px 40px;
 
+    transition: $transition;
+
     @media (max-width: $breakpoint - 1px) {
       padding: 0 20px;
-    }
-
-    &:nth-child(odd) {
-      background-color: $color-gray;
-
-      @media (max-width: $breakpoint - 1px) {
-        background: none;
-      }
     }
 
     &:not(:first-child) {
       @media (max-width: $breakpoint - 1px) {
         margin-top: 40px;
+      }
+    }
+
+    &--active {
+      @media (min-width: $breakpoint) {
+        background-color: $color-gray;
+
+        #{$comp}__title {
+          color: $color-main;
+        }
       }
     }
   }
@@ -34,9 +40,13 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
+    transition: $transition;
 
     @media (min-width: $breakpoint) {
-      display: none;
+      margin-bottom: 20px;
+      
+      font-size: 26px;
+      line-height: 36px;
     }
   }
 
