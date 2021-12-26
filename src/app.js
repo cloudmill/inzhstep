@@ -9,8 +9,19 @@ import '@fancyapps/fancybox';
 import './assets/scripts/drop.js';
 import { createDebounce, createThrottle } from './assets/scripts/optimization.js'
 
-const MAIN_BREAKPOINT = 1280;
+const sitePath = document.querySelector('[data-type=site-templ-path]');
 
+window.CONFIG = window.location.hostname && window.location.hostname !== 'cloudmill.github.io'
+  ? {
+    path: sitePath ? sitePath.value : '/local/templates/main/',
+    debug: true,
+  }
+  : {
+    path: './',
+    debug: true
+  };
+
+const MAIN_BREAKPOINT = 1280;
 
 
 // product
@@ -130,11 +141,11 @@ const MAIN_BREAKPOINT = 1280;
 		// setup
 		$.fancybox.defaults.closeExisting = true;
 		// $.fancybox.defaults.touch = false; // ?
-		
+
 		// open
 		$('[data-fancy-button]').on('click', function (event) {
 			event.preventDefault();
-		
+
 			const id = $(this).data('fancy-button');
 			const modal = $(`[data-fancy-modal="${id}"]`);
 
@@ -261,7 +272,7 @@ const MAIN_BREAKPOINT = 1280;
 					balloon,
 				}, {
 					iconLayout: 'default#image',
-					iconImageHref: 'assets/images/placemark.svg',
+					iconImageHref: `${window.CONFIG.path}/assets/images/placemark.svg`,
 					iconImageSize: [markWidth, markHeight],
 					iconImageOffset: [-markWidth / 2, -markHeight],
 
@@ -634,7 +645,7 @@ const MAIN_BREAKPOINT = 1280;
 									// The duration and easing for the last 3 elements will be different to create a different feeling for the animation.
 									const duration = pos >= this.totalDetailItems - 3 ? 0.7 : 0.2;
 									const ease = pos >= this.totalDetailItems - 3 ? 'Expo.easeOut' : 'Power2.easeInOut';
-									// Every box will have a delay. 
+									// Every box will have a delay.
 									const delay = pos * 0.08;
 									// The direction to animate the box. We can specify this as a data attribute otherwise we assume a default of rtl ("right to left")
 									// right to left (rtl) | left to right (ltr) | bottom to top (btt) | top to bottom (ttb).
@@ -979,7 +990,7 @@ const MAIN_BREAKPOINT = 1280;
 
 				const activeIndex = [...document.querySelectorAll('[data-section]')].indexOf(this)
 				try {
-					$('html, body').animate({ 
+					$('html, body').animate({
 						scrollTop: $(`.sections__block:nth-child(${activeIndex + 1})`).offset().top - Math.max(100, getPanelDetectTop() - 1),
 					}, MOVE_DURATION)
 				} catch {}
@@ -1020,7 +1031,7 @@ const MAIN_BREAKPOINT = 1280;
 			}
 
 			updateBlocksY()
-		
+
 			window.addEventListener('load', updateBlocksY)
 			window.addEventListener('resize', resizeDebounce(updateBlocksY, 1000 / RESIZE_FPS))
 			window.addEventListener('scroll', scrollThrottle(updateBlocksY, 1000 / SCROLL_FPS))
