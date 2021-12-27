@@ -6,6 +6,10 @@
     display: none;
   }
 
+  @media (min-width: $breakpoint-hd) {
+    @include scrollbar-hidden();
+  }
+
   &--white {
     #{$component}__link {
       color: $color-white;

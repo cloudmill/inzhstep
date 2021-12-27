@@ -66,6 +66,10 @@
             border-top: 1px solid $color-main;
             border-right: 1px solid $color-white-transparent;
 
+            @media (min-width: $breakpoint-hd) {
+                @include scrollbar-hidden();
+            }
+
             .panel {
                 -ms-flex-align: start; // ?
                 align-self: flex-start;
@@ -74,6 +78,10 @@
 
         &--tabs {
             width: calc(#{$grid-part-d} * 4);
+
+            @media (min-width: $breakpoint-hd) {
+                @include scrollbar-hidden();
+            }
         }
     }
     
