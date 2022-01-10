@@ -23,6 +23,38 @@ window.CONFIG = window.location.hostname && window.location.hostname !== 'cloudm
 
 const MAIN_BREAKPOINT = 1280;
 
+//backend
+{
+  $(() => {
+    //forms
+    {
+      $('[data-type=form]').submit(function(e) {
+        e.preventDefault();
+
+        const thisObj = $(this);
+        let data = {};
+
+        thisObj.find('[data-type=get-field]').each(function() {
+          data[$(this).data('field')] = $(this).val();
+        });
+
+        $.ajax({
+          type: 'POST',
+          url: `${window.CONFIG.path}/include/ajax/forms.php`,
+          dataType: 'json',
+          data: data,
+          success: function(r) {
+            if (r.success) {
+              $.fancybox.open($(`[data-fancy-modal="${thisObj.data('modal-id')}"]`));
+            } else {
+              console.log(r.message);
+            }
+          }
+        });
+      });
+    }
+  });
+}
 
 // product
 {
