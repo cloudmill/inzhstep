@@ -32,11 +32,17 @@ block content
           form.modal__form.form
             .form__item
               input.form__input.input(type='text' name='name' placeholder='Имя' required)
+              .form__error
+                |Поле заполнено неверно
             .form__item
               - var regExp = '\\+7 \\([0-9][0-9][0-9]\\) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
               input.form__input.input(type='tel' name='phone' placeholder='Телефон' required data-mask='phone' inputmode='text' data-parsley-pattern=regExp)
+              .form__error
+                |Поле заполнено неверно
             .form__item
               input.form__input.input(type='email' name='email' placeholder='Email' required)
+              .form__error
+                |Поле заполнено неверно
             .form__item
               .checkbox
                 label.checkbox__label

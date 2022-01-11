@@ -49,6 +49,9 @@
 
 .form {
   &__item {
+    position: relative;
+    z-index: 0;
+
     &:not(:first-child) {
       margin-top: 30px;
     }
@@ -61,15 +64,72 @@
   &__button {
     justify-content: flex-end;
   }
+
+  &__error {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+
+    pointer-events: none;
+
+    font-size: 10px;
+    line-height: 1.2;
+    color: red;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  .parsley-errors-list {
+    display: none;
+  }
 }
 
 .input {
+  @mixin input() {
+    font-family: $ff-a;
+    font-size: 16px;
+    line-height: 19px;
+    color: $color-black;
+    transition: $transition;
+  }
+
   padding-bottom: 15px;
 
   border: none;
   border-bottom: 1px solid $color-gray-border;
-  font-size: 16px;
-  line-height: 19px;
+  @include input();
+
+  @include placeholder() {
+    @include input();
+  }
+
+  &:hover {
+    border-color: $color-main;
+  }
+
+  &.parsley-error {
+    color: red;
+    border-color: red;
+
+    @include placeholder() {
+      color: red;
+    }
+
+    & ~ .form__error {
+      pointer-events: all;
+
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    color: $color-main;
+    border-color: $color-main;
+
+    @include placeholder() {
+      color: $color-main;
+    }
+  }
 }
 
 .checkbox {
@@ -84,16 +144,28 @@
     display: flex;
 
     cursor: pointer;
+
+    &:hover {
+      .checkbox__box {
+        border-color: $color-main;
+      }
+    }
+
+    &.parsley-error {
+      #{$component}__box {
+        border-color: red;
+      }
+    }
   }
   &__input {
     position: absolute;
 
     visibility: hidden;
-    
+
     opacity: 0;
 
     &:checked {
-      &+#{$component}__box {
+      & + #{$component}__box {
         border-color: $color-main;
         color: $color-main;
 
@@ -136,6 +208,11 @@
   }
   &__link {
     text-decoration: underline;
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
   }
 }
 
