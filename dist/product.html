@@ -553,9 +553,15 @@
 						<div class="modal__container">
 							<h3 class="modal__title">Оставить заявку</h3>
 							<form class="modal__form form">
-								<div class="form__item"><input class="form__input input" type="text" name="name" placeholder="Имя" required></div>
-								<div class="form__item"><input class="form__input input" type="tel" name="phone" placeholder="Телефон" required data-mask="phone" inputmode="text" data-parsley-pattern="\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"></div>
-								<div class="form__item"><input class="form__input input" type="email" name="email" placeholder="Email" required></div>
+								<div class="form__item"><input class="form__input input" type="text" name="name" placeholder="Имя" required>
+									<div class="form__error">Поле заполнено неверно</div>
+								</div>
+								<div class="form__item"><input class="form__input input" type="tel" name="phone" placeholder="Телефон" required data-mask="phone" inputmode="text" data-parsley-pattern="\+7 \([0-9][0-9][0-9]\) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]">
+									<div class="form__error">Поле заполнено неверно</div>
+								</div>
+								<div class="form__item"><input class="form__input input" type="email" name="email" placeholder="Email" required>
+									<div class="form__error">Поле заполнено неверно</div>
+								</div>
 								<div class="form__item">
 									<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" name="agreement" required>
 											<div class="checkbox__box"><svg class="checkbox__svg" xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
