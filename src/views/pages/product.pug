@@ -31,15 +31,16 @@ block content
             |Оставить заявку
           form.modal__form.form
             .form__item
-              input.form__input.input(name='name' placeholder='Имя')
+              input.form__input.input(type='text' name='name' placeholder='Имя' required)
             .form__item
-              input.form__input.input(name='phone' placeholder='Телефон')
+              - var regExp = '\\+7 \\([0-9][0-9][0-9]\\) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+              input.form__input.input(type='tel' name='phone' placeholder='Телефон' required data-mask='phone' inputmode='text' data-parsley-pattern=regExp)
             .form__item
-              input.form__input.input(name='email' placeholder='Email')
+              input.form__input.input(type='email' name='email' placeholder='Email' required)
             .form__item
               .checkbox
                 label.checkbox__label
-                  input.checkbox__input(type='checkbox' name='agreement')
+                  input.checkbox__input(type='checkbox' name='agreement' required)
                   .checkbox__box
                     +checkbox-svg('checkbox__svg')
                   .checkbox__text
