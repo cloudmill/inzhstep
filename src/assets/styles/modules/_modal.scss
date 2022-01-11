@@ -129,6 +129,12 @@
     @include placeholder() {
       color: $color-main;
     }
+
+    & ~ .form__error {
+      pointer-events: none;
+
+      opacity: 0;
+    }
   }
 }
 
